@@ -13,6 +13,7 @@ import cs.swe632.smartclassregistration.springboot.model.Greeting;
 public class GreetingController {
 
     private static final String template = "Hello, %s!";
+    private static final String templateOther = "Hello, %s! You are number %d";
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/greeting")
@@ -21,10 +22,10 @@ public class GreetingController {
                             String.format(template, name));
     }
     
-    @RequestMapping("/greeting/{name}")
-    public Greeting greetingWithPathVariable(@PathVariable(value="name") String name) {
+    @RequestMapping("/greeting/{name}/{id}")
+    public Greeting greetingWithPathVariable(@PathVariable(value="name") String name, @PathVariable(value="id") int id) {
         return new Greeting(counter.incrementAndGet(),
-                            String.format(template, name));
+                            String.format(templateOther, name, id));
     }
     
 }

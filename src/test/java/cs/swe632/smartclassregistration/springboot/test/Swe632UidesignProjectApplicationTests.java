@@ -1,4 +1,4 @@
-package cs.swe632.smartclassregistration.swe632uidesignproject;
+package cs.swe632.smartclassregistration.springboot.test;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

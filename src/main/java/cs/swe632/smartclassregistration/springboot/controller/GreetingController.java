@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cs.swe632.smartclassregistration.springboot.model.Greeting;
 
+@RequestMapping("/greeting")
 @RestController
 public class GreetingController {
 
@@ -16,13 +17,13 @@ public class GreetingController {
     private static final String templateOther = "Hello, %s! You are number %d";
     private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping("/greeting")
+    @RequestMapping("/")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }
     
-    @RequestMapping("/greeting/{name}/{id}")
+    @RequestMapping("/{name}/{id}")
     public Greeting greetingWithPathVariable(@PathVariable(value="name") String name, @PathVariable(value="id") int id) {
         return new Greeting(counter.incrementAndGet(),
                             String.format(templateOther, name, id));

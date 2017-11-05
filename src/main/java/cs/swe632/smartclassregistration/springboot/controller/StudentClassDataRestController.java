@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cs.swe632.smartclassregistration.springboot.model.Greeting;
 
-@RequestMapping("/greeting")
+@RequestMapping("/restresources")
 @RestController
-public class GreetingController {
+public class StudentClassDataRestController {
 
     private static final String template = "Hello, %s!";
     private static final String templateOther = "Hello, %s! You are number %d";

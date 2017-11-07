@@ -14,6 +14,9 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-social.css" />
 
+<!-- Custom Stylesheets -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/custom/custom-stylesheet.css" />
+
 <!-- ========= -->
 <!-- Libraries -->
 <!-- ========= -->
@@ -29,7 +32,7 @@
 	<!-- Your HTML -->
 	<!-- ========= -->
 
-
+	<jsp:include page="/fixed-navbar.jsp" />
 	
 	<div class="body-content">
 	

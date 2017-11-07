@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE = edge,chrome = 1" />
@@ -8,19 +8,19 @@
 <!-- ========= -->
 <!-- Stylesheets -->
 <!-- ========= -->
-<link rel="stylesheet" th:href="@{/css/bootstrap-theme.min.css}" />
-<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
-<link rel="stylesheet" th:href="@{/css/docs.css}" />
-<link rel="stylesheet" th:href="@{/css/font-awesome.css}" />
-<link rel="stylesheet" th:href="@{/css/bootstrap-social.css}" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/docs.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-social.css" />
 
 <!-- ========= -->
 <!-- Libraries -->
 <!-- ========= -->
-<script th:src="@{/js/lib/jquery-3.2.1.min.js}" type="text/javascript"></script>
-<script th:src="@{/js/lib/bootstrap.min.js}" type="text/javascript"></script>
-<script th:src="@{/js/lib/json2.js}" type="text/javascript"></script>
-<script th:src="@{/js/src/index.js}" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/lib/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/lib/bootstrap.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/lib/json2.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/src/index.js" type="text/javascript"></script>
 
 </head>
 
@@ -28,7 +28,9 @@
 	<!-- ========= -->
 	<!-- Your HTML -->
 	<!-- ========= -->
-	<div th:replace="fixed-navbar :: header"></div>
+
+
+	
 	<div class="body-content">
 	
 		<p>Hello World</p>

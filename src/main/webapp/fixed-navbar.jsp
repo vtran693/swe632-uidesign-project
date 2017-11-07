@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 
 <head>
     <meta charset="UTF-8" />
@@ -8,25 +8,25 @@
     <!-- ========= -->
     <!-- Stylesheets -->
     <!-- ========= -->
-    <link rel="stylesheet" th:href="@{/css/bootstrap-theme.min.css}" />
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
-    <link rel="stylesheet" th:href="@{/css/docs.css}" />
-    <link rel="stylesheet" th:href="@{/css/font-awesome.css}" />
-    <link rel="stylesheet" th:href="@{/css/bootstrap-social.css}" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/docs.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-social.css" />
 
     <!-- ========= -->
     <!-- Libraries -->
     <!-- ========= -->
-    <script th:src="@{/js/lib/jquery-3.2.1.min.js}" type="text/javascript"></script>
-    <script th:src="@{/js/lib/bootstrap.min.js}" type="text/javascript"></script>
-    <script th:src="@{/js/lib/json2.js}" type="text/javascript"></script>
-    <script th:src="@{/js/src/index.js}" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/lib/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/lib/bootstrap.min.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/lib/json2.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/src/index.js" type="text/javascript"></script>
 
 </head>
 
 <body>
 
-    <div class="navbar navbar-default navbar-fixed-top" th:fragment="header">
+    <div class="navbar navbar-default navbar-fixed-top" >
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -39,7 +39,7 @@
                 </button>
                
           <!--       <a class="navbar-brand" href="#">
-                    <img class="img-responsive" alt="Brand" th:src="@{/img/mason-logo-green.gif}" />
+                    <img class="img-responsive" alt="Brand" src="${pageContext.request.contextPath}/img/mason-logo-green.gif}" />
                 </a> -->
                 
                

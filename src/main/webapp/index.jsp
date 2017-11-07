@@ -48,7 +48,6 @@
 			
 		<h1>Our Content goes here!</h1>
 
-
 		
 		</div>
 		

@@ -17,3 +17,14 @@
     border:0;
     background:transparent;
 }
+
+/* Bootstrap Button */
+.btn-glyphicon {
+    padding:8px;
+    background:#ffffff;
+    margin-right:4px;
+}
+.icon-btn {
+    padding: 1px 15px 3px 2px;
+    border-radius:50px;
+}

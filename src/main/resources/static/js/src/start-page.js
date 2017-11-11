@@ -95,11 +95,18 @@ $(function() {
   
 
 
-    $("#fetch-student").click(function(event){   
-        alert('That is it!');
+    $("#student-questionnaire").click(function(event){   
+        $("#new-registration-direct-search-template").hide();
+        $("#new-registration-questionnaire-template").show();
     });
 
-    
+    $("#class-level").change(function(){
+        if($(this).prop("checked") == true){
+           alert ($(this).val());
+        }else{
+            alert ($(this).val());
+        }
+    });    
     
 });
 

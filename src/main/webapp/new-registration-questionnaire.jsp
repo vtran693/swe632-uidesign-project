@@ -1,19 +1,16 @@
-<div id = 'new-registration-questionnaire-template'>
+<div>
     <div id="question1">
-            <p>What level class are you looking for?</p>
-            <div class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary active">
-                    <input type="checkbox" checked> Option 1 (pre-checked)
-                </label>
-                <label class="btn btn-primary">
-                    <input type="checkbox"> Option 2
-                </label>
-                <label class="btn btn-primary">
-                    <input type="checkbox"> Option 3
+        <div class="form-group">
+            <label class="col-md-12 control-label h3" for="class-level">What Class Level are you?</label>
+            <div class="col-md-12">
+                <label>
+                    <input type="checkbox" id="class-level" value="Graduate" checked data-toggle="toggle" data-onstyle="primary" data-offstyle="warning"
+                        data-size="normal" data-width="180" data-on="Graduate" data-off="Undergraduate">
                 </label>
             </div>
         </div>
+    </div>
 
 
-    
+
 </div>

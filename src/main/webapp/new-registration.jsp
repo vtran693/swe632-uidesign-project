@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-primary">
     <!-- Default panel contents -->
     <div class="panel-heading">Class Registration</div>
     <div class="panel-body">
@@ -7,8 +7,7 @@
             <jsp:include page="/new-registration-direct-search.jsp" />
         </div>        
 
-        <p>or do you want to use our smart registration helper?</p>
-        <button id="fetch-student">I need a helper!</button>
+
 
         <div id = 'new-registration-questionnaire-template'>
             <jsp:include page="/new-registration-questionnaire.jsp" />

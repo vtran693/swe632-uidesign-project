@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE = edge,chrome = 1" />
-	<title>Hello World using Backbone.js</title>
+	<title>Single-Page App - Smart Class Registration</title>
 
 	<!-- ========= -->
 	<!-- Stylesheets -->
@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-social.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery-ui.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-toggle.css" />
 
 	<!-- Custom Stylesheets -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/custom/custom-stylesheet.css" />
@@ -26,7 +27,7 @@
 	<script src="${pageContext.request.contextPath}/js/lib/bootstrap.min.js" type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/js/lib/json2.js" type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/js/lib/jquery-ui.js" type="text/javascript"></script>
-
+	<script src="${pageContext.request.contextPath}/js/lib/bootstrap-toggle.js" type="text/javascript"></script>
 
 	<!-- ========= -->
 	<!-- JavaScript Function -->

@@ -67,7 +67,7 @@
 	
 					<p>Our new class registration user interface would use your LinkedIn Profile to create an "internal social network" within the school. 
 						By sharing your profile at our registration system, not only would you have an opportunity to match other classmates of same career interests, 
-						but you could also allow our schoolâ€™s affiliated partners to find you earlier.
+						but you could also allow our school'€s affiliated partners to find you earlier.
 					</p>
 						
 					<p>Your LinkedIn profile is public anyways, so why not using it properly to introduce yourself to the industry as soon as possible? 

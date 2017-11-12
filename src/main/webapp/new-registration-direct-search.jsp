@@ -1,5 +1,4 @@
 <div>
-
     <h3>You can use the direct search box below if you already know classes you want to register:</h3>
 
     <div class="ui-widget">

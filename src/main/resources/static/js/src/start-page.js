@@ -18,10 +18,22 @@ var allUndergradClasses = [
     "CS 471 - Operating Systems.",
     "CS 484 - Data Mining"
 ];
-
+var classLevelGrad = false;
+var changed = false;
 $(function() {
-    $('#myModal').modal('show');
-    $("#new-registration-template").hide();
+    $('#new-feature').modal('show');
+
+    // Display the textbox to type in LinkedIn Address
+    $('#linkedin-link').click(function(event){
+        event.preventDefault();
+        $('#linkedin-verify-template').modal('show');
+
+    });
+
+    // Display verify page by appending after the input textbox
+
+    // Verify linkedin page
+    $('[data-toggle=tooltip]').tooltip();
 
     // Create a new registration
     $("#create").click(function(event){
@@ -102,13 +114,22 @@ $(function() {
 
     $("#class-level").change(function(){
         if($(this).prop("checked") == true){
-           alert ($(this).val());
+            classLevelGrad = true;
         }else{
-            alert ($(this).val());
+            classLevelGrad = false;
         }
     });    
-    
+
+    // $("#check-all-major").click(function () {
+    //     $(".major").prop('checked', $(this).prop('checked'));
+    // });
+
+    $("#check-all-major").change(function () {
+        $(".major").prop('checked', $(this).prop('checked')).change();
+    });    
 });
+
+
 
 function renderClassList(){
     // Autocomplete trigger for masters/undergrads
@@ -117,6 +138,14 @@ function renderClassList(){
     });
 }
 
+function displayNextQuestion(changed){
+
+}
+
+function slideClassCategory(){
+
+ 
+}
 
 
 

@@ -1,12 +1,14 @@
 package cs.swe632.smartclassregistration.springboot.controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
+import cs.swe632.smartclassregistration.springboot.model.Course;
 import cs.swe632.smartclassregistration.springboot.model.Greeting;
 import cs.swe632.smartclassregistration.springboot.model.Student;
 import cs.swe632.smartclassregistration.springboot.service.StudentService;
@@ -80,5 +82,16 @@ public class StudentClassDataRestController {
 
 		return student;
 	}
-	   	
+	
+	@GetMapping("/class/get-grad-swe-courses")
+	public List<Course> getGradSweCourses(){
+		List<Course> list = new ArrayList<Course>();
+		Course course = new Course();
+		course.setName("SWE 632 - User Interface Design and Development");
+		list.add(course);
+		course = new Course();
+		course.setName("SWE 645 - Component-Based Software Development");
+		list.add(course);	
+		return list;
+	}	   	
 }

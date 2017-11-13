@@ -11,7 +11,10 @@ public interface StudentService {
     boolean addStudent(Student student);
     void updateStudent(Student student);
 	void deleteStudent(String studentUsername);
-	
+
+    void registerCourse(Course course);
+    void dropCourse(Course course);
+
 	// Real logic for front end needs
 	List<Course> getStudentCompletedCourses(String studentUsername);
 	List<Course> getStudentCurrentRegisteredCourses(String studentUsername);

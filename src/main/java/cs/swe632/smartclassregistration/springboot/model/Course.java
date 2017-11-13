@@ -4,7 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 
-@Embeddable
+@Entity
 public class Course implements Serializable{
 	
 	// Primary Key (Course Name, Course Section ID)
@@ -13,10 +13,15 @@ public class Course implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@Id
-	@Column(name="course_name")
+
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name="course_id")
+    private int courseId;
+
+    @Column(name="course_name")
 	private String courseName;
-	@Id
 	@Column(name="course_section")
 	private String courseSection;
 	
@@ -28,6 +33,9 @@ public class Course implements Serializable{
 	
 	@Column(name="course_availability")
 	private int courseAvailability;
+
+    @Column(name="course_professor")
+    private String courseProfessor;
 	
 	public String getCourseName() {
 		return courseName;
@@ -59,8 +67,24 @@ public class Course implements Serializable{
 	public void setCourseAvailability(int courseAvailability) {
 		this.courseAvailability = courseAvailability;
 	}
-	
-	// Custom method to decrement availability (when someone registers for the course)
+
+    public String getCourseProfessor() {
+        return courseProfessor;
+    }
+
+    public void setCourseProfessor(String courseProfessor) {
+        this.courseProfessor = courseProfessor;
+    }
+
+    public int getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
+    }
+
+    // Custom method to decrement availability (when someone registers for the course)
 	public void decrementAvailability() {
 		this.courseAvailability--;
 	}

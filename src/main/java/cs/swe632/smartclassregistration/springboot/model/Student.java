@@ -53,15 +53,17 @@ public class Student implements Serializable{
 	@Column(name="student_major")	
 	private String studentMajor;	
 	@Column(name="student_concentration")
-	private String studentConcentration;	
-	
+	private String studentConcentration;
 
-	@Embedded
-	@Column(name="student_completed_courses")
+
+    @ManyToMany
+    @JoinTable(name="Student_Course",
+            joinColumns={@JoinColumn(name="student_username")}, inverseJoinColumns={@JoinColumn(name="course_name")})
 	private List<Course> studentCompletedCourses;
 	
-	@Embedded
-	@Column(name="student_current_registered_courses")
+    @ManyToMany
+    @JoinTable(name="Student_Course",
+            joinColumns={@JoinColumn(name="student_username")}, inverseJoinColumns={@JoinColumn(name="course_name")})
 	private List<Course> studentCurrentRegisteredCourses;
 	
 	public String getStudentUsername() {

@@ -48,7 +48,7 @@ public class StudentDAOImpl implements StudentDAO{
 	@Override
 	public boolean studentExists(String studentUsername) {
 		//String hql = "FROM Student as student WHERE student.title = ? and student.category = ?";
-		String hql = "SELECT student FROM TABLE Students where student.username = :username";
+		String hql = "from Student where studentUsername = :username";
 		int count = entityManager.createQuery(hql).setParameter("username", studentUsername)
 					.getResultList().size();
 		return count > 0 ? true : false;
@@ -56,14 +56,14 @@ public class StudentDAOImpl implements StudentDAO{
 
 	@Override
 	public List<Course> getStudentCompletedCourses(String studentUsername) {
-		String hql = "SELECT student FROM TABLE Students where student.username = :username";
+		String hql = "from Student where studentUsername = :username";
 		Student student = (Student) entityManager.createQuery(hql).setParameter("username", studentUsername).getSingleResult();
 		return student.getStudentCompletedCourses();
 	}
 
 	@Override
 	public List<Course> getStudentCurrentRegisteredCourses(String studentUsername) {
-		String hql = "SELECT student FROM TABLE Students where student.username = :username";
+		String hql = "from Student where studentUsername = :username";
 		Student student = (Student) entityManager.createQuery(hql).setParameter("username", studentUsername).getSingleResult();
 		return student.getStudentCurrentRegisteredCourses();
 	}

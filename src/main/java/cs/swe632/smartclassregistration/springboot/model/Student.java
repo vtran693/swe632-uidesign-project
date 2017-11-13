@@ -56,13 +56,11 @@ public class Student implements Serializable{
 	private String studentConcentration;	
 	
 
-	@ElementCollection
-	@CollectionTable("Courses")
+	@Embedded
 	@Column(name="student_completed_courses")
 	private List<Course> studentCompletedCourses;
 	
-	@ElementCollection
-	@CollectionTable("Courses")
+	@Embedded
 	@Column(name="student_current_registered_courses")
 	private List<Course> studentCurrentRegisteredCourses;
 	

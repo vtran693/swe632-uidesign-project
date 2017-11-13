@@ -38,7 +38,6 @@ public class StudentClassDataRestController {
 	private StudentService studentService;
 	
 	
-	@Autowired
 	@GetMapping("/student/{username}")
 	public Student getStudentByUsername(@PathVariable("username") String studentUsername) {
 		Student student = studentService.getStudentByUsername(studentUsername);

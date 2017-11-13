@@ -13,7 +13,7 @@ public class WebController {
 	
 	@RequestMapping(value="/data/inject/student")
 	public String loadStudentPage() {
-		return "load-student";
+		return "load-data";
 	}
 }
 

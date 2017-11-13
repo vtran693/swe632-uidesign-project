@@ -3,8 +3,8 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name="Courses")
+
+@Embeddable
 public class Course implements Serializable{
 	
 	// Primary Key (Course Name, Course Section ID)

@@ -2,13 +2,18 @@ package cs.swe632.smartclassregistration.springboot.dao;
 
 import java.util.List;
 
+import cs.swe632.smartclassregistration.springboot.model.Course;
 import cs.swe632.smartclassregistration.springboot.model.Student;
 
 public interface StudentDAO {
     List<Student> getAllStudents();
-    Student getStudentById(int studentId);
+    Student getStudentByUsername(String studentUsername);
     void addStudent(Student student);
     void updateStudent(Student student);
-    void deleteStudent(int studentId);
-    boolean studentExists(String title, String category);
+    void deleteStudent(String studentUsername); 
+	boolean studentExists(String studentUsername);
+	
+	// Real DAO action for front end needs
+	List<Course> getStudentCompletedCourses(String studentUsername);
+	List<Course> getStudentCurrentRegisteredCourses(String studentUsername);
 }

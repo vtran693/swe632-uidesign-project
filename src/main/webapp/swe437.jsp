@@ -35,63 +35,73 @@
 	<jsp:include page="/fixed-navbar.jsp" />
 	
 	<div class="body-content">
+	<div class="container">
 	
-		<div align="center">
-		<iframe src="https://us-east-1.online.tableau.com/t/divyavajja/views/SWE632/SWE437?:embed=y&:showAppBanner=false&:showShareOptions=true&:display_count=no&:showVizHome=no" height="600" width="1050"></iframe><br/><br/><br/>
+		<script type='text/javascript' src='https://us-east-1.online.tableau.com/javascripts/api/viz_v1.js'></script>
+		<div class='tableauPlaceholder' style='width: 1000px; height: 650px;' align="center">
+			<object class='tableauViz' width='1000' height='650' style='display:none;'>
+				<param name='host_url' value='https%3A%2F%2Fus-east-1.online.tableau.com%2F' /> 
+				<param name='embed_code_version' value='2' /> 
+				<param name='site_root' value='&#47;t&#47;divyavajja' />
+				<param name='name' value='SWE632&#47;SWE437' />
+				<param name='tabs' value='no' />
+				<param name='toolbar' value='no' />
+				<param name='showAppBanner' value='false' />
+				<param name='showShareOptions' value='false' />
+			</object>
 		</div>
 		
-		<div class="panel-group">
-   		<div class="panel panel-default">
-      	<div class="panel-heading">
-	        <h4 class="panel-title">
-	          <a data-toggle="collapse" href="#collapse1">Reviews</a>
-	        </h4>
-    	</div>
-      	<div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body">
+		
+		<div class="panel panel-default">
+      	<div class="panel-heading" align="center">Reviews</div>
+        <div class="panel-body" style="max-height:200px;overflow-y: scroll;">
               <div class="media">
               <div class="media-left">
-                <img src="img_avatar1.png" class="media-object" style="width:60px">
+                <img src="viet-linkedin-pic.jpg" class="media-object" style="width:60px">
               </div>
               <div class="media-body">
-                <a class="media-heading" href="http://www.linkedin.com/in/divya-vajja-ab80a478">Divya Vajja - Student</a>
-                <p>CS 550 was a core course and it was very interesting to take under Amihai Motro</p>
+                <a class="media-heading" href="https://www.linkedin.com/in/viet-tran-272570108/" target="_blank">Viet Tran - Student - SWE</a>
+                <p>Dr. Ammann is knowledgeable in software testing, and you will learn quite a bit from him. There are weekly quizzes, and homeworks. 
+                Required to read textbook. Some of material can be confusing - most learning done in class activities. Final exam was more challenging than weekly quizzes, however not insurmountable. Would recommend Dr. Amman Great guy</p>
               </div>
               </div>
               <hr>
               <div class="media">
               <div class="media-left">
-                <img src="img_avatar1.png" class="media-object" style="width:60px">
+                <img src="imgs.jpg" class="media-object" style="width:60px">
               </div>
               <div class="media-body">
-                <a class="media-heading">Left-aligned</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                 <a class="media-heading" href="http://www.linkedin.com/in/divya-vajja-ab80a478" target="_blank">Krishna Vemuri - Student - CS</a>
+                <p>He's a nice professor who gaves in-class execises to prepare quizs. 12 quizzes drop 3 lowest. Hws are every week like quizzes. 
+                Fortunately, you can have 2 partners for hw. Easy class as long as you follow up with the in class exercise. 
+                The final is a little tough. I didn't copy down terms on cheat sheet. So I lost 660 on the final. Speak so low.</p>
               </div>
               </div>
               <hr>
               <div class="media">
               <div class="media-left">
-                <img src="img_avatar1.png" class="media-object" style="width:60px">
+                <img src="imgn.jpg" class="media-object" style="width:60px">
               </div>
               <div class="media-body">
-                <h4 class="media-heading">Left-aligned</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                 <a class="media-heading" href="#" target="_blank">Sameera Bammidi - Student - INFS</a>
+                <p>Terribly banal, overcomplicates trivial topics, and forces you to attend his useless lectures. 
+                Attendance is mandatory and you will lose tons of points if you don't attend because of participation 
+                points and these god-awful weekly quizzes he gives even though this is a 400 level course.</p>
               </div>
               </div>
               <hr>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-	<div align="center">
-	<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add Class to Cart</button>
-  	<button type="button" class="btn btn-primary">Back to Class Suggestions</button>
-	</div>
+     	</div>
+    
+ 
+		<div align="center">
+		<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add Class to Cart</button>
+	  	<button type="button" class="btn btn-primary">Back to Class Suggestions</button>
+		</div>
 
 	
-	
-		
+	</div>
+	</div>	
 
 </body>
 

@@ -1,5 +1,6 @@
 package cs.swe632.smartclassregistration.springboot.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,15 +53,16 @@ public class StudentClassDataRestController {
 	public void addStudent(@RequestBody Student student) {
         studentService.addStudent(student);    
 	}
+	private boolean addStudentSetup(Student student) {
+		return studentService.addStudent(student);
+	}
+	
 	@PutMapping("/student")
 	public Student updateStudent(@RequestBody Student student) {
 		studentService.updateStudent(student);
 		return student;
 	}
-	@DeleteMapping("/student/{username}")
-	public void deleteStudent(@PathVariable("username") String studentUsername) {
-		studentService.deleteStudent(studentUsername);
-	}
+
 	
 	@GetMapping("/student/{username}/completed-courses")
 	public List<Course> getStudentCompletedCourses(@PathVariable("username") String studentUsername) {
@@ -94,8 +96,9 @@ public class StudentClassDataRestController {
 		return courseService.addCourse(course);
 	}
 	
+	
 	@GetMapping("/course/setup")
-	public void setupCourse() {
+	public String setupCourse() {
 		Course swe632Section1 = new Course();
 		swe632Section1.setCourseId(1);
 		swe632Section1.setCourseName("SWE632");
@@ -106,10 +109,47 @@ public class StudentClassDataRestController {
 		swe632Section1.setCourseTimePeriod("7:20-10:00");
 		swe632Section1.setCourseAvailability(1);
 		swe632Section1.setCourseProfessor("Feras Batarseh");
-		
         this.addCourseSetup(swe632Section1); 
+  
+		Course swe645Section1 = new Course();
+		swe645Section1.setCourseId(2);
+		swe645Section1.setCourseName("SWE645");
+		swe645Section1.setCourseSection("01");
+		swe645Section1.setCourseMajor("SWE");
+		swe645Section1.setCourseConcentration("Web");
+		swe645Section1.setCourseDate("Thur");
+		swe645Section1.setCourseTimePeriod("7:20-10:00");
+		swe645Section1.setCourseAvailability(1);
+		swe645Section1.setCourseProfessor("Feras Batarseh");
+        this.addCourseSetup(swe645Section1); 
+        
+		Student vietTran = new Student();
+		vietTran.setStudentUsername("vtran18");
+		vietTran.setStudentGNumber("G012345678");
+		vietTran.setStudentClassLevel("Graduate");
+		vietTran.setStudentMajor("SWE");
+		vietTran.setStudentConcentration("Web Development");
+		
+        this.addStudentSetup(vietTran); 
+        
+        studentService.setStudentCompletedCourses("vtran18", swe632Section1);
+
+        
+        return "success";
 	}
 	
+	@GetMapping("/student/{username}/completed")
+	public List<Course> getStudentCompletedCoursesByService(@PathVariable("username") String studentUsername){
+		Student student = studentService.getStudentByUsername(studentUsername);
+		return student.getStudentCompletedCourses();
+	}
+	
+	@GetMapping("/student/{username}/delete")
+	public String deleteStudent(@PathVariable("username") String studentUsername) {
+		studentService.deleteStudent(studentUsername);
+		return "delete success";
+	}
+
 	
 //	@GetMapping("/student/get-master-dummy")
 //	public Student getMasterDummyStudent(){

@@ -19,5 +19,6 @@ public interface StudentDAO {
 	// Real DAO action for front end needs
 	List<Course> getStudentCompletedCourses(String studentUsername);
 	List<Course> getStudentCurrentRegisteredCourses(String studentUsername);
+	void setStudentCompletedCourses(String studentUsername, Course completedCourse);
 	
 }

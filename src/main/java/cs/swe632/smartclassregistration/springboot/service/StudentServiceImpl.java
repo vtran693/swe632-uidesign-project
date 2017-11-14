@@ -67,4 +67,11 @@ public class StudentServiceImpl implements StudentService {
 		
 	}
 
+	@Override
+	public void setStudentCompletedCourses(String studentUsername, Course completedCourse) {
+		// TODO Auto-generated method stub
+		studentDAO.setStudentCompletedCourses(studentUsername, completedCourse);
+	
+	}
+
 }

@@ -67,6 +67,15 @@ public class StudentDAOImpl implements StudentDAO{
 	}
 
 	@Override
+	public void setStudentCompletedCourses(String studentUsername, Course completedCourse) {
+		Student specificStudent = this.getStudentByUsername(studentUsername);
+		specificStudent.getStudentCompletedCourses().add(completedCourse);
+		specificStudent.setStudentCompletedCourses(specificStudent.getStudentCompletedCourses());
+		entityManager.flush();
+	}
+
+	
+	@Override
 	public List<Course> getStudentCurrentRegisteredCourses(String studentUsername) {
 		String hql = "from Student where studentUsername = :username";
 		Student student = (Student) entityManager.createQuery(hql).setParameter("username", studentUsername).getSingleResult();

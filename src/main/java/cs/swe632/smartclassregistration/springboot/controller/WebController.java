@@ -10,4 +10,11 @@ public class WebController {
     public String homepage(){
         return "main-menu";
     }
+	
+	@RequestMapping(value="/data/inject/student")
+	public String loadStudentPage() {
+		return "load-data";
+	}
 }
+
+

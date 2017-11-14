@@ -2,17 +2,14 @@ package cs.swe632.smartclassregistration.springboot.model;
 
 import javax.persistence.*;
 
-import org.hibernate.validator.constraints.NotBlank;
+import cs.swe632.smartclassregistration.springboot.model.Course;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
-
 
 @Entity
 @Table(name="Students")
 public class Student implements Serializable{
-//	@Id
 //	@GeneratedValue(strategy = GenerationType.AUTO)
 //	private String gNumber;
 	
@@ -39,33 +36,78 @@ public class Student implements Serializable{
 //	@NotBlank
 //	private List<Course> courseHistory;
 	
-	
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="student_id")
-        private int studentId;  
-	@Column(name="title")
-        private String title;
-	@Column(name="student_category")	
-	private String category;
-	public int getStudentId() {
-		return studentId;
+	@Column(name="student_username")
+    private String studentUsername;  
+	@Column(name="student_gnumber")
+    private String studentGNumber;
+	// Undergrad vs Grad
+	@Column(name="student_level")	
+	private String studentClassLevel;  
+	@Column(name="student_major")	
+	private String studentMajor;	
+	@Column(name="student_conc")
+	private String studentConcentration;
+
+
+    @ManyToMany
+    @JoinTable(name="SC_Completed",
+            joinColumns={@JoinColumn(name="student_username")}, inverseJoinColumns={@JoinColumn(name="course_id")})
+	private List<Course> studentCompletedCourses;
+	
+    @ManyToMany
+    @JoinTable(name="SC_Current",
+            joinColumns={@JoinColumn(name="student_username")}, inverseJoinColumns={@JoinColumn(name="course_id")})
+	private List<Course> studentCurrentRegisteredCourses;
+	
+	public String getStudentUsername() {
+		return studentUsername;
 	}
-	public void setStudentId(int studentId) {
-		this.studentId = studentId;
+	public void setStudentUsername(String studentUsername) {
+		this.studentUsername = studentUsername;
 	}
-	public String getTitle() {
-		return title;
+	public String getStudentGNumber() {
+		return studentGNumber;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setStudentGNumber(String studentGNumber) {
+		this.studentGNumber = studentGNumber;
 	}
-	public String getCategory() {
-		return category;
+	public String getStudentClassLevel() {
+		return studentClassLevel;
 	}
-	public void setCategory(String category) {
-		this.category = category;
-	}	
+	public void setStudentClassLevel(String studentClassLevel) {
+		this.studentClassLevel = studentClassLevel;
+	}
+	public String getStudentMajor() {
+		return studentMajor;
+	}
+	public void setStudentMajor(String studentMajor) {
+		this.studentMajor = studentMajor;
+	}
+	public String getStudentConcentration() {
+		return studentConcentration;
+	}
+	public void setStudentConcentration(String studentConcentration) {
+		this.studentConcentration = studentConcentration;
+	}
+	public List<Course> getStudentCompletedCourses() {
+		return studentCompletedCourses;
+	}
+	public void setStudentCompletedCourses(List<Course> studentCompletedCourses) {
+		this.studentCompletedCourses = studentCompletedCourses;
+	}
+	public List<Course> getStudentCurrentRegisteredCourses() {
+		return studentCurrentRegisteredCourses;
+	}
+	public void setStudentCurrentRegisteredCourses(List<Course> studentCurrentRegisteredCourses) {
+		this.studentCurrentRegisteredCourses = studentCurrentRegisteredCourses;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 }

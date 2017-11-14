@@ -1,5 +1,9 @@
 package cs.swe632.smartclassregistration.springboot.service;
 
+import java.util.List;
+
+import cs.swe632.smartclassregistration.springboot.model.Course;
+
 /**
  * Created with IntelliJ IDEA.
  * User: viettran
@@ -10,10 +14,10 @@ package cs.swe632.smartclassregistration.springboot.service;
 public interface CourseService {
 
     List<Course> getAllCourses();
-    Student getCourseByName(String courseName);
-    Student getCourseByNameAndSection(String courseName, String courseSection);
+    List<Course> getCourseByName(String courseName);
+    Course getCourseByNameAndSection(String courseName, String courseSection);
     boolean addCourse(Course course);
     void updateCourse(Course course);
-    void deleteCourse(String courseName);
+    void deleteCourse(String courseName, String courseSection);
 
 }

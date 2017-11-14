@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 
 @Entity
+@Table(name="Courses")
 public class Course implements Serializable{
 	
 	// Primary Key (Course Name, Course Section ID)
@@ -16,31 +17,31 @@ public class Course implements Serializable{
 
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="course_id")
     private int courseId;
 
     @Column(name="course_name")
 	private String courseName;
+    
 	@Column(name="course_section")
 	private String courseSection;
 	
 	@Column(name="course_date")
 	private String courseDate;
 	
-	@Column(name="course_timeperiod")
+	@Column(name="course_period")
 	private String courseTimePeriod;
 	
-	@Column(name="course_availability")
+	@Column(name="course_avail")
 	private int courseAvailability;
 
-    @Column(name="course_professor")
+    @Column(name="course_prof")
     private String courseProfessor;
     
     @Column(name="course_major")
     private String courseMajor;
     
-    @Column(name="course_concentration")
+    @Column(name="course_conc")
     private String courseConcentration;
 	
 	public String getCourseName() {
@@ -90,7 +91,19 @@ public class Course implements Serializable{
         this.courseId = courseId;
     }
 
-    // Custom method to decrement availability (when someone registers for the course)
+    public String getCourseMajor() {
+		return courseMajor;
+	}
+	public void setCourseMajor(String courseMajor) {
+		this.courseMajor = courseMajor;
+	}
+	public String getCourseConcentration() {
+		return courseConcentration;
+	}
+	public void setCourseConcentration(String courseConcentration) {
+		this.courseConcentration = courseConcentration;
+	}
+	// Custom method to decrement availability (when someone registers for the course)
 	public boolean decrementAvailability() {
 		if (this.courseAvailability == 0) {
 			return false;

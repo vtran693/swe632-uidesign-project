@@ -1,16 +1,13 @@
 package cs.swe632.smartclassregistration.springboot.controller;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import cs.swe632.smartclassregistration.springboot.model.Course;
-import cs.swe632.smartclassregistration.springboot.model.Greeting;
 import cs.swe632.smartclassregistration.springboot.model.Student;
+import cs.swe632.smartclassregistration.springboot.service.CourseService;
 import cs.swe632.smartclassregistration.springboot.service.StudentService;
 
 @RequestMapping("/api")
@@ -36,6 +33,8 @@ public class StudentClassDataRestController {
 	
 	@Autowired
 	private StudentService studentService;
+	@Autowired
+	private CourseService courseService;
 	
 	
 	@GetMapping("/student/{username}")
@@ -87,8 +86,28 @@ public class StudentClassDataRestController {
 	
 	// Course API
 	@PostMapping("/course")
-	public void addStudent(@RequestBody Course course) {
-        studentService.addStudent(student);    
+	public boolean addCourse(@RequestBody Course course) {
+        return courseService.addCourse(course);    
+	}
+	
+	private boolean addCourseSetup(Course course) {
+		return courseService.addCourse(course);
+	}
+	
+	@GetMapping("/course/setup")
+	public void setupCourse() {
+		Course swe632Section1 = new Course();
+		swe632Section1.setCourseId(1);
+		swe632Section1.setCourseName("SWE632");
+		swe632Section1.setCourseSection("01");
+		swe632Section1.setCourseMajor("SWE");
+		swe632Section1.setCourseConcentration("Design");
+		swe632Section1.setCourseDate("Wed");
+		swe632Section1.setCourseTimePeriod("7:20-10:00");
+		swe632Section1.setCourseAvailability(1);
+		swe632Section1.setCourseProfessor("Feras Batarseh");
+		
+        this.addCourseSetup(swe632Section1); 
 	}
 	
 	

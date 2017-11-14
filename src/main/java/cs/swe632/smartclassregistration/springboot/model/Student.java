@@ -3,8 +3,6 @@ package cs.swe632.smartclassregistration.springboot.model;
 import javax.persistence.*;
 
 import cs.swe632.smartclassregistration.springboot.model.Course;
-import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
 import java.util.List;
@@ -48,22 +46,22 @@ public class Student implements Serializable{
 	@Column(name="student_gnumber")
     private String studentGNumber;
 	// Undergrad vs Grad
-	@Column(name="student_classlevel")	
+	@Column(name="student_level")	
 	private String studentClassLevel;  
 	@Column(name="student_major")	
 	private String studentMajor;	
-	@Column(name="student_concentration")
+	@Column(name="student_conc")
 	private String studentConcentration;
 
 
     @ManyToMany
-    @JoinTable(name="Student_Course",
-            joinColumns={@JoinColumn(name="student_username")}, inverseJoinColumns={@JoinColumn(name="course_name")})
+    @JoinTable(name="SC_Completed",
+            joinColumns={@JoinColumn(name="student_username")}, inverseJoinColumns={@JoinColumn(name="course_id")})
 	private List<Course> studentCompletedCourses;
 	
     @ManyToMany
-    @JoinTable(name="Student_Course",
-            joinColumns={@JoinColumn(name="student_username")}, inverseJoinColumns={@JoinColumn(name="course_name")})
+    @JoinTable(name="SC_Current",
+            joinColumns={@JoinColumn(name="student_username")}, inverseJoinColumns={@JoinColumn(name="course_id")})
 	private List<Course> studentCurrentRegisteredCourses;
 	
 	public String getStudentUsername() {

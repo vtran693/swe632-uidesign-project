@@ -3,6 +3,10 @@ package cs.swe632.smartclassregistration.springboot.dao;
 import cs.swe632.smartclassregistration.springboot.model.Course;
 
 import javax.persistence.*;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 /**
@@ -12,6 +16,8 @@ import java.util.List;
  * Time: 12:07 PM
  * To change this template use File | Settings | File Templates.
  */
+@Transactional
+@Repository
 public class CourseDAOImpl implements CourseDAO{
 
     @PersistenceContext

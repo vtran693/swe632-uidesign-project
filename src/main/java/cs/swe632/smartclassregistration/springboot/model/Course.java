@@ -36,6 +36,12 @@ public class Course implements Serializable{
 
     @Column(name="course_professor")
     private String courseProfessor;
+    
+    @Column(name="course_major")
+    private String courseMajor;
+    
+    @Column(name="course_concentration")
+    private String courseConcentration;
 	
 	public String getCourseName() {
 		return courseName;
@@ -85,16 +91,38 @@ public class Course implements Serializable{
     }
 
     // Custom method to decrement availability (when someone registers for the course)
-	public void decrementAvailability() {
+	public boolean decrementAvailability() {
+		if (this.courseAvailability == 0) {
+			return false;
+		}
 		this.courseAvailability--;
+		return true;
 	}
 	
 	// Custom method to increment availability (when someone drops the course registration)
-	public void incrementAvailability() {
+	public boolean incrementAvailability() {
+		if (this.courseAvailability > 0) {
+			return false;
+		}
 		this.courseAvailability++;
+		return true;
 	}
 	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof Course)) {
+			return false;
+		}
+		Course course = (Course) o ;
+		if (this.courseName.equals(course.courseName) && this.courseSection.equals(course.courseSection)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 }

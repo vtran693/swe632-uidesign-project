@@ -12,8 +12,8 @@ public interface StudentService {
     void updateStudent(Student student);
 	void deleteStudent(String studentUsername);
 
-    void registerCourse(Course course);
-    void dropCourse(Course course);
+    String registerCourse(String studentUsername, Course course);
+    String dropCourse(String studentUsername, Course course);
 
 	// Real logic for front end needs
 	List<Course> getStudentCompletedCourses(String studentUsername);

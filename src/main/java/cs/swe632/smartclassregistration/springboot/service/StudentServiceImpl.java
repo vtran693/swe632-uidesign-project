@@ -56,4 +56,15 @@ public class StudentServiceImpl implements StudentService {
 		return currentRegisteredCourses;
 	}
 
+	@Override
+	public String registerCourse(String studentUsername, Course course) {
+		return studentDAO.registerCourse(studentUsername, course);
+	}
+
+	@Override
+	public String dropCourse(String studentUsername, Course course) {
+		return studentDAO.dropCourse(studentUsername, course);
+		
+	}
+
 }

@@ -13,7 +13,11 @@ public interface StudentDAO {
     void deleteStudent(String studentUsername); 
 	boolean studentExists(String studentUsername);
 	
+	String registerCourse(String studentUsername, Course course);
+	String dropCourse(String studentUsername, Course course);
+	
 	// Real DAO action for front end needs
 	List<Course> getStudentCompletedCourses(String studentUsername);
 	List<Course> getStudentCurrentRegisteredCourses(String studentUsername);
+	
 }

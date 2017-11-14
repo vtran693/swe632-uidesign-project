@@ -75,7 +75,21 @@ public class StudentClassDataRestController {
 		return currentRegisteredCourses;
 	}
 	
+	@PutMapping("/student/{username}/register")
+	public String registerCourse(@PathVariable("username") String studentUsername, @RequestBody Course course) {
+		return studentService.registerCourse(studentUsername, course);
+	}
 	
+	@PutMapping("/student/{username}/drop")
+	public String dropCourse(@PathVariable("username") String studentUsername, @RequestBody Course course) {
+		return studentService.dropCourse(studentUsername, course);
+	}
+	
+	// Course API
+	@PostMapping("/course")
+	public void addStudent(@RequestBody Course course) {
+        studentService.addStudent(student);    
+	}
 	
 	
 //	@GetMapping("/student/get-master-dummy")

@@ -1,5 +1,7 @@
 package cs.swe632.smartclassregistration.springboot.dao;
 
+import java.util.List;
+
 import cs.swe632.smartclassregistration.springboot.model.Course;
 
 /**
@@ -13,7 +15,7 @@ public interface CourseDAO {
 
     List<Course> getAllCourses();
     Course getCourseById(int courseId);
-    Course getCourseByName(String courseName);
+    List<Course> getCourseByName(String courseName);
     Course getCourseByNameAndSection(String courseName, String courseSection);
     void addCourse(Course course);
     void updateCourse(Course course);

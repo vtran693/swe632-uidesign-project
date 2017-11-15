@@ -87,6 +87,38 @@ public class StudentClassDataRestController {
 	}
 	
 	// Course API
+	
+	@GetMapping("/courses")
+	public List<Course> getAllCourses(){
+		return courseService.getAllCourses();
+	}
+	
+	
+	@GetMapping("/courses/undergrad")
+	public List<Course> getAllUndergradCourses(){
+		return courseService.getAllUndergradCourses();
+	}
+	@GetMapping("/courses/undergrad/swe")
+	public List<Course> getAllUndergradCoursesSwe(){
+		return courseService.getAllUndergradCoursesSwe();
+	}
+	@GetMapping("/courses/undergrad/cs")
+	public List<Course> getAllUndergradCoursesCs(){
+		return courseService.getAllUndergradCoursesCs();
+	}
+	@GetMapping("/courses/grad")
+	public List<Course> getAllGradCourses(){
+		return courseService.getAllGradCourses();
+	}
+	@GetMapping("/courses/grad/swe")
+	public List<Course> getAllGradCoursesSwe(){
+		return courseService.getAllGradCoursesSwe();
+	}
+	@GetMapping("/courses/grad/cs")
+	public List<Course> getAllGradCoursesCs(){
+		return courseService.getAllGradCoursesCs();
+	}
+	
 	@PostMapping("/course")
 	public boolean addCourse(@RequestBody Course course) {
         return courseService.addCourse(course);    
@@ -160,39 +192,5 @@ public class StudentClassDataRestController {
 		studentService.deleteStudent(studentUsername);
 		return "delete success";
 	}
-
-	
-//	@GetMapping("/student/get-master-dummy")
-//	public Student getMasterDummyStudent(){
-//		
-//		Student student = new Student();
-//		student.setStudentId(15);
-//		student.setTitle("Master");
-//		student.setCategory("Software Engineer");
-//
-//		return student;
-//	}
-//
-//	@GetMapping("/student/get-undergrad-dummy")
-//	public Student getUndergradDummyStudent(){
-//		
-//		Student student = new Student();
-//		student.setStudentId(20);
-//		student.setTitle("Undergrad");
-//		student.setCategory("Software Engineer");
-//
-//		return student;
-//	}
-//	
-//	@GetMapping("/class/get-grad-swe-courses")
-//	public List<Course> getGradSweCourses(){
-//		List<Course> list = new ArrayList<Course>();
-//		Course course = new Course();
-//		course.setName("SWE 632 - User Interface Design and Development");
-//		list.add(course);
-//		course = new Course();
-//		course.setName("SWE 645 - Component-Based Software Development");
-//		list.add(course);	
-//		return list;
-//	}	   	
+ 	
 }

@@ -19,5 +19,11 @@ public interface CourseService {
     boolean addCourse(Course course);
     void updateCourse(Course course);
     void deleteCourse(String courseName, String courseSection);
+	List<Course> getAllUndergradCourses();
+	List<Course> getAllUndergradCoursesSwe();
+	List<Course> getAllUndergradCoursesCs();
+	List<Course> getAllGradCourses();
+	List<Course> getAllGradCoursesSwe();
+	List<Course> getAllGradCoursesCs();
 
 }

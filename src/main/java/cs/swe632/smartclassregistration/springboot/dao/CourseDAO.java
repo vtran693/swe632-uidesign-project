@@ -22,5 +22,11 @@ public interface CourseDAO {
     void deleteCourse(String courseName, String courseSection);
     boolean courseExists(String courseName, String courseSection);
     boolean isFull(Course course);
+	List<Course> getAllUndergradCourses();
+	List<Course> getAllUndergradCoursesSwe();
+	List<Course> getAllUndergradCoursesCs();
+	List<Course> getAllGradCourses();
+	List<Course> getAllGradCoursesSwe();
+	List<Course> getAllGradCoursesCs();
 
 }

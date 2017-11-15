@@ -54,6 +54,36 @@ public class CourseServiceImpl implements CourseService {
 		courseDAO.deleteCourse(courseName, courseSection);
 	}
 
+	@Override
+	public List<Course> getAllUndergradCourses() {
+		return courseDAO.getAllUndergradCourses();
+	}
+
+	@Override
+	public List<Course> getAllUndergradCoursesSwe() {
+		return courseDAO.getAllUndergradCoursesSwe();
+	}
+
+	@Override
+	public List<Course> getAllUndergradCoursesCs() {
+		return courseDAO.getAllUndergradCoursesCs();
+	}
+
+
+	@Override
+	public List<Course> getAllGradCourses() {
+		return courseDAO.getAllGradCourses();
+	}
+
+	@Override
+	public List<Course> getAllGradCoursesSwe() {
+		return courseDAO.getAllGradCoursesSwe();
+	}
+
+	@Override
+	public List<Course> getAllGradCoursesCs() {
+		return courseDAO.getAllGradCoursesCs();
+	}
 
 
 }

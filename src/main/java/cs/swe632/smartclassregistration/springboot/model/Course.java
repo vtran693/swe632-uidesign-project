@@ -26,6 +26,9 @@ public class Course implements Serializable{
 	@Column(name="course_section")
 	private String courseSection;
 	
+	@Column(name="course_level")
+	private String courseLevel;
+	
 	@Column(name="course_date")
 	private String courseDate;
 	
@@ -43,7 +46,7 @@ public class Course implements Serializable{
     
     @Column(name="course_conc")
     private String courseConcentration;
-	
+    
 	public String getCourseName() {
 		return courseName;
 	}
@@ -102,6 +105,13 @@ public class Course implements Serializable{
 	}
 	public void setCourseConcentration(String courseConcentration) {
 		this.courseConcentration = courseConcentration;
+	}
+	
+	public String getCourseLevel() {
+		return courseLevel;
+	}
+	public void setCourseLevel(String courseLevel) {
+		this.courseLevel = courseLevel;
 	}
 	// Custom method to decrement availability (when someone registers for the course)
 	public boolean decrementAvailability() {

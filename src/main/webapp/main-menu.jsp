@@ -20,7 +20,7 @@
 	<!-- Custom Stylesheets -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/custom/custom-stylesheet.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.scss" />
-
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav_bar.css"/>
 
 	<!-- For Linkedin Verification -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">

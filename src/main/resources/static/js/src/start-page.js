@@ -8,12 +8,12 @@ var loginInfo = [
         'password': 'Monkeyisland123'
     },
     {
-        'username': 'divya',
-        'password': '123'
+        'username': 'dvajja',
+        'password': 'div123'
     },
     {
-        'username': 'nuthana',
-        'password': '456'
+        'username': 'ntatinen',
+        'password': 'Nuthana37$$'
     }
 
 ]

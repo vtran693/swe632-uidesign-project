@@ -155,6 +155,143 @@ public class StudentClassDataRestController {
 		swe645Section1.setCourseProfessor("Vinod Dubey");
         this.addCourseSetup(swe645Section1); 
         
+        
+		Course cs584Section1 = new Course();
+		swe645Section1.setCourseId(3);
+		swe645Section1.setCourseName("CS584");
+		swe645Section1.setCourseSection("01");
+		swe645Section1.setCourseMajor("CS");
+		swe645Section1.setCourseConcentration("Core");
+		swe645Section1.setCourseDate("Tue");
+		swe645Section1.setCourseTimePeriod("7:20-10:00");
+		swe645Section1.setCourseAvailability(1);
+		swe645Section1.setCourseProfessor("Jessica Lin");
+        this.addCourseSetup(cs584Section1);
+        
+        
+		Course cs583Section1 = new Course();
+		cs583Section1.setCourseId(4);
+		cs583Section1.setCourseName("CS583");
+		cs583Section1.setCourseSection("01");
+		cs583Section1.setCourseMajor("CS");
+		cs583Section1.setCourseConcentration("Core");
+		cs583Section1.setCourseDate("Wed");
+		cs583Section1.setCourseTimePeriod("4:30-7:10");
+		cs583Section1.setCourseAvailability(1);
+		cs583Section1.setCourseProfessor("Dana S Richards");
+        this.addCourseSetup(cs583Section1);
+        
+        
+		Course cs550Section1 = new Course();
+		cs550Section1.setCourseId(5);
+		cs550Section1.setCourseName("CS550");
+		cs550Section1.setCourseSection("01");
+		cs550Section1.setCourseMajor("CS");
+		cs550Section1.setCourseConcentration("Core");
+		cs550Section1.setCourseDate("Thur");
+		cs550Section1.setCourseTimePeriod("4:30-7:10");
+		cs550Section1.setCourseAvailability(1);
+		cs550Section1.setCourseProfessor("Jessica Lin");
+        this.addCourseSetup(cs550Section1);
+        
+        
+		Course swe621Section1 = new Course();
+		swe621Section1.setCourseId(6);
+		swe621Section1.setCourseName("SWE621");
+		swe621Section1.setCourseSection("01");
+		swe621Section1.setCourseMajor("SWE");
+		swe621Section1.setCourseConcentration("Software Development");
+		swe621Section1.setCourseDate("Tue");
+		swe621Section1.setCourseTimePeriod("7:20-10:00");
+		swe621Section1.setCourseAvailability(1);
+		swe621Section1.setCourseProfessor("Hassan Gomaa");
+        this.addCourseSetup(swe621Section1);
+             
+    	Course cs530Section1 = new Course();
+    	cs530Section1.setCourseId(13);
+    	cs530Section1.setCourseName("CS530");
+    	cs530Section1.setCourseSection("02");
+    	cs530Section1.setCourseMajor("CS");
+    	cs530Section1.setCourseConcentration("Pre-requisite");
+    	cs530Section1.setCourseDate("Tue");
+    	cs530Section1.setCourseTimePeriod("7:20-10:00");
+    	cs530Section1.setCourseAvailability(1);
+    	cs530Section1.setCourseProfessor("Dmitri Kaznachey");
+        this.addCourseSetup(cs530Section1);
+              
+      	Course isa562Section1 = new Course();
+      	isa562Section1.setCourseId(14);
+      	isa562Section1.setCourseName("ISA562");
+      	isa562Section1.setCourseSection("01");
+      	isa562Section1.setCourseMajor("ISA");
+      	isa562Section1.setCourseConcentration("Core");
+      	isa562Section1.setCourseDate("Wed");
+      	isa562Section1.setCourseTimePeriod("4:30-7:10");
+      	isa562Section1.setCourseAvailability(1);
+      	isa562Section1.setCourseProfessor("Arun K Sood");
+        this.addCourseSetup(isa562Section1);
+        
+        Course cs650Section1 = new Course();
+        cs650Section1.setCourseId(15);
+        cs650Section1.setCourseName("CS650");
+        cs650Section1.setCourseSection("01");
+        cs650Section1.setCourseMajor("CS");
+        cs650Section1.setCourseConcentration("Databases");
+        cs650Section1.setCourseDate("Thu");
+        cs650Section1.setCourseTimePeriod("4:30-7:10");
+        cs650Section1.setCourseAvailability(1);
+        cs650Section1.setCourseProfessor("Amihai Motro");
+        this.addCourseSetup(isa562Section1);
+        
+        Course cs818Section1 = new Course();
+        cs818Section1.setCourseId(16);
+        cs818Section1.setCourseName("CS818");
+        cs818Section1.setCourseSection("01");
+        cs818Section1.setCourseMajor("CS");
+        cs818Section1.setCourseConcentration("Networks");
+        cs818Section1.setCourseDate("Tue");
+        cs818Section1.setCourseTimePeriod("4:30-7:10");
+        cs818Section1.setCourseAvailability(1);
+        cs818Section1.setCourseProfessor("Song Min Kim");
+        this.addCourseSetup(cs818Section1);
+        
+        Course cs531Section1 = new Course();
+      	cs531Section1.setCourseId(17);
+      	cs531Section1.setCourseName("CS531");
+      	cs531Section1.setCourseSection("02");
+      	cs531Section1.setCourseMajor("CS");
+      	cs531Section1.setCourseConcentration("Pre-requisite");
+      	cs531Section1.setCourseDate("Tue");
+      	cs531Section1.setCourseTimePeriod("4:30-7:10");
+      	cs531Section1.setCourseAvailability(1);
+      	cs531Section1.setCourseProfessor("Harrold Greenwald");
+        this.addCourseSetup(cs531Section1);
+        
+        Course cs630Section1 = new Course();
+        cs630Section1.setCourseId(18);
+        cs630Section1.setCourseName("CS630");
+        cs630Section1.setCourseSection("02");
+        cs630Section1.setCourseMajor("CS");
+        cs630Section1.setCourseConcentration("Algorithms");
+        cs630Section1.setCourseDate("Tue");
+        cs630Section1.setCourseTimePeriod("4:30-7:10");
+        cs630Section1.setCourseAvailability(1);
+        cs630Section1.setCourseProfessor("Fei Li");
+        this.addCourseSetup(cs630Section1);
+        
+		Course swe642Section1 = new Course();
+		swe642Section1.setCourseId(19);
+		swe642Section1.setCourseName("SWE642");
+		swe642Section1.setCourseSection("01");
+		swe642Section1.setCourseMajor("SWE");
+		swe642Section1.setCourseConcentration("Web");
+		swe642Section1.setCourseDate("Tue");
+		swe642Section1.setCourseTimePeriod("7:20-10:00");
+		swe642Section1.setCourseAvailability(1);
+		swe645Section1.setCourseProfessor("Vinod K Dubey");
+        this.addCourseSetup(swe642Section1); 
+        
+        
 		Student vietTran = new Student();
 		vietTran.setStudentUsername("vtran18");
 		vietTran.setStudentName("Viet Tran");
@@ -167,7 +304,33 @@ public class StudentClassDataRestController {
         this.addStudentSetup(vietTran); 
         
         studentService.setStudentCompletedCourses("vtran18", swe632Section1);
+        studentService.setStudentCompletedCourses("vtran18", cs583Section1);
+        studentService.setStudentCompletedCourses("vtran18", cs818Section1);
+        studentService.setStudentCompletedCourses("vtran18", swe621Section1);
         studentService.setStudentCurrentRegisteredCourses("vtran18", swe645Section1);
+        
+        
+        
+		Student nuthanaTatineni = new Student();
+		nuthanaTatineni.setStudentUsername("ntatinen");
+		nuthanaTatineni.setStudentName("Nuthana Tatineni");
+		nuthanaTatineni.setStudentLinkedIn("https://www.linkedin.com/in/nuthanat/");
+		nuthanaTatineni.setStudentGNumber("G01003061");
+		nuthanaTatineni.setStudentClassLevel("Graduate");
+		nuthanaTatineni.setStudentMajor("Computer Science");
+		nuthanaTatineni.setStudentConcentration("Web Development");
+		
+        this.addStudentSetup(nuthanaTatineni); 
+        
+        studentService.setStudentCompletedCourses("ntatinen", cs583Section1);
+        studentService.setStudentCompletedCourses("ntatinen", cs550Section1);
+        studentService.setStudentCompletedCourses("ntatinen", swe621Section1);
+        studentService.setStudentCompletedCourses("ntatinen", cs530Section1);
+        studentService.setStudentCompletedCourses("ntatinen", cs531Section1);
+        studentService.setStudentCompletedCourses("ntatinen", isa562Section1);
+        studentService.setStudentCompletedCourses("ntatinen", cs650Section1);
+        studentService.setStudentCompletedCourses("ntatinen", cs818Section1);
+        studentService.setStudentCurrentRegisteredCourses("ntatinen", cs584Section1);
 
         
         return "success";

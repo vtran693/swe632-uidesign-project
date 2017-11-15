@@ -13,7 +13,7 @@
             <ul>
                 <div id="swe632-recommend-class"></div> <a class="btn icon-btn btn-primary" href="#"><span class="glyphicon btn-glyphicon glyphicon-info-sign img-circle text-primary"></span>Details</a> <a class="btn icon-btn btn-primary" href="#"><span class="glyphicon btn-glyphicon glyphicon-list img-circle text-success"></span>Availability</a> <br/>
                 <p>since 88% of students who took them together got A's in both classes</p>
-               
+
                 <div id="swe637-recommend-class"></div> <a class="btn icon-btn btn-primary" href="#"><span class="glyphicon btn-glyphicon glyphicon-info-sign img-circle text-primary"></span>Details</a> <a class="btn icon-btn btn-primary" href="#"><span class="glyphicon btn-glyphicon glyphicon-list img-circle text-success"></span>Availability</a> <br/>
                 <p>since you only have this core course left, and it will only be offered this upcoming semester!</p>               
                 

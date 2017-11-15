@@ -39,27 +39,7 @@ var changed = false;
 
 var userLogin;
 
-function displayLoadingPage(){
-    $('#loading.page-template').show();
-
-
-    var elem = $("loading-bar"); 
-    var barWidth = 1;
-    var id = setInterval(frame, 10);
-    function frame() {
-        if (width >= 100) {
-            $('#loading.page-template').hide();
-            $('#fixed-navbar-template').show();
-            $('#main-menu-template').show();
-            $('#new-feature').modal('show');
-        } else {
-            barWidth++; 
-            elem.width(barWidth + '%'); 
-        }
-    }
-    
-}
-
+var linkedInLinked = false;
 
 $(function() {
     
@@ -73,11 +53,17 @@ $(function() {
         
 
         $.get( "/api/student/" + userLogin, function( data ) {
-            $("#student-username-val").html(data.studentUsername);
+            $("#student-name-val").html(data.studentName);
             $("#student-gnumber-val").html(data.studentGNumber);
             $("#student-level-val").html(data.studentClassLevel);
             $("#student-major-val").html(data.studentMajor);
             $("#student-conc-val").html(data.studentConcentration);
+            if (linkedInLinked){
+                $("#student-linkedin-val").html(data.studentLinkedIn);
+            }
+            else{
+                $("#student-linkedin-val").html("Not Yet Provided. <a id='linkedin-link-summary' class='col-md-4 btn btn-block btn-social btn-linkedin'><span class='fa fa-linkedin'></span> Link Your LinkedIn!</a>");
+            }
         });
 
         $.get( "/api/student/" + userLogin + "/completed", function( data ) {
@@ -172,17 +158,10 @@ $(function() {
         $('#class-selection-val').html('You selected: ' + ui.item.value);
     });    
 
-   
-
-
-
-
     // Autocomplete trigger for undergrads
     // $("#undergrads").autocomplete({
     //     source: allUndergradClasses
     // });
-
-  
 
 
     $("#student-questionnaire").click(function(event){   
@@ -212,15 +191,20 @@ function displayLoadingPage(){
     $('#loading-page-template').show();
     var elem = $("#loading-bar"); 
     var barWidth = 1;
-    var id = setInterval(frame, 10);
+    var id = setInterval(frame, 1);
     function frame() {
         if (barWidth >= 100) {
-            $('#loading.page-template').hide();
-            $('#fixed-navbar-template').show();
-            $('#main-menu-template').show();
-            $('#new-feature').modal('show');
+            clearInterval(id);
+            setTimeout(function(){ 
+                $('#loading-page-template').hide();
+                $('#fixed-navbar-template').show();
+                $('#main-menu-template').show();
+                $('#new-feature').modal('show'); 
+            }, 1250);
         } else {
-            barWidth++; 
+           
+            barWidth+=1; 
+            $("#complete-percentage").html(barWidth);
             elem.width(barWidth + '%'); 
         }
     }

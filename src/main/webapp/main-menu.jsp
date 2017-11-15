@@ -44,18 +44,15 @@
 	<!-- Your HTML -->
 	<!-- ========= -->
 
-	<div id='fixed-navbar-template' style="display:none">
+	<div id="fixed-navbar-template" style="display:none">
 		<jsp:include page="/fixed-navbar.jsp" />
 	</div>
-	<div id='loading-page-template' style="display:none">
-		<jsp:include page="/loading-page.jsp" />
-	</div>	
 
-	<div id='login-template' class='body-content'>
+	<div id="login-template" class="body-content">
 		<jsp:include page="/login.jsp" />
 	</div>
 
-	<div id='loading-page-template' class='body-content'>
+	<div id="loading-page-template" class="body-content" style="display:none">
 		<jsp:include page="/loading-page.jsp" />
 	</div>
 
@@ -77,10 +74,7 @@
 				</div>
 				<div id="collapseOne" class="panel-collapse collapse in">
 					<div class="panel-body">
-						<ul>
-							<li>
-								<span>Username: </span><span id="student-username-val"></span>
-							</li>							
+						<ul>						
 							<li>
 								<span>Name: </span><span id="student-name-val"></span>
 							</li>
@@ -97,7 +91,7 @@
 								<span>Concentration: </span><span id="student-conc-val"></span>
 							</li>
 							<li>
-								<span>LinkedIn Profile Link: </span><span></span>
+								<span>LinkedIn Profile Link: </span><span id="student-linkedin-val"></span>
 							</li>							
 						</ul>
 

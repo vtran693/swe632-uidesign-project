@@ -34,10 +34,10 @@
                 </div>                
             </ul>
             <ul>
-                <div id="core-classes"></div>
+                <div id="core-classes-suggest-one"></div>
             </ul>
             <ul>
-                <div id="core-classes"></div>
+                <div id="core-classes-suggest-two"></div>
             </ul>
 
 
@@ -46,7 +46,7 @@
                 <strong class="registered-class"></strong>
             </div>
             <ul>
-                <div id="concentration-classes"></div>
+                <div id="concentration-classes-suggest-one"></div>
             </ul>
 
         </div>

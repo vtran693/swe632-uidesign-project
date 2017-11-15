@@ -111,15 +111,16 @@
 				<div id="collapseTwo" class="panel-collapse collapse">
 					<div class="panel-body">
 						<div class="h4 list-heading">Core Courses</div>
-						
 						<ul id="core-classes"></ul>
+							
 					
 						<div class="h4 list-heading">Concentration Courses</div>
+						<ul id="concentration-classes">
+						</ul>
 						
-						<ul id="concentration-classes"></ul>
 						
 					</div>
-				</div>
+				</div``>
 			</div>
 			<div class="panel panel-primary">
 				<div class="panel-heading">

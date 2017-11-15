@@ -42,6 +42,8 @@ var allUndergradClasses = [
 ];
 var classLevelGrad = false;
 var changed = false;
+var coreHtml = "";
+var concentrationHtml = "";
 
 var loginVerified = false;
 var userLoginData;
@@ -98,22 +100,27 @@ $(function () {
 
 
             $.get("/api/student/" + userLogin + "/completed", function (data) {
-                $("#core-classes").html("");
-                $("#concentration-classes").html("");
 
                 var completedCourses = data;
-                var coreHtml = "", concentrationHtml = "";
+                coreHtml = "" 
+                concentrationHtml = "";
                 for (var i = 0; i < data.length; i++) {
                     var eachCourse = data[i];
                     if (data[i].courseMajor == "Core") {
-                        coreHtml += "<li>" + data[i].courseName + " - " + data[i].courseSection + "</li>";
+                        coreHtml += ("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "</li>");
                     }
                     else {
-                        concentrationHtml += "<li>" + data[i].courseName + " - " + data[i].courseSection + "</li>";
+                        concentrationHtml += ("<li>" + data[i].courseName  + " - " + "Section " + data[i].courseSection + "</li>");
                     }
                 }
-                $("#core-classes").append(coreHtml);
-                $("#concentration-classes").append(concentrationHtml);
+                if (coreHtml == ""){
+                    coreHtml = "You have not taken any Core classes yet";
+                }
+                if (concentrationHtml == ""){
+                    concentrationHtml = "You have not taken any Concentration classes yet";
+                }
+                $("#core-classes").html(coreHtml);
+                $("#concentration-classes").html(concentrationHtml);
             });
             displayLoadingPage();
         }
@@ -372,7 +379,6 @@ function displayLoadingPage() {
             elem.width(barWidth + '%');
         }
     }
-
 }
 
 

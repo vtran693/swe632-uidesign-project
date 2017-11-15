@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="#">Main Menu
+                    <a id="btn-home" href="#">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -34,26 +34,26 @@
                     <a href="#">New Registration</a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"></a>
+                    	<li>
+                            <a href="#">Submit Review</a>
                         </li>
                         <li>
-                            <a href="#"></a>
-                        </li>
+                            <a href="#">My Grades</a>
+                        </li>     
                         <li>
-                            <a href="#">Review</a>
-                        </li>
-                        <li role="separator" class="divider"></li>
-                        <li>
-                            <a href="#">Separated link</a>
+                            <a href="#">Current Class Schedule</a>
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="#">One more separated link</a>
+                            <a href="https://library.gmu.edu/use/study-rooms" target="_blank">Group Study Rooms</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a href="https://library.gmu.edu/" target="_blank">University Libraries</a>
                         </li>
                     </ul>
                 </li>
@@ -66,18 +66,21 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#">Link</a>
+                    <a href="#">HELP</a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#">Action</a>
+                            <a href="#">Personal Information</a>
                         </li>
                         <li>
-                            <a href="#">Another action</a>
+                            <a href="#">Student Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Financial Aid</a>
                         </li>
                         <li>
                             <a href="#">Employee Services</a>

@@ -44,15 +44,17 @@ var classLevelGrad = false;
 var changed = false;
 
 var loginVerified = false;
-var userLogin;
+var userLoginData;
 
 var linkedInLinked = false;
+
+var searchCriteriaLevel = "";
 
 $(function () {
 
     $('#btn-login').click(function () {
         $('#verify-process-tag-login').show();
-            
+
         $('#login-alert').hide();
         $.each(loginInfo, function (index, value) {
             if ($('#login-username').val() == value.username) {
@@ -61,14 +63,15 @@ $(function () {
                 }
             }
         });
-    
-        
-        if (loginVerified){
+
+
+        if (loginVerified) {
             loginVerified = true;
             userLogin = $('#login-username').val();
             $('#login-template').hide();
 
             $.get("/api/student/" + userLogin, function (data) {
+                userLoginData = data;
                 $("#student-name-val").html(data.studentName);
                 $("#student-gnumber-val").html(data.studentGNumber);
                 $("#student-level-val").html(data.studentClassLevel);
@@ -99,8 +102,8 @@ $(function () {
             });
             displayLoadingPage();
         }
-        else{
-            setTimeout(function(){
+        else {
+            setTimeout(function () {
                 $('#login-alert').show();
             }, 1000)
         }
@@ -222,9 +225,78 @@ $(function () {
     //     $(".major").prop('checked', $(this).prop('checked'));
     // });
 
+    $("#class-level").change(function () {
+        if ($("#class-level").prop('checked')) {
+            searchCriteriaLevel = "grad";
+            if (userLoginData.studentClassLevel == "Under Graduate") {
+                $("#class-level-mismatch").slideToggle();
+            }
+        }
+        else {
+            searchCriteriaLevel = "undergrad";
+            if (userLoginData.studentClassLevel == "Graduate") {
+                $("#class-level-mismatch").slideToggle();
+            }
+        }
+    });
+
     $("#check-all-major").change(function () {
         $(".major").prop('checked', $(this).prop('checked')).change();
     });
+
+
+
+
+    $("#calculate-suggestion").click(function () {
+        var textChange = "";
+        var searchResultList;
+        if ($("#software-engineer").prop('checked')) {
+            $.get("/api/courses/" + searchCriteriaLevel + "/swe", function (data) {
+                var completedCourses = data;
+
+                for (var i = 0; i < data.length; i++) {
+                    var eachCourse = data[i];
+
+                    // If the the text change is different from the current data course name, write <li>
+                    if (textChange != data.courseName){
+                        if (textChange != ""){
+                            searchResultList += "</ul>"
+                            searchResultList += "</li>"
+                        }
+                        // Update the text change
+                        textChange = data.courseName;
+                        searchResultList += ("<li>" + data[i].courseName);
+                        searchResultList += "<ul>";
+                    }
+                    searchResultList += ("<li>" + data[i].courseName + " - " + data[i].courseSection + " " + data[i].courseDate + " - " + data[i].courseTimePeriod); 
+    
+                    searchResultList += ("<button id='" + data[i].courseName + "-" + data[i].courseSection + "-registerbutton'" + " class='btn btn-success'>Register</button>");
+
+                    searchResultList += "</li>";
+
+                }
+                $("#search-class-result").append(searchResultList);
+            });
+        }
+        // Reset the text change
+        textChange = ""
+        if ($("#computer-science").prop('checked')) {
+            $.get("/api/courses/" + searchCriteriaLevel + "/cs", function (data) {
+                var completedCourses = data;
+
+                for (var i = 0; i < data.length; i++) {
+                    var eachCourse = data[i];
+
+                    searchResultList += "<li>" + data[i].courseName + " - " + data[i].courseSection;
+
+                    searchResultList += "</li>";
+
+                }
+                $("#search-class-result").append(searchResultList);
+            });
+        }
+    });
+
 });
 
 

@@ -1,4 +1,11 @@
-<div class="navbar navbar-default navbar-fixed-top">
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav_bar.css"/>
+</head>
+<body>
+<div  id="nav_bar" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -19,12 +26,12 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="#">Link
+                    <a href="#">Main Menu
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">Link</a>
+                    <a href="#">New Registration</a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
@@ -32,13 +39,13 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#">Action</a>
+                            <a href="#"></a>
                         </li>
                         <li>
-                            <a href="#">Another action</a>
+                            <a href="#"></a>
                         </li>
                         <li>
-                            <a href="#">Something else here</a>
+                            <a href="#">Review</a>
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
@@ -73,11 +80,11 @@
                             <a href="#">Another action</a>
                         </li>
                         <li>
-                            <a href="#">Something else here</a>
+                            <a href="#">Employee Services</a>
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="#">Separated link</a>
+                            <a href="#">Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -87,3 +94,4 @@
     </div>
     <!-- /.container-fluid -->
 </div>
+</body>

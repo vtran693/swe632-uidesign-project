@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE = edge,chrome = 1" />
-<title>Hello World using Backbone.js</title>
+<title>SWE 437 class details</title>
 
 <!-- ========= -->
 <!-- Stylesheets -->
@@ -72,7 +72,7 @@
               </div>
               <div class="media-body">
                  <a class="media-heading" href="http://www.linkedin.com/in/divya-vajja-ab80a478" target="_blank">Krishna Vemuri - Student - CS</a>
-                <p>He's a nice professor who gaves in-class execises to prepare quizs. 12 quizzes drop 3 lowest. Hws are every week like quizzes. 
+                <p> Paul Ammann's a nice professor who gaves in-class execises to prepare quizs. 12 quizzes drop 3 lowest. Hws are every week like quizzes. 
                 Fortunately, you can have 2 partners for hw. Easy class as long as you follow up with the in class exercise. 
                 The final is a little tough. I didn't copy down terms on cheat sheet. So I lost 660 on the final. Speak so low.</p>
               </div>
@@ -84,9 +84,9 @@
               </div>
               <div class="media-body">
                  <a class="media-heading" href="#" target="_blank">Sameera Bammidi - Student - INFS</a>
-                <p>Terribly banal, overcomplicates trivial topics, and forces you to attend his useless lectures. 
+                <p>Richard H Carver - Terribly banal, over-complicates trivial topics, and forces you to attend his useless lectures. 
                 Attendance is mandatory and you will lose tons of points if you don't attend because of participation 
-                points and these god-awful weekly quizzes he gives even though this is a 400 level course.</p>
+                points.</p>
               </div>
               </div>
               <hr>

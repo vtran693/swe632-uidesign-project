@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE = edge,chrome = 1" />
-<title>Hello World using Backbone.js</title>
+<title>SWE 621 class details</title>
 
 <!-- ========= -->
 <!-- Stylesheets -->
@@ -38,7 +38,7 @@
 	<div class="container">
 	
 		<script type='text/javascript' src='https://us-east-1.online.tableau.com/javascripts/api/viz_v1.js'></script>
-		<div class='tableauPlaceholder' style='width: 1000px; height: 450px;' align="center">
+		<div class='tableauPlaceholder' style='width: 900px; height: 300px;' align="center">
 			<object class='tableauViz' width='1000' height='450' style='display:none;'>
 				<param name='host_url' value='https%3A%2F%2Fus-east-1.online.tableau.com%2F' /> 
 				<param name='embed_code_version' value='2' /> 

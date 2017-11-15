@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE = edge,chrome = 1" />
-<title>Hello World using Backbone.js</title>
+<title>CS 550 class details</title>
 
 <!-- ========= -->
 <!-- Stylesheets -->

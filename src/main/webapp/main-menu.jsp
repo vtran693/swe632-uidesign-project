@@ -32,7 +32,6 @@
 	<script src="${pageContext.request.contextPath}/js/lib/json2.js" type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/js/lib/jquery-ui.js" type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/js/lib/bootstrap-toggle.js" type="text/javascript"></script>
-	<script src="${pageContext.request.contextPath}/js/lib/docs.js" type="text/javascript"></script>
 	<!-- ========= -->
 	<!-- JavaScript Function -->
 	<!-- ========= -->
@@ -52,6 +51,10 @@
 
 	<div id='login-template' class='body-content'>
 		<jsp:include page="/login.jsp" />
+	</div>
+
+	<div id='loading-page-template' class='body-content'>
+		<jsp:include page="/loading-page.jsp" />
 	</div>
 
 	<div id="new-registration-template" class="body-content" style="display:none">

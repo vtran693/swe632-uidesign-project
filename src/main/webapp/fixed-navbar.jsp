@@ -87,7 +87,9 @@
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="#">Logout</a>
+                            <a href="/web/home" class="btn btn-info btn-md">
+          						<span class="glyphicon glyphicon-log-out"></span> Log out
+        					</a>
                         </li>
                     </ul>
                 </li>

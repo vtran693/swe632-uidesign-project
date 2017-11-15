@@ -120,11 +120,13 @@ public class StudentClassDataRestController {
 		swe645Section1.setCourseDate("Thur");
 		swe645Section1.setCourseTimePeriod("7:20-10:00");
 		swe645Section1.setCourseAvailability(1);
-		swe645Section1.setCourseProfessor("Feras Batarseh");
+		swe645Section1.setCourseProfessor("Vinod Dubey");
         this.addCourseSetup(swe645Section1); 
         
 		Student vietTran = new Student();
 		vietTran.setStudentUsername("vtran18");
+		vietTran.setStudentName("Viet Tran");
+		vietTran.setStudentLinkedIn("https://www.linkedin.com/in/viet-tran-272570108/");
 		vietTran.setStudentGNumber("G012345678");
 		vietTran.setStudentClassLevel("Graduate");
 		vietTran.setStudentMajor("SWE");
@@ -133,10 +135,19 @@ public class StudentClassDataRestController {
         this.addStudentSetup(vietTran); 
         
         studentService.setStudentCompletedCourses("vtran18", swe632Section1);
+        studentService.setStudentCurrentRegisteredCourses("vtran18", swe645Section1);
 
         
         return "success";
 	}
+	
+	@GetMapping("/course/{name}/{section}/delete")
+	public String deleteCourseWithNameAndSection(@PathVariable("name") String courseName, @PathVariable("section") String courseSection) {
+		courseService.deleteCourse(courseName, courseSection);
+		return "delete success";
+	}
+	
+	
 	
 	@GetMapping("/student/{username}/completed")
 	public List<Course> getStudentCompletedCoursesByService(@PathVariable("username") String studentUsername){

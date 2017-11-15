@@ -150,5 +150,13 @@ public class StudentDAOImpl implements StudentDAO{
 			return "success";
 		}
 	}
+
+	@Override
+	public void setStudentCurrentRegisteredCourses(String studentUsername, Course registeredCourse) {
+		Student specificStudent = this.getStudentByUsername(studentUsername);
+		specificStudent.getStudentCurrentRegisteredCourses().add(registeredCourse);
+		specificStudent.setStudentCurrentRegisteredCourses(specificStudent.getStudentCurrentRegisteredCourses());
+		entityManager.flush();
+	}
 	
 }

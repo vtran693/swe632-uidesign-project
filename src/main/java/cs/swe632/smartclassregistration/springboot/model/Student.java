@@ -43,6 +43,10 @@ public class Student implements Serializable{
 	@Id
 	@Column(name="student_username")
     private String studentUsername;  
+	@Column(name="student_name")
+	private String studentName;
+	@Column(name="student_linkedin")
+	private String studentLinkedIn;
 	@Column(name="student_gnumber")
     private String studentGNumber;
 	// Undergrad vs Grad
@@ -93,6 +97,18 @@ public class Student implements Serializable{
 	}
 	public void setStudentConcentration(String studentConcentration) {
 		this.studentConcentration = studentConcentration;
+	}
+	public String getStudentName() {
+		return studentName;
+	}
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+	public String getStudentLinkedIn() {
+		return studentLinkedIn;
+	}
+	public void setStudentLinkedIn(String studentLinkedIn) {
+		this.studentLinkedIn = studentLinkedIn;
 	}
 	public List<Course> getStudentCompletedCourses() {
 		return studentCompletedCourses;

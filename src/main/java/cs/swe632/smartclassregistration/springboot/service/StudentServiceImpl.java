@@ -74,4 +74,10 @@ public class StudentServiceImpl implements StudentService {
 	
 	}
 
+	@Override
+	public void setStudentCurrentRegisteredCourses(String studentUsername, Course registeredCourse) {
+		// TODO Auto-generated method stub
+		studentDAO.setStudentCurrentRegisteredCourses(studentUsername, registeredCourse);
+	}
+
 }

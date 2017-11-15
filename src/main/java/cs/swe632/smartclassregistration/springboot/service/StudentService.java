@@ -19,4 +19,5 @@ public interface StudentService {
 	List<Course> getStudentCompletedCourses(String studentUsername);
 	List<Course> getStudentCurrentRegisteredCourses(String studentUsername);
 	void setStudentCompletedCourses(String studentUsername, Course completedCourse);
+	void setStudentCurrentRegisteredCourses(String studentUsername, Course registeredCourse);
 }

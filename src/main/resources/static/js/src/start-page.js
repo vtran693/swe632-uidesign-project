@@ -98,12 +98,7 @@ $(function() {
 
         displayLoadingPage();
 
-<<<<<<< HEAD
-
-    })
-=======
     });
->>>>>>> SWE632_VietTran_Diehard
        
 
     // Display the textbox to type in LinkedIn Address

@@ -8,9 +8,7 @@
         <div id="new-registration-questionnaire-template" style="display:none">
             <jsp:include page="/new-registration-questionnaire.jsp" />
         </div>
-        <div id="class-detail-template" style="display:none">
-            <jsp:include page="/class-detail.jsp" />
-        </div>
+
     </div>
 </div>
 

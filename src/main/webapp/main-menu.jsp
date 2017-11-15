@@ -48,7 +48,9 @@
 	<div id='fixed-navbar-template' style="display:none">
 		<jsp:include page="/fixed-navbar.jsp" />
 	</div>
-	
+	<div id='loading-page-template' style="display:none">
+		<jsp:include page="/loading-page.jsp" />
+	</div>	
 
 	<div id='login-template' class='body-content'>
 		<jsp:include page="/login.jsp" />

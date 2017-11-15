@@ -7,6 +7,8 @@
                     <input type="checkbox" id="class-level" value="Graduate" checked data-toggle="toggle" data-onstyle="primary"
                         data-offstyle="warning" data-size="normal" data-width="180" data-on="Graduate" data-off="Undergraduate"/>
                 </label>
+
+                
             </div>
 
 

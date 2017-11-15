@@ -39,14 +39,37 @@ var changed = false;
 
 var userLogin;
 
+function displayLoadingPage(){
+    $('#loading.page-template').show();
+
+
+    var elem = $("loading-bar"); 
+    var barWidth = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            $('#loading.page-template').hide();
+            $('#fixed-navbar-template').show();
+            $('#main-menu-template').show();
+            $('#new-feature').modal('show');
+        } else {
+            barWidth++; 
+            elem.width(barWidth + '%'); 
+        }
+    }
+    
+}
 
 $(function() {
     
     $('#btn-login').click(function(){
 
+        
+
+
         userLogin=$('#login-username').val();
         $('#login-template').hide();
-        $('#fixed-navbar-template').show();
+        
 
         $.get( "/api/student/" + userLogin, function( data ) {
             $("#student-username-val").html(data.studentUsername);
@@ -72,8 +95,9 @@ $(function() {
             $("#concentration-classes").html(concentrationHtml);
         });
 
-        $('#main-menu-template').show();
-        $('#new-feature').modal('show');
+        displayLoadingPage();
+
+
     })
        
 

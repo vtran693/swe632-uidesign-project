@@ -52,7 +52,4 @@
         </div>
     </div>
 
-    <div id="registration-suggestion-template" style="display:none">
-        <jsp:include page="/registration-suggestion.jsp" />
-    </div>
 </div>

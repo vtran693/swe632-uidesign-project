@@ -60,6 +60,7 @@ function displayLoadingPage(){
     
 }
 
+
 $(function() {
     
     $('#btn-login').click(function(){
@@ -97,8 +98,12 @@ $(function() {
 
         displayLoadingPage();
 
+<<<<<<< HEAD
 
     })
+=======
+    });
+>>>>>>> SWE632_VietTran_Diehard
        
 
     // Display the textbox to type in LinkedIn Address
@@ -207,6 +212,25 @@ $(function() {
     });    
 });
 
+
+function displayLoadingPage(){
+    $('#loading-page-template').show();
+    var elem = $("#loading-bar"); 
+    var barWidth = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (barWidth >= 100) {
+            $('#loading.page-template').hide();
+            $('#fixed-navbar-template').show();
+            $('#main-menu-template').show();
+            $('#new-feature').modal('show');
+        } else {
+            barWidth++; 
+            elem.width(barWidth + '%'); 
+        }
+    }
+    
+}
 
 
 function renderClassList(){

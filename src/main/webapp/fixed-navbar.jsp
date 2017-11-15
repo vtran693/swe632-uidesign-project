@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav_bar.css"/>
 </head>
 <body>
-<div  id="nav_bar" class="navbar navbar-primary navbar-fixed-top">
+<div  id="nav_bar" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">

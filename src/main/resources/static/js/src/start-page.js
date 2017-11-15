@@ -19,7 +19,9 @@ var loginInfo = [
 ]
 
 var linkedUrlList = [
-    "https://www.linkedin.com/in/viet-tran-272570108/"
+    "https://www.linkedin.com/in/viet-tran-272570108/",
+	"https://www.linkedin.com/in/nuthanat/",
+	"https://www.linkedin.com/in/divya-vajja-ab80a478/"
 ];
 
 //Data

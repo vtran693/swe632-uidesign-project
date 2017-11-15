@@ -98,6 +98,9 @@ $(function () {
 
 
             $.get("/api/student/" + userLogin + "/completed", function (data) {
+                $("#core-classes").html("");
+                $("#concentration-classes").html("");
+
                 var completedCourses = data;
                 var coreHtml = "", concentrationHtml = "";
                 for (var i = 0; i < data.length; i++) {
@@ -109,8 +112,8 @@ $(function () {
                         concentrationHtml += "<li>" + data[i].courseName + " - " + data[i].courseSection + "</li>";
                     }
                 }
-                $("#core-classes").html(coreHtml);
-                $("#concentration-classes").html(concentrationHtml);
+                $("#core-classes").append(coreHtml);
+                $("#concentration-classes").append(concentrationHtml);
             });
             displayLoadingPage();
         }
@@ -140,10 +143,9 @@ $(function () {
                 if ($('#linkedin-url').val() == value) {
                     $('#verify-linkedin').slideToggle("slow");
                 }
-                else {
-                    $('#linkedin-error-label').show();
-                }
             });
+
+            $('#linkedin-error-label').show();
         }, 1000);
 
     });

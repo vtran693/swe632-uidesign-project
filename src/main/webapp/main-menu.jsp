@@ -129,6 +129,29 @@
 				</div>
 				<div id="collapseThree" class="panel-collapse collapse">
 					<div class="panel-body">
+					
+						<div class="list-group">
+
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseModify">MODIFY YOUR CURRENT REGISTRATION SESSION</a>		
+							<div id="collapseModify" class="panel-collapse collapse">
+									<div class="alert alert-success alert-dismissable">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">Delete</a>
+  <strong>CS 637</strong> 
+</div>
+							</div>	
+							<br/>
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseExisting">VIEW YOUR CURRENT REGISTRATION SESSION</a>		
+							<div id="collapseExisting" class="panel-collapse collapse">
+										
+										<ul id="current-reg">
+											<li>CS584 - Data Mining</li>
+										</ul>
+							</div>	
+							<br/>
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseReview">WRITE A REVIEW</a>		
+							<div id="collapseReview" class="panel-collapse collapse">
+
+							</div>
 						<div class="list-group">
 
 							<a href="#" id="create" class="list-group-item">

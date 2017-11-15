@@ -155,7 +155,7 @@ public class StudentClassDataRestController {
 		swe645Section1.setCourseProfessor("Vinod Dubey");
         this.addCourseSetup(swe645Section1); 
         
-<<<<<<< HEAD
+
         
 		Course cs584Section1 = new Course();
 		swe645Section1.setCourseId(3);
@@ -291,7 +291,7 @@ public class StudentClassDataRestController {
 		swe642Section1.setCourseAvailability(1);
 		swe645Section1.setCourseProfessor("Vinod K Dubey");
         this.addCourseSetup(swe642Section1); 
-=======
+
         Course swe205Section1 = new Course();
         swe205Section1.setCourseId(7);
         swe205Section1.setCourseName("SWE205");
@@ -363,7 +363,6 @@ public class StudentClassDataRestController {
         cs484Section1.setCourseAvailability(1);
         cs484Section1.setCourseProfessor("Harry Wechsler");
         this.addCourseSetup(cs484Section1);
->>>>>>> 186ce650bbce2bd95744f42dd66045556725c90f
         
         
 		Student vietTran = new Student();
@@ -391,7 +390,6 @@ public class StudentClassDataRestController {
         studentService.setStudentCompletedCourses("vtran18", cs818Section1);
         studentService.setStudentCompletedCourses("vtran18", swe621Section1);
         studentService.setStudentCurrentRegisteredCourses("vtran18", swe645Section1);
-<<<<<<< HEAD
         
         
         
@@ -415,14 +413,12 @@ public class StudentClassDataRestController {
         studentService.setStudentCompletedCourses("ntatinen", cs650Section1);
         studentService.setStudentCompletedCourses("ntatinen", cs818Section1);
         studentService.setStudentCurrentRegisteredCourses("ntatinen", cs584Section1);
-=======
+
         studentService.setStudentCompletedCourses("dvajja", swe205Section1);
         studentService.setStudentCompletedCourses("dvajja", swe321Section2);
         studentService.setStudentCompletedCourses("dvajja", cs310Section1);
         studentService.setStudentCurrentRegisteredCourses("dvajja", cs471Section2);
         studentService.setStudentCurrentRegisteredCourses("dvajja", cs484Section1);
-       
->>>>>>> 186ce650bbce2bd95744f42dd66045556725c90f
 
         
         return "success";

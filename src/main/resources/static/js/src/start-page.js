@@ -1,5 +1,21 @@
 var dynamicClassList = [];
 
+
+var loginInfo = [
+
+    {'username': 'vtran18',
+    'password': 'monkeyisland123'
+    },
+    {'username': 'divya',
+    'password': '123'
+    },
+    {'username': 'nuthana',
+    'password': '456'
+    }
+
+]
+
+
 //Data
 var allMasterClasses = [
     "SWE 632 - User Interface Design and Development",
@@ -20,8 +36,46 @@ var allUndergradClasses = [
 ];
 var classLevelGrad = false;
 var changed = false;
+
+var userLogin;
+
+
 $(function() {
-    $('#new-feature').modal('show');
+    
+    $('#btn-login').click(function(){
+
+        userLogin=$('#login-username').val();
+        $('#login-template').hide();
+        $('#fixed-navbar-template').show();
+
+        $.get( "/api/student/" + userLogin, function( data ) {
+            $("#student-username-val").html(data.studentUsername);
+            $("#student-gnumber-val").html(data.studentGNumber);
+            $("#student-level-val").html(data.studentClassLevel);
+            $("#student-major-val").html(data.studentMajor);
+            $("#student-conc-val").html(data.studentConcentration);
+        });
+
+        $.get( "/api/student/" + userLogin + "/completed", function( data ) {
+            var completedCourses = data;
+            var coreHtml ="", concentrationHtml="";
+            for (var i = 0; i < data.length; i++){
+                var eachCourse = data[i];
+                if (data[i].courseMajor == "Core" ){
+                    coreHtml += "<li>" + data[i].courseName + " - " + data[i].courseSection + "</li>";
+                }
+                else{
+                    concentrationHtml += "<li>" + data[i].courseName + " - " + data[i].courseSection + "</li>";
+                }
+            }
+            $("#core-classes").html(coreHtml);
+            $("#concentration-classes").html(concentrationHtml);
+        });
+
+        $('#main-menu-template').show();
+        $('#new-feature').modal('show');
+    })
+       
 
     // Display the textbox to type in LinkedIn Address
     $('#linkedin-link').click(function(event){
@@ -46,7 +100,7 @@ $(function() {
             alert( "Student ID: " + data.studentId );
             alert( "Student Title: " + data.title );
             alert( "Student Category: " + data.category );
-            if (data.title === 'Master'){
+            if (data.title == 'Master'){
                 dynamicClassList = allMasterClasses;
             }
             else{
@@ -66,7 +120,7 @@ $(function() {
             alert( "Student ID: " + data.studentId );
             alert( "Student Title: " + data.title );
             alert( "Student Category: " + data.category );
-            if (data.title === 'Master'){
+            if (data.title == 'Master'){
                 dynamicClassList = allMasterClasses;
             }
             else{

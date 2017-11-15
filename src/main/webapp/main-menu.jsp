@@ -32,7 +32,7 @@
 	<script src="${pageContext.request.contextPath}/js/lib/json2.js" type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/js/lib/jquery-ui.js" type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/js/lib/bootstrap-toggle.js" type="text/javascript"></script>
-
+	<script src="${pageContext.request.contextPath}/js/lib/docs.js" type="text/javascript"></script>
 	<!-- ========= -->
 	<!-- JavaScript Function -->
 	<!-- ========= -->
@@ -45,7 +45,14 @@
 	<!-- Your HTML -->
 	<!-- ========= -->
 
-	<jsp:include page="/fixed-navbar.jsp" />
+	<div id='fixed-navbar-template' style="display:none">
+		<jsp:include page="/fixed-navbar.jsp" />
+	</div>
+	
+
+	<div id='login-template' class='body-content'>
+		<jsp:include page="/login.jsp" />
+	</div>
 
 	<div id="new-registration-template" class="body-content" style="display:none">
 		<jsp:include page="/new-registration.jsp" />
@@ -54,7 +61,7 @@
 		<jsp:include page="/modify-registration.jsp" />
 	</div>
 
-	<div id='main-menu-template' class='body-content'>
+	<div id='main-menu-template' class='body-content' style="display:none">
 		<jsp:include page="/title.jsp" />
 		<div class="panel-group" id="accordion">
 			<div class="panel panel-primary">
@@ -67,20 +74,26 @@
 					<div class="panel-body">
 						<ul>
 							<li>
-								<span>Name: Viet Tran</span>
+								<span>Username: </span><span id="student-username-val"></span>
+							</li>							
+							<li>
+								<span>Name: </span><span id="student-name-val"></span>
 							</li>
 							<li>
-								<span>Class Level: Graduate</span>
+								<span>G-Number: </span><span id="student-gnumber-val"></span>
+							</li>							
+							<li>
+								<span>Class Level: </span><span id="student-level-val"></span>
 							</li>
 							<li>
-								<span>Student Type: Part-time</span>
+								<span>Major: </span><span id="student-major-val"></span>
 							</li>
 							<li>
-								<span>Major: MS Software Engineering </span>
+								<span>Concentration: </span><span id="student-conc-val"></span>
 							</li>
 							<li>
-								<span>Emphasis: Web Apps Design and Development</span>
-							</li>
+								<span>LinkedIn Profile Link: </span><span></span>
+							</li>							
 						</ul>
 
 						<!-- <span>Name: ${student.firstName} ${student.firstName}</span> -->
@@ -97,10 +110,14 @@
 				</div>
 				<div id="collapseTwo" class="panel-collapse collapse">
 					<div class="panel-body">
-						<p>Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML
-							conventions.
-							<a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a>
-						</p>
+						<div class="h4 list-heading">Core Courses</div>
+						<ul>
+							<div id="core-classes"></div>
+						</ul>
+						<div class="h4 list-heading">Concentration Courses</div>
+						<ul>
+							<div id="concentration-classes"></div>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -118,7 +135,7 @@
 								CREATE A NEW REGISTRATION SESSION
 							</a>
 							<a href="#" id="modify" class="list-group-item">
-								MODIFY THE EXISTING REGISTRATION SESSION - DUMMY
+								MODIFY/VIEW YOUR EXISTING REGISTRATION SESSION - DUMMY
 							</a>
 							<a href="#" class="list-group-item">
 								VIEW YOUR CURRENT REGISTRATION SESSION

@@ -134,6 +134,7 @@ public class StudentClassDataRestController {
 		Course swe632Section1 = new Course();
 		swe632Section1.setCourseId(1);
 		swe632Section1.setCourseName("SWE632");
+		swe632Section1.setCourseLevel("Grad");
 		swe632Section1.setCourseSection("01");
 		swe632Section1.setCourseMajor("SWE");
 		swe632Section1.setCourseConcentration("Design");
@@ -146,6 +147,7 @@ public class StudentClassDataRestController {
 		Course swe645Section1 = new Course();
 		swe645Section1.setCourseId(2);
 		swe645Section1.setCourseName("SWE645");
+		swe645Section1.setCourseLevel("Grad");
 		swe645Section1.setCourseSection("01");
 		swe645Section1.setCourseMajor("SWE");
 		swe645Section1.setCourseConcentration("Web");
@@ -158,21 +160,23 @@ public class StudentClassDataRestController {
 
         
 		Course cs584Section1 = new Course();
-		swe645Section1.setCourseId(3);
-		swe645Section1.setCourseName("CS584");
-		swe645Section1.setCourseSection("01");
-		swe645Section1.setCourseMajor("CS");
-		swe645Section1.setCourseConcentration("Core");
-		swe645Section1.setCourseDate("Tue");
-		swe645Section1.setCourseTimePeriod("7:20-10:00");
-		swe645Section1.setCourseAvailability(1);
-		swe645Section1.setCourseProfessor("Jessica Lin");
+		cs584Section1.setCourseId(3);
+		cs584Section1.setCourseName("CS584");
+		cs584Section1.setCourseLevel("Grad");
+		cs584Section1.setCourseSection("01");
+		cs584Section1.setCourseMajor("CS");
+		cs584Section1.setCourseConcentration("Core");
+		cs584Section1.setCourseDate("Tue");
+		cs584Section1.setCourseTimePeriod("7:20-10:00");
+		cs584Section1.setCourseAvailability(1);
+		cs584Section1.setCourseProfessor("Jessica Lin");
         this.addCourseSetup(cs584Section1);
         
         
 		Course cs583Section1 = new Course();
 		cs583Section1.setCourseId(4);
 		cs583Section1.setCourseName("CS583");
+		cs583Section1.setCourseLevel("Grad");
 		cs583Section1.setCourseSection("01");
 		cs583Section1.setCourseMajor("CS");
 		cs583Section1.setCourseConcentration("Core");
@@ -186,6 +190,7 @@ public class StudentClassDataRestController {
 		Course cs550Section1 = new Course();
 		cs550Section1.setCourseId(5);
 		cs550Section1.setCourseName("CS550");
+		cs550Section1.setCourseLevel("Grad");
 		cs550Section1.setCourseSection("01");
 		cs550Section1.setCourseMajor("CS");
 		cs550Section1.setCourseConcentration("Core");
@@ -199,6 +204,7 @@ public class StudentClassDataRestController {
 		Course swe621Section1 = new Course();
 		swe621Section1.setCourseId(6);
 		swe621Section1.setCourseName("SWE621");
+		swe621Section1.setCourseLevel("Grad");
 		swe621Section1.setCourseSection("01");
 		swe621Section1.setCourseMajor("SWE");
 		swe621Section1.setCourseConcentration("Software Development");
@@ -211,6 +217,7 @@ public class StudentClassDataRestController {
     	Course cs530Section1 = new Course();
     	cs530Section1.setCourseId(13);
     	cs530Section1.setCourseName("CS530");
+    	cs530Section1.setCourseLevel("Grad");
     	cs530Section1.setCourseSection("02");
     	cs530Section1.setCourseMajor("CS");
     	cs530Section1.setCourseConcentration("Pre-requisite");
@@ -218,11 +225,12 @@ public class StudentClassDataRestController {
     	cs530Section1.setCourseTimePeriod("7:20-10:00");
     	cs530Section1.setCourseAvailability(1);
     	cs530Section1.setCourseProfessor("Dmitri Kaznachey");
-        this.addCourseSetup(cs530Section1);
+    this.addCourseSetup(cs530Section1);
               
       	Course isa562Section1 = new Course();
       	isa562Section1.setCourseId(14);
       	isa562Section1.setCourseName("ISA562");
+      	isa562Section1.setCourseLevel("Grad");
       	isa562Section1.setCourseSection("01");
       	isa562Section1.setCourseMajor("ISA");
       	isa562Section1.setCourseConcentration("Core");
@@ -235,6 +243,7 @@ public class StudentClassDataRestController {
         Course cs650Section1 = new Course();
         cs650Section1.setCourseId(15);
         cs650Section1.setCourseName("CS650");
+        cs650Section1.setCourseLevel("Grad");
         cs650Section1.setCourseSection("01");
         cs650Section1.setCourseMajor("CS");
         cs650Section1.setCourseConcentration("Databases");
@@ -242,11 +251,12 @@ public class StudentClassDataRestController {
         cs650Section1.setCourseTimePeriod("4:30-7:10");
         cs650Section1.setCourseAvailability(1);
         cs650Section1.setCourseProfessor("Amihai Motro");
-        this.addCourseSetup(isa562Section1);
+        this.addCourseSetup(cs650Section1);
         
         Course cs818Section1 = new Course();
         cs818Section1.setCourseId(16);
         cs818Section1.setCourseName("CS818");
+        cs818Section1.setCourseLevel("Grad");
         cs818Section1.setCourseSection("01");
         cs818Section1.setCourseMajor("CS");
         cs818Section1.setCourseConcentration("Networks");
@@ -259,6 +269,7 @@ public class StudentClassDataRestController {
         Course cs531Section1 = new Course();
       	cs531Section1.setCourseId(17);
       	cs531Section1.setCourseName("CS531");
+      	cs531Section1.setCourseLevel("Grad");
       	cs531Section1.setCourseSection("02");
       	cs531Section1.setCourseMajor("CS");
       	cs531Section1.setCourseConcentration("Pre-requisite");
@@ -271,6 +282,7 @@ public class StudentClassDataRestController {
         Course cs630Section1 = new Course();
         cs630Section1.setCourseId(18);
         cs630Section1.setCourseName("CS630");
+        cs630Section1.setCourseLevel("Grad");
         cs630Section1.setCourseSection("02");
         cs630Section1.setCourseMajor("CS");
         cs630Section1.setCourseConcentration("Algorithms");
@@ -283,18 +295,20 @@ public class StudentClassDataRestController {
 		Course swe642Section1 = new Course();
 		swe642Section1.setCourseId(19);
 		swe642Section1.setCourseName("SWE642");
+		swe642Section1.setCourseLevel("Grad");
 		swe642Section1.setCourseSection("01");
 		swe642Section1.setCourseMajor("SWE");
 		swe642Section1.setCourseConcentration("Web");
 		swe642Section1.setCourseDate("Tue");
 		swe642Section1.setCourseTimePeriod("7:20-10:00");
 		swe642Section1.setCourseAvailability(1);
-		swe645Section1.setCourseProfessor("Vinod K Dubey");
+		swe642Section1.setCourseProfessor("Vinod K Dubey");
         this.addCourseSetup(swe642Section1); 
 
         Course swe205Section1 = new Course();
         swe205Section1.setCourseId(7);
         swe205Section1.setCourseName("SWE205");
+        swe205Section1.setCourseLevel("Undergrad");
         swe205Section1.setCourseSection("01");
         swe205Section1.setCourseMajor("SWE");
         swe205Section1.setCourseConcentration("Analysis");
@@ -307,6 +321,7 @@ public class StudentClassDataRestController {
         Course swe321Section2 = new Course();
         swe321Section2.setCourseId(8);
         swe321Section2.setCourseName("SWE321");
+        swe321Section2.setCourseLevel("Undergrad");
         swe321Section2.setCourseSection("02");
         swe321Section2.setCourseMajor("SWE");
         swe321Section2.setCourseConcentration("Engeneering");
@@ -319,6 +334,7 @@ public class StudentClassDataRestController {
         Course swe437Section1 = new Course();
         swe437Section1.setCourseId(9);
         swe437Section1.setCourseName("SWE437");
+        swe437Section1.setCourseLevel("Undergrad");
         swe437Section1.setCourseSection("01");
         swe437Section1.setCourseMajor("SWE");
         swe437Section1.setCourseConcentration("Testing");
@@ -331,6 +347,7 @@ public class StudentClassDataRestController {
         Course cs471Section2 = new Course();
         cs471Section2.setCourseId(10);
         cs471Section2.setCourseName("SWE471");
+        cs471Section2.setCourseLevel("Undergrad");
         cs471Section2.setCourseSection("02");
         cs471Section2.setCourseMajor("CS");
         cs471Section2.setCourseConcentration("Design");
@@ -343,6 +360,7 @@ public class StudentClassDataRestController {
         Course cs310Section1 = new Course();
         cs310Section1.setCourseId(11);
         cs310Section1.setCourseName("CS310");
+        cs310Section1.setCourseLevel("Undergrad");
         cs310Section1.setCourseSection("01");
         cs310Section1.setCourseMajor("CS");
         cs310Section1.setCourseConcentration("Analysis");
@@ -355,6 +373,7 @@ public class StudentClassDataRestController {
         Course cs484Section1 = new Course();
         cs484Section1.setCourseId(12);
         cs484Section1.setCourseName("CS484");
+        cs484Section1.setCourseLevel("Undergrad");
         cs484Section1.setCourseSection("01");
         cs484Section1.setCourseMajor("CS");
         cs484Section1.setCourseConcentration("Design");
@@ -420,7 +439,7 @@ public class StudentClassDataRestController {
         studentService.setStudentCurrentRegisteredCourses("dvajja", cs471Section2);
         studentService.setStudentCurrentRegisteredCourses("dvajja", cs484Section1);
 
-        
+        this.addStudentSetup(divyaVajja);
         return "success";
 	}
 	

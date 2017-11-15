@@ -111,13 +111,13 @@
 				<div id="collapseTwo" class="panel-collapse collapse">
 					<div class="panel-body">
 						<div class="h4 list-heading">Core Courses</div>
-						<ul>
-							<div id="core-classes"></div>
-						</ul>
+						
+						<ul id="core-classes"></ul>
+					
 						<div class="h4 list-heading">Concentration Courses</div>
-						<ul>
-							<div id="concentration-classes"></div>
-						</ul>
+						
+						<ul id="concentration-classes"></ul>
+						
 					</div>
 				</div>
 			</div>

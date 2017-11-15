@@ -3,18 +3,24 @@ var dynamicClassList = [];
 
 var loginInfo = [
 
-    {'username': 'vtran18',
-    'password': 'monkeyisland123'
+    {
+        'username': 'vtran18',
+        'password': 'Monkeyisland123'
     },
-    {'username': 'divya',
-    'password': '123'
+    {
+        'username': 'divya',
+        'password': '123'
     },
-    {'username': 'nuthana',
-    'password': '456'
+    {
+        'username': 'nuthana',
+        'password': '456'
     }
 
 ]
 
+var linkedUrlList = [
+    "https://www.linkedin.com/in/viet-tran-272570108/"
+];
 
 //Data
 var allMasterClasses = [
@@ -37,83 +43,118 @@ var allUndergradClasses = [
 var classLevelGrad = false;
 var changed = false;
 
+var loginVerified = false;
 var userLogin;
 
 var linkedInLinked = false;
 
-$(function() {
+$(function () {
+
+    $('#btn-login').click(function () {
+        $('#verify-process-tag-login').show();
+            
+        $('#login-alert').hide();
+        $.each(loginInfo, function (index, value) {
+            if ($('#login-username').val() == value.username) {
+                if ($('#login-password').val() == value.password) {
+                    loginVerified = true;
+                }
+            }
+        });
     
-    $('#btn-login').click(function(){
-
         
+        if (loginVerified){
+            loginVerified = true;
+            userLogin = $('#login-username').val();
+            $('#login-template').hide();
 
-
-        userLogin=$('#login-username').val();
-        $('#login-template').hide();
-        
-
-        $.get( "/api/student/" + userLogin, function( data ) {
-            $("#student-name-val").html(data.studentName);
-            $("#student-gnumber-val").html(data.studentGNumber);
-            $("#student-level-val").html(data.studentClassLevel);
-            $("#student-major-val").html(data.studentMajor);
-            $("#student-conc-val").html(data.studentConcentration);
-            if (linkedInLinked){
-                $("#student-linkedin-val").html(data.studentLinkedIn);
-            }
-            else{
-                $("#student-linkedin-val").html("Not Yet Provided. <a id='linkedin-link-summary' class='col-md-4 btn btn-block btn-social btn-linkedin'><span class='fa fa-linkedin'></span> Link Your LinkedIn!</a>");
-            }
-        });
-
-        $.get( "/api/student/" + userLogin + "/completed", function( data ) {
-            var completedCourses = data;
-            var coreHtml ="", concentrationHtml="";
-            for (var i = 0; i < data.length; i++){
-                var eachCourse = data[i];
-                if (data[i].courseMajor == "Core" ){
-                    coreHtml += "<li>" + data[i].courseName + " - " + data[i].courseSection + "</li>";
+            $.get("/api/student/" + userLogin, function (data) {
+                $("#student-name-val").html(data.studentName);
+                $("#student-gnumber-val").html(data.studentGNumber);
+                $("#student-level-val").html(data.studentClassLevel);
+                $("#student-major-val").html(data.studentMajor);
+                $("#student-conc-val").html(data.studentConcentration);
+                if (linkedInLinked) {
+                    $("#student-linkedin-val").html(data.studentLinkedIn);
                 }
-                else{
-                    concentrationHtml += "<li>" + data[i].courseName + " - " + data[i].courseSection + "</li>";
+                else {
+                    $("#student-linkedin-val").html("Not Yet Provided. <a id='linkedin-link-summary' class='btn btn-block btn-social btn-linkedin'><span class='col-md-4 fa fa-linkedin'></span> Link Your LinkedIn!</a>");
                 }
-            }
-            $("#core-classes").html(coreHtml);
-            $("#concentration-classes").html(concentrationHtml);
-        });
+            });
 
-        displayLoadingPage();
-
+            $.get("/api/student/" + userLogin + "/completed", function (data) {
+                var completedCourses = data;
+                var coreHtml = "", concentrationHtml = "";
+                for (var i = 0; i < data.length; i++) {
+                    var eachCourse = data[i];
+                    if (data[i].courseMajor == "Core") {
+                        coreHtml += "<li>" + data[i].courseName + " - " + data[i].courseSection + "</li>";
+                    }
+                    else {
+                        concentrationHtml += "<li>" + data[i].courseName + " - " + data[i].courseSection + "</li>";
+                    }
+                }
+                $("#core-classes").html(coreHtml);
+                $("#concentration-classes").html(concentrationHtml);
+            });
+            displayLoadingPage();
+        }
+        else{
+            setTimeout(function(){
+                $('#login-alert').show();
+            }, 1000)
+        }
+        $('#verify-process-tag-login').hide();
     });
-       
+
 
     // Display the textbox to type in LinkedIn Address
-    $('#linkedin-link').click(function(event){
+    $('#linkedin-link').click(function (event) {
         event.preventDefault();
+        $('#new-feature').modal('hide');
+        // Load up a new modal...
         $('#linkedin-verify-template').modal('show');
-
     });
 
     // Display verify page by appending after the input textbox
+    $('#verify-linkedin-button').click(function () {
+        $('#verify-process-tag-linkedin').show();
+        setTimeout(function () {
+            $('$verify-process-tag-linkedin').hide();
+            $.each(linkedUrlList, function (index, value) {
+                if ($('#linkedin-url').val() == value) {
+                    $('#verify-linkedin').slideToggle("slow");
+                }
+                else {
+                    $('#linkedin-error-label').show();
+                }
+            });
+        }, 1000);
+
+    });
+    // Slide toggle to close the verify page
+    $('#reject-linkedin').click(function () {
+        $('#verify-linkedin').slideToggle("slow");
+    });
 
     // Verify linkedin page
     $('[data-toggle=tooltip]').tooltip();
 
     // Create a new registration
-    $("#create").click(function(event){
+    $("#create").click(function (event) {
         event.preventDefault();
         $("#main-menu-template").hide();
         $("#new-registration-template").show();
 
-        
-        $.get( "/api/student/get-master-dummy", function( data ) {
-            alert( "Student ID: " + data.studentId );
-            alert( "Student Title: " + data.title );
-            alert( "Student Category: " + data.category );
-            if (data.title == 'Master'){
+
+        $.get("/api/student/get-master-dummy", function (data) {
+            alert("Student ID: " + data.studentId);
+            alert("Student Title: " + data.title);
+            alert("Student Category: " + data.category);
+            if (data.title == 'Master') {
                 dynamicClassList = allMasterClasses;
             }
-            else{
+            else {
                 dynamicClassList = allUndergradClasses;
             }
             renderClassList();
@@ -121,26 +162,26 @@ $(function() {
     });
 
     // Modify the existing registration - STILL DUMMY - TESTING MASTER VS UNDERGRADS
-    $("#modify").click(function(event){
+    $("#modify").click(function (event) {
         event.preventDefault();
         $("#main-menu-template").hide();
         $("#new-registration-template").show();
 
-        $.get( "/api/student/get-undergrad-dummy", function( data ) {
-            alert( "Student ID: " + data.studentId );
-            alert( "Student Title: " + data.title );
-            alert( "Student Category: " + data.category );
-            if (data.title == 'Master'){
+        $.get("/api/student/get-undergrad-dummy", function (data) {
+            alert("Student ID: " + data.studentId);
+            alert("Student Title: " + data.title);
+            alert("Student Category: " + data.category);
+            if (data.title == 'Master') {
                 dynamicClassList = allMasterClasses;
             }
-            else{
+            else {
                 dynamicClassList = allUndergradClasses;
             }
             renderClassList();
         });
-    });    
+    });
 
-    $("#new-registration-questionnaire-template").hide();
+
 
     // Autocomplete Search for undergrads
     $('#undergrads').on('change', function () {
@@ -156,7 +197,7 @@ $(function() {
     }).change();
     $('#class-selection').on('autocompleteselect', function (e, ui) {
         $('#class-selection-val').html('You selected: ' + ui.item.value);
-    });    
+    });
 
     // Autocomplete trigger for undergrads
     // $("#undergrads").autocomplete({
@@ -164,18 +205,18 @@ $(function() {
     // });
 
 
-    $("#student-questionnaire").click(function(event){   
+    $("#student-questionnaire").click(function (event) {
         $("#new-registration-direct-search-template").hide();
         $("#new-registration-questionnaire-template").show();
     });
 
-    $("#class-level").change(function(){
-        if($(this).prop("checked") == true){
+    $("#class-level").change(function () {
+        if ($(this).prop("checked") == true) {
             classLevelGrad = true;
-        }else{
+        } else {
             classLevelGrad = false;
         }
-    });    
+    });
 
     // $("#check-all-major").click(function () {
     //     $(".major").prop('checked', $(this).prop('checked'));
@@ -183,49 +224,49 @@ $(function() {
 
     $("#check-all-major").change(function () {
         $(".major").prop('checked', $(this).prop('checked')).change();
-    });    
+    });
 });
 
 
-function displayLoadingPage(){
+function displayLoadingPage() {
     $('#loading-page-template').show();
-    var elem = $("#loading-bar"); 
+    var elem = $("#loading-bar");
     var barWidth = 1;
     var id = setInterval(frame, 1);
     function frame() {
         if (barWidth >= 100) {
             clearInterval(id);
-            setTimeout(function(){ 
+            setTimeout(function () {
                 $('#loading-page-template').hide();
                 $('#fixed-navbar-template').show();
                 $('#main-menu-template').show();
-                $('#new-feature').modal('show'); 
-            }, 1250);
+                $('#new-feature').modal('show');
+            }, 1000);
         } else {
-           
-            barWidth+=1; 
+
+            barWidth += 1;
             $("#complete-percentage").html(barWidth);
-            elem.width(barWidth + '%'); 
+            elem.width(barWidth + '%');
         }
     }
-    
+
 }
 
 
-function renderClassList(){
+function renderClassList() {
     // Autocomplete trigger for masters/undergrads
     $("#class-selection").autocomplete({
         source: dynamicClassList
     });
 }
 
-function displayNextQuestion(changed){
+function displayNextQuestion(changed) {
 
 }
 
-function slideClassCategory(){
+function slideClassCategory() {
 
- 
+
 }
 
 

@@ -3,14 +3,11 @@
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <div class="panel-title">Sign In</div>
-                <div style="float:right; font-size: 80%; position: relative; top:-10px">
-                    <a href="#">Forgot password?</a>
-                </div>
             </div>
 
             <div style="padding-top:30px" class="panel-body">
 
-                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12">Invalid username or password. Please try again!</div>
 
                 <form id="loginform" class="form-horizontal" role="form">
 
@@ -42,24 +39,12 @@
                     <div style="margin-top:10px" class="form-group">
                         <!-- Button -->
 
-                        <div class="col-sm-12 controls">
-                            <a id="btn-login" href="#" class="btn btn-success">Login </a>
-                            <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
-
+                        <div class="col-md-12 controls">
+                            <a id="btn-login" href="#" class="btn btn-success col-md-6">Login </a> 
                         </div>
+                        <span id="verify-process-tag-login" class="label label-primary" style="display:none">Verifying...</span>
                     </div>
-
-
-                    <div class="form-group">
-                        <div class="col-md-12 control">
-                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
-                                Don't have an account!
-                                <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-                                    Sign Up Here
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </form>
 
 

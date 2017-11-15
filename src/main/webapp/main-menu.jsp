@@ -32,6 +32,7 @@
 	<script src="${pageContext.request.contextPath}/js/lib/json2.js" type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/js/lib/jquery-ui.js" type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/js/lib/bootstrap-toggle.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/js/lib/docs.js" type="text/javascript"></script>
 	<!-- ========= -->
 	<!-- JavaScript Function -->
 	<!-- ========= -->
@@ -150,8 +151,8 @@
 
 	</div>
 
-	<div class="modal fade body-content" id="linkedin-verify-template" role="dialog">
-		<jsp:include page="/linkedin-successful.jsp" />
+	<div class="modal fade body-content" id="linkedin-verify-template" role="dialog" aria-labelledby="verify-linkedin-label">
+		<jsp:include page="/input-linkedin.jsp" />
 	</div>
 	
 	<div class="modal fade body-content" id="new-feature" tabindex="-1" role="dialog" aria-labelledby="new-feature-label">
@@ -186,6 +187,26 @@
 							</a>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal HTML -->
+	<div id="confirm-success" class="modal fade body-content">
+		<div class="modal-dialog modal-confirm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="icon-box">
+						<i class="material-icons">&#xE876;</i>
+					</div>
+					<h4 class="modal-title">Awesome!</h4>
+				</div>
+				<div class="modal-body">
+					<p class="text-center">Your LinkedIn Profile Link has been added to our system. Click OK to Proceed</p>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
 				</div>
 			</div>
 		</div>

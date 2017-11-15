@@ -21,7 +21,8 @@
         </div>     
         <div>
             <button class="btn btn-info pull-left" data-toggle="tooltip" data-placement="top" title="Follow to piojoman">Follow</button>
-            <button href="#confirm-success" class="btn btn-primary btn-block trigger-btn" data-toggle="modal"> Confirm Your LinkedIn Address </button>                        
+            <button href="#confirm-success" class="btn btn-primary btn-block trigger-btn" data-toggle="modal"> Confirm Your LinkedIn Address </button>     
+            <button id="reject-linkedin" class="btn btn-primary btn-block trigger-btn" > Not My LinkedIn Profile </button>                     
             <button class="btn btn-danger pull-right" style="margin-left:5px;" data-toggle="tooltip" data-placement="top" title="Block"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true" ></span></button>
             <button class="btn btn-success pull-right" data-toggle="tooltip" data-placement="top" title="Write a comment" ><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>                        
         </div>                                         

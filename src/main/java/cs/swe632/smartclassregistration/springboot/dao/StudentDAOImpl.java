@@ -1,5 +1,6 @@
 package cs.swe632.smartclassregistration.springboot.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -69,9 +70,16 @@ public class StudentDAOImpl implements StudentDAO{
 	@Override
 	public void setStudentCompletedCourses(String studentUsername, Course completedCourse) {
 		Student specificStudent = this.getStudentByUsername(studentUsername);
-		specificStudent.getStudentCompletedCourses().add(completedCourse);
-		specificStudent.setStudentCompletedCourses(specificStudent.getStudentCompletedCourses());
-		entityManager.flush();
+		List<Course> completedCourseList = specificStudent.getStudentCompletedCourses();
+		
+		if (completedCourseList == null) {
+			completedCourseList = new ArrayList<Course>();
+		}
+		if (!completedCourseList.contains(completedCourse)) {
+			completedCourseList.add(completedCourse);
+			specificStudent.setStudentCompletedCourses(specificStudent.getStudentCompletedCourses());
+			entityManager.flush();
+		}
 	}
 
 	
@@ -154,9 +162,15 @@ public class StudentDAOImpl implements StudentDAO{
 	@Override
 	public void setStudentCurrentRegisteredCourses(String studentUsername, Course registeredCourse) {
 		Student specificStudent = this.getStudentByUsername(studentUsername);
-		specificStudent.getStudentCurrentRegisteredCourses().add(registeredCourse);
-		specificStudent.setStudentCurrentRegisteredCourses(specificStudent.getStudentCurrentRegisteredCourses());
-		entityManager.flush();
+		List<Course> currentRegisteredCourseList = specificStudent.getStudentCurrentRegisteredCourses();
+		if (currentRegisteredCourseList == null) {
+			currentRegisteredCourseList = new ArrayList<Course>();
+		}
+		if (!currentRegisteredCourseList.contains(registeredCourse)) {
+			currentRegisteredCourseList.add(registeredCourse);
+			specificStudent.setStudentCurrentRegisteredCourses(specificStudent.getStudentCurrentRegisteredCourses());
+			entityManager.flush();
+		}
 	}
 	
 }

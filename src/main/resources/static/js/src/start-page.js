@@ -44,15 +44,17 @@ var classLevelGrad = false;
 var changed = false;
 
 var loginVerified = false;
-var userLogin;
+var userLoginData;
 
 var linkedInLinked = false;
+
+var searchCriteriaLevel = "";
 
 $(function () {
 
     $('#btn-login').click(function () {
         $('#verify-process-tag-login').show();
-            
+
         $('#login-alert').hide();
         $.each(loginInfo, function (index, value) {
             if ($('#login-username').val() == value.username) {
@@ -61,14 +63,15 @@ $(function () {
                 }
             }
         });
-    
-        
-        if (loginVerified){
+
+
+        if (loginVerified) {
             loginVerified = true;
             userLogin = $('#login-username').val();
             $('#login-template').hide();
 
             $.get("/api/student/" + userLogin, function (data) {
+                userLoginData = data;
                 $("#student-name-val").html(data.studentName);
                 $("#student-gnumber-val").html(data.studentGNumber);
                 $("#student-level-val").html(data.studentClassLevel);
@@ -80,7 +83,19 @@ $(function () {
                 else {
                     $("#student-linkedin-val").html("Not Yet Provided. <a id='linkedin-link-summary' class='btn btn-block btn-social btn-linkedin'><span class='col-md-4 fa fa-linkedin'></span> Link Your LinkedIn!</a>");
                 }
+                // After data is loaded, show the switch based on the class level
+                // By default it is checked for Grad
+
+                if (userLoginData.studentMajor == "Under Graduate") {
+                    $("#class-level").prop("checked", false).change();
+                    searchCriteriaLevel = "undergrad";
+                }
+                else{
+                    searchCriteriaLevel = "grad";
+                }
             });
+
+
 
             $.get("/api/student/" + userLogin + "/completed", function (data) {
                 var completedCourses = data;
@@ -99,8 +114,8 @@ $(function () {
             });
             displayLoadingPage();
         }
-        else{
-            setTimeout(function(){
+        else {
+            setTimeout(function () {
                 $('#login-alert').show();
             }, 1000)
         }
@@ -120,7 +135,7 @@ $(function () {
     $('#verify-linkedin-button').click(function () {
         $('#verify-process-tag-linkedin').show();
         setTimeout(function () {
-            $('$verify-process-tag-linkedin').hide();
+            $('#verify-process-tag-linkedin').hide();
             $.each(linkedUrlList, function (index, value) {
                 if ($('#linkedin-url').val() == value) {
                     $('#verify-linkedin').slideToggle("slow");
@@ -181,6 +196,15 @@ $(function () {
         });
     });
 
+    $(".major").change(function () {
+        if ($("#software-engineer").prop("checked") || $("#computer-science").prop("checked")) {
+            $("#calculate-suggestion").slideDown("slow");
+        }
+        else {
+            $("#calculate-suggestion").slideUp("slow");
+        }
+    })
+
 
 
     // Autocomplete Search for undergrads
@@ -206,25 +230,122 @@ $(function () {
 
 
     $("#student-questionnaire").click(function (event) {
-        $("#new-registration-direct-search-template").hide();
+        // $("#new-registration-direct-search-template").hide();
         $("#new-registration-questionnaire-template").show();
     });
 
-    $("#class-level").change(function () {
-        if ($(this).prop("checked") == true) {
-            classLevelGrad = true;
-        } else {
-            classLevelGrad = false;
-        }
-    });
+    // $("#class-level").change(function () {
+    //     if ($(this).prop("checked") == true) {
+    //         classLevelGrad = true;
+    //     } else {
+    //         classLevelGrad = false;
+    //     }
+    // });
 
     // $("#check-all-major").click(function () {
     //     $(".major").prop('checked', $(this).prop('checked'));
     // });
 
+    $("#class-level").change(function () {
+        if ($(this).prop("checked") == true) {
+            searchCriteriaLevel = "grad";
+            if (userLoginData.studentClassLevel == "Under Graduate") {
+                $("#class-level-mismatch").slideDown();
+            }
+            else {
+                $("#class-level-mismatch").slideUp();
+            }
+        }
+        else {
+            searchCriteriaLevel = "undergrad";
+            if (userLoginData.studentClassLevel == "Graduate") {
+                $("#class-level-mismatch").slideDown();
+            }
+            else {
+                $("#class-level-mismatch").slideUp();
+            }
+        }
+    });
+
     $("#check-all-major").change(function () {
         $(".major").prop('checked', $(this).prop('checked')).change();
     });
+
+
+
+
+    $("#calculate-suggestion").click(function () {
+        $("#class-search-result-template").slideDown();
+        // Reset search data
+        $("#search-class-result").html("");
+
+        var textChange = "";
+        var searchResultList="";
+        if ($("#software-engineer").prop('checked')) {
+            $.get("/api/courses/" + searchCriteriaLevel + "/swe", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    var eachCourse = data[i];
+                    // If the the text change is different from the current data course name, write <li>
+                    if (textChange != data[i].courseName) {
+                        if (textChange != "") {
+                            searchResultList += "</ul>"
+                            searchResultList += "</li>"
+                        }
+                        // Update the text change
+                        textChange = data[i].courseName;
+                        searchResultList += ("<li>" + data[i].courseName);
+                        searchResultList += ("<button id='" + data[i] + "-detailsbutton'" + " class='btn btn-primary'>Details</button>");
+                        searchResultList += "<ul>";
+                    }
+                    searchResultList += ("<li>" + data[i].courseName + " - " + data[i].courseSection + " " + data[i].courseDate + " - " + data[i].courseTimePeriod);
+
+                    searchResultList += ("<button id='" + data[i].courseName + "-" + data[i].courseSection + "-registerbutton'" + " class='btn btn-success'");
+                    
+                    searchResultList += (" onclick='register" + data[i].courseName + "Section" + data[i].courseSection + "'>Register</button>");
+
+                    searchResultList += "</li>";
+
+                }
+                $("#search-class-result").append(searchResultList);
+            });
+        }
+        // Reset the text change
+        textChange = ""
+
+        if ($("#computer-science").prop('checked')) {
+            $.get("/api/courses/" + searchCriteriaLevel + "/cs", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    var eachCourse = data[i];
+                    // If the the text change is different from the current data course name, write <li>
+                    if (textChange != data[i].courseName) {
+                        if (textChange != "") {
+                            searchResultList += "</ul>"
+                            searchResultList += "</li>"
+                        }
+                        // Update the text change
+                        textChange = data[i].courseName;
+                        searchResultList += ("<li>" + data[i].courseName);
+                        searchResultList += ("<button id='" + data[i] + "-detailsbutton'" + " class='btn btn-primary'>Details</button>");
+                        searchResultList += "<ul>";
+                    }
+                    searchResultList += ("<li>" + data[i].courseName + " - " + data[i].courseSection + " " + data[i].courseDate + " - " + data[i].courseTimePeriod);
+
+                    searchResultList += ("<button id='" + data[i].courseName + "-" + data[i].courseSection + "-registerbutton'" + " class='btn btn-success'");
+                    
+                    searchResultList += (" onclick='register" + data[i].courseName + "Section" + data[i].courseSection + "'>Register</button>");
+
+                    searchResultList += "</li>";
+                }
+                $("#search-class-result").append(searchResultList);
+            });
+        }
+    });
+
+    // Register for SWE645
+    $("#SWE645-01-registerbutton").click(function(){
+
+    })
+
 });
 
 
@@ -260,8 +381,10 @@ function renderClassList() {
     });
 }
 
-function displayNextQuestion(changed) {
-
+function registerSWE645Section01() {
+    $(".registered-class").html("SWE645 - Section 01");
+    $("#new-registration-template").hide();
+    $("#registration-suggestion-template").show();
 }
 
 function slideClassCategory() {

@@ -402,6 +402,9 @@ public class StudentClassDataRestController {
 		divyaVajja.setStudentMajor("SWE");
 		divyaVajja.setStudentConcentration("Software Development");
 		
+		this.addStudentSetup(divyaVajja);
+		
+		
         this.addStudentSetup(vietTran); 
         
         studentService.setStudentCompletedCourses("vtran18", swe632Section1);
@@ -439,7 +442,7 @@ public class StudentClassDataRestController {
         studentService.setStudentCurrentRegisteredCourses("dvajja", cs471Section2);
         studentService.setStudentCurrentRegisteredCourses("dvajja", cs484Section1);
 
-        this.addStudentSetup(divyaVajja);
+        
         return "success";
 	}
 	

@@ -85,42 +85,42 @@ public class CourseDAOImpl implements CourseDAO{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Course> getAllUndergradCourses() {
-		String hql = "from Course as crs ORDER BY crs.courseName where crs.courseLevel = :level";
+		String hql = "from Course crs where crs.courseLevel = :level ORDER BY crs.courseName";
 		return (List<Course>) entityManager.createQuery(hql).setParameter("level", "Undergrad").getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Course> getAllUndergradCoursesSwe() {
-		String hql = "from Course as crs ORDER BY crs.courseName where crs.courseLevel = :level and crs.courseMajor = :major";
+		String hql = "from Course crs where crs.courseLevel = :level and crs.courseMajor = :major ORDER BY crs.courseName";
 		return (List<Course>) entityManager.createQuery(hql).setParameter("level", "Undergrad").setParameter("major", "SWE").getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Course> getAllUndergradCoursesCs() {
-		String hql = "from Course as crs ORDER BY crs.courseName where crs.courseLevel = :level and crs.courseMajor = :major";
+		String hql = "from Course crs where crs.courseLevel = :level and crs.courseMajor = :major ORDER BY crs.courseName";
 		return (List<Course>) entityManager.createQuery(hql).setParameter("level", "Undergrad").setParameter("major", "CS").getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Course> getAllGradCourses() {
-		String hql = "from Course as crs ORDER BY crs.courseName where crs.courseLevel = :level";
+		String hql = "from Course crs where crs.courseLevel = :level ORDER BY crs.courseName";
 		return (List<Course>) entityManager.createQuery(hql).setParameter("level", "Grad").getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Course> getAllGradCoursesSwe() {
-		String hql = "from Course as crs ORDER BY crs.courseName where crs.courseLevel = :level and crs.courseMajor = :major";
+		String hql = "from Course crs where crs.courseLevel = :level and crs.courseMajor = :major ORDER BY crs.courseName";
 		return (List<Course>) entityManager.createQuery(hql).setParameter("level", "Grad").setParameter("major", "SWE").getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Course> getAllGradCoursesCs() {
-		String hql = "from Course as crs ORDER BY crs.courseName where crs.courseLevel = :level and crs.courseMajor = :major";
+		String hql = "from Course crs where crs.courseLevel = :level and crs.courseMajor = :major ORDER BY crs.courseName";
 		return (List<Course>) entityManager.createQuery(hql).setParameter("level", "Grad").setParameter("major", "CS").getResultList();
 	}
 

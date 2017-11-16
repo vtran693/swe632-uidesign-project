@@ -10,6 +10,28 @@
 
         <ul id="search-class-result"></ul>
 
+        <div id="class-detail-CS550-template" style="display:none">
+            <jsp:include page="/class-detail-CS550.jsp" />
+        </div>
+        <div id="class-detail-CS584-template" style="display:none">
+            <jsp:include page="/class-detail-CS584.jsp" />
+        </div>
+        <div id="class-detail-SWE437-template" style="display:none">
+            <jsp:include page="/class-detail-SWE437.jsp" />
+        </div>
+        <div id="class-detail-SWE621-template" style="display:none">
+            <jsp:include page="/class-detail-SWE621.jsp" />
+        </div>
+        <div id="class-detail-SWE632-template" style="display:none">
+            <jsp:include page="/class-detail-SWE632.jsp" />
+        </div>
+
+        <div id="class-detail-SWE632-updated-template" style="display:none">
+            <jsp:include page="/class-detail-SWE632-updated.jsp" />
+        </div>
+        <div id="class-detail-SWE645-template" style="display:none">
+            <jsp:include page="/class-detail-SWE645.jsp" />
+        </div>
 
     </div>
 

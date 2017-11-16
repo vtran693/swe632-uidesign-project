@@ -20,8 +20,8 @@ var loginInfo = [
 
 var linkedUrlList = [
     "https://www.linkedin.com/in/viet-tran-272570108/",
-	"https://www.linkedin.com/in/nuthanat/",
-	"https://www.linkedin.com/in/divya-vajja-ab80a478/"
+    "https://www.linkedin.com/in/nuthanat/",
+    "https://www.linkedin.com/in/divya-vajja-ab80a478/"
 ];
 
 //Data
@@ -94,7 +94,7 @@ $(function () {
                     $("#class-level").prop("checked", false).change();
                     searchCriteriaLevel = "undergrad";
                 }
-                else{
+                else {
                     searchCriteriaLevel = "grad";
                 }
             });
@@ -104,7 +104,7 @@ $(function () {
             $.get("/api/student/" + userLogin + "/completed", function (data) {
 
                 var completedCourses = data;
-                coreHtml = "" 
+                coreHtml = ""
                 concentrationHtml = "";
                 for (var i = 0; i < data.length; i++) {
                     var eachCourse = data[i];
@@ -112,13 +112,13 @@ $(function () {
                         coreHtml += ("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "</li>");
                     }
                     else {
-                        concentrationHtml += ("<li>" + data[i].courseName  + " - " + "Section " + data[i].courseSection + "</li>");
+                        concentrationHtml += ("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "</li>");
                     }
                 }
-                if (coreHtml == ""){
+                if (coreHtml == "") {
                     coreHtml = "You have not taken any Core classes yet";
                 }
-                if (concentrationHtml == ""){
+                if (concentrationHtml == "") {
                     concentrationHtml = "You have not taken any Concentration classes yet";
                 }
                 $("#core-classes").html(coreHtml);
@@ -291,7 +291,7 @@ $(function () {
         $("#search-class-result").html("");
 
         var textChange = "";
-        var searchResultList="";
+        var searchResultList = "";
         if ($("#software-engineer").prop('checked')) {
             $.get("/api/courses/" + searchCriteriaLevel + "/swe", function (data) {
                 for (var i = 0; i < data.length; i++) {
@@ -305,14 +305,14 @@ $(function () {
                         // Update the text change
                         textChange = data[i].courseName;
                         searchResultList += ("<li>" + data[i].courseName);
-                        searchResultList += ("<button id='" + data[i] + "-detailsbutton'" + " class='btn btn-primary'>Details</button>");
+                        searchResultList += ("<button id='" + data[i].courseName + "-detailsbutton'" + " class='btn btn-primary' onclick='view" + data[i].courseName + "Details()'>Details</button>");
                         searchResultList += "<ul>";
                     }
                     searchResultList += ("<li>" + data[i].courseName + " - " + data[i].courseSection + " " + data[i].courseDate + " - " + data[i].courseTimePeriod);
 
                     searchResultList += ("<button id='" + data[i].courseName + "-" + data[i].courseSection + "-registerbutton'" + " class='btn btn-success'");
-                    
-                    searchResultList += (" onclick='register" + data[i].courseName + "Section" + data[i].courseSection + "'>Register</button>");
+
+                    searchResultList += (" onclick='register" + data[i].courseName + "Section" + data[i].courseSection + "()'>Register</button>");
 
                     searchResultList += "</li>";
 
@@ -321,7 +321,7 @@ $(function () {
             });
         }
         // Reset the text change
-        textChange = ""
+        textChange = "";
 
         if ($("#computer-science").prop('checked')) {
             $.get("/api/courses/" + searchCriteriaLevel + "/cs", function (data) {
@@ -336,16 +336,17 @@ $(function () {
                         // Update the text change
                         textChange = data[i].courseName;
                         searchResultList += ("<li>" + data[i].courseName);
-                        searchResultList += ("<button id='" + data[i] + "-detailsbutton'" + " class='btn btn-primary'>Details</button>");
+                        searchResultList += ("<button id='" + data[i].courseName + "-detailsbutton'" + " class='btn btn-primary' onclick='view" + data[i].courseName + "Details()'>Details</button>");
                         searchResultList += "<ul>";
                     }
                     searchResultList += ("<li>" + data[i].courseName + " - " + data[i].courseSection + " " + data[i].courseDate + " - " + data[i].courseTimePeriod);
 
                     searchResultList += ("<button id='" + data[i].courseName + "-" + data[i].courseSection + "-registerbutton'" + " class='btn btn-success'");
-                    
-                    searchResultList += (" onclick='register" + data[i].courseName + "Section" + data[i].courseSection + "'>Register</button>");
+
+                    searchResultList += (" onclick='register" + data[i].courseName + "Section" + data[i].courseSection + "()'>Register</button>");
 
                     searchResultList += "</li>";
+
                 }
                 $("#search-class-result").append(searchResultList);
             });
@@ -353,7 +354,7 @@ $(function () {
     });
 
     // Register for SWE645
-    $("#SWE645-01-registerbutton").click(function(){
+    $("#SWE645-01-registerbutton").click(function () {
 
     })
 
@@ -397,9 +398,58 @@ function registerSWE645Section01() {
     $("#registration-suggestion-template").show();
 }
 
+function viewSWE621Details() {
+    $("#class-detail-SWE621-template").slideDown();
+    $("#class-detail-SWE632-template").hide();
+    $("#class-detail-SWE645-template").hide();
+    $("#class-detail-SWE437-template").hide();
+    $("#class-detail-CS550-template").hide();
+    $("#class-detail-CS584-template").hide();
+}
+
+function viewSWE632Details() {
+    $("#class-detail-SWE621-template").hide();
+    $("#class-detail-SWE632-template").slideDown();
+    $("#class-detail-SWE645-template").hide();
+    $("#class-detail-SWE437-template").hide();
+    $("#class-detail-CS550-template").hide();
+    $("#class-detail-CS584-template").hide();
+}
+function viewSWE645Details() {
+    $("#class-detail-SWE621-template").hide();
+    $("#class-detail-SWE632-template").hide();
+    $("#class-detail-SWE645-template").slideDown();
+    $("#class-detail-SWE437-template").hide();
+    $("#class-detail-CS550-template").hide();
+    $("#class-detail-CS584-template").hide();
+}
+function viewSWE437Details() {
+    $("#class-detail-SWE621-template").hide();
+    $("#class-detail-SWE632-template").hide();
+    $("#class-detail-SWE645-template").hide();
+    $("#class-detail-SWE437-template").slideDown();
+    $("#class-detail-CS550-template").hide();
+    $("#class-detail-CS584-template").hide();
+}
+function viewCS550Details() {
+    $("#class-detail-SWE621-template").hide();
+    $("#class-detail-SWE632-template").hide();
+    $("#class-detail-SWE645-template").hide();
+    $("#class-detail-SWE437-template").hide();
+    $("#class-detail-CS550-template").slideDown();
+    $("#class-detail-CS584-template").hide();
+}
+function viewCS584Details() {
+    $("#class-detail-SWE621-template").hide();
+    $("#class-detail-SWE632-template").hide();
+    $("#class-detail-SWE645-template").hide();
+    $("#class-detail-SWE437-template").hide();
+    $("#class-detail-CS550-template").hide();
+    $("#class-detail-CS584-template").slideDown();
+}
+
 function slideClassCategory() {
-
-
+    $("#class-detail-CS550-template").slideDown();
 }
 
 

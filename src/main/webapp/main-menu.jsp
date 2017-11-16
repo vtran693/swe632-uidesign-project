@@ -132,47 +132,89 @@
 					</div>
 					</div>
 				</div>
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. Main Menu</a>
-						</h4>
-					</div>
-					<div id="collapseThree" class="panel-collapse collapse">
-						<div class="panel-body">
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. Main Menu</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse">
+					<div class="panel-body">
+					<div class="list-group">
 
-							<div class="list-group">
+						
+							
+							<div class="panel-group">
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title">
+						        <a href="#" id="create">CREATE A NEW REGISTRATION SESSION</a>
+						      </h4>
+						    </div>
 
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapseModify">MODIFY YOUR CURRENT REGISTRATION SESSION</a>
-								<div id="collapseModify" class="panel-collapse collapse">
+						    </div>
+						  </div>
+							
+						<div class="panel-group">
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title">
+						        <a data-toggle="collapse" href="#collapseModify1">VIEW YOUR CURRENT REGISTRATION</a>
+						      </h4>
+						    </div>
+						    <div id="collapseModify1" class="panel-collapse collapse">
+						      <div class="panel-body">
+						      		<ul id="current-reg">
+                                            <li>CS584 - Data Mining</li>
+                                        </ul>
+								</div>
+						      </div>
+						    </div>
+						  </div>
+						
+						<div class="panel-group">
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title">
+						        <a data-toggle="collapse" href="#collapseModify">MODIFY YOUR CURRENT REGISTRATION SESSION</a>
+						      </h4>
+						    </div>
+						    <div id="collapseModify" class="panel-collapse collapse">
+						      <div class="panel-body">
+						      		<div class="alert alert-success alert-dismissable">
+  										<a href="#" class="close" data-dismiss="alert" aria-label="close">Delete</a>
+  										<strong>CS 637 - Component Testing</strong> 
+									</div>
 									<div class="alert alert-success alert-dismissable">
-										<a href="#" class="close" data-dismiss="alert" aria-label="close">Delete</a>
-										<strong>CS 637</strong>
+  										<a href="#" class="close" data-dismiss="alert" aria-label="close">Delete</a>
+  										<strong>CS 484 - Data Mining</strong> 
 									</div>
 								</div>
-								<br/>
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapseExisting">VIEW YOUR CURRENT REGISTRATION SESSION</a>
-								<div id="collapseExisting" class="panel-collapse collapse">
-
-									<ul id="current-reg">
-										<li>CS584 - Data Mining</li>
-									</ul>
+						      </div>
+						    </div>
+						  </div>
+						  
+						  <div class="panel-group">
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title">
+						        <a data-toggle="collapse" href="#collapseReview">WRITE REVIEW FOR A COMPLETED COURSE</a>
+						      </h4>
+						    </div>
+						    <div id="collapseReview" class="panel-collapse collapse">
+						      <div class="panel-body">
+						      		
 								</div>
-								<br/>
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapseReview">WRITE A REVIEW</a>
-								<div id="collapseReview" class="panel-collapse collapse">
-
-								</div>
-								<div class="list-group">
-
-									<a href="#" id="create" class="list-group-item">
-										CREATE A NEW REGISTRATION SESSION
-									</a>
-									<a href="#" class="list-group-item">
-										VIEW YOUR CURRENT REGISTRATION SESSION
-									</a>
-								</div>
-							</div>
+						      </div>
+						    </div>
+						  </div>
+						
+					
+						
+							
+							</div>	
+								
 						</div>
 					</div>
 				</div>

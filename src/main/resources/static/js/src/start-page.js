@@ -174,9 +174,7 @@ $(function () {
 
 
         $.get("/api/student/get-master-dummy", function (data) {
-            alert("Student ID: " + data.studentId);
-            alert("Student Title: " + data.title);
-            alert("Student Category: " + data.category);
+
             if (data.title == 'Master') {
                 dynamicClassList = allMasterClasses;
             }
@@ -194,9 +192,7 @@ $(function () {
         $("#new-registration-template").show();
 
         $.get("/api/student/get-undergrad-dummy", function (data) {
-            alert("Student ID: " + data.studentId);
-            alert("Student Title: " + data.title);
-            alert("Student Category: " + data.category);
+
             if (data.title == 'Master') {
                 dynamicClassList = allMasterClasses;
             }
@@ -451,6 +447,9 @@ function viewCS584Details() {
 function slideClassCategory() {
     $("#class-detail-CS550-template").slideDown();
 }
+
+
+
 
 
 

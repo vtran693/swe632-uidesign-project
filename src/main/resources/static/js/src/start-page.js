@@ -135,6 +135,12 @@ $(function () {
     });
 
 
+    // Ok button
+    $("#ok-button").click(function(){
+        $("#student-linkedin-val").html(userLoginData.studentLinkedIn);
+    });
+    
+
     // Display the textbox to type in LinkedIn Address
     $('#linkedin-link').click(function (event) {
         event.preventDefault();
@@ -145,16 +151,27 @@ $(function () {
 
     // Display verify page by appending after the input textbox
     $('#verify-linkedin-button').click(function () {
+
+        var matched = false;
         $('#verify-process-tag-linkedin').show();
         setTimeout(function () {
             $('#verify-process-tag-linkedin').hide();
             $.each(linkedUrlList, function (index, value) {
                 if ($('#linkedin-url').val() == value) {
                     $('#verify-linkedin').slideToggle("slow");
+                    $("#verify-linkedin-button").hide();
+                    $("#not-now-linkedin-button").hide();
+                    matched = true;
                 }
             });
+            if (matched == true){
+                $('#linkedin-error-label').hide();
 
-            $('#linkedin-error-label').show();
+            }
+            else{
+                $('#linkedin-error-label').show();
+            }
+            
         }, 1000);
 
     });
@@ -300,13 +317,13 @@ $(function () {
                         }
                         // Update the text change
                         textChange = data[i].courseName;
-                        searchResultList += ("<li>" + data[i].courseName);
-                        searchResultList += ("<button id='" + data[i].courseName + "-detailsbutton'" + " class='btn btn-primary' onclick='view" + data[i].courseName + "Details()'>Details</button>");
+                        searchResultList += ("<li>" + data[i].courseName) ;
+                        searchResultList += ("<button id='" + data[i].courseName + "-detailsbutton'" + " class='btn btn-primary' style='margin-left:5cm' onclick='view" + data[i].courseName + "Details()'>Details</button>");
                         searchResultList += "<ul>";
                     }
                     searchResultList += ("<li>" + data[i].courseName + " - " + data[i].courseSection + " " + data[i].courseDate + " - " + data[i].courseTimePeriod);
 
-                    searchResultList += ("<button id='" + data[i].courseName + "-" + data[i].courseSection + "-registerbutton'" + " class='btn btn-success'");
+                    searchResultList += ("<button style='margin-left:0.3cm' id='" + data[i].courseName + "-" + data[i].courseSection + "-registerbutton'" + " class='btn btn-success'");
 
                     searchResultList += (" onclick='register" + data[i].courseName + "Section" + data[i].courseSection + "()'>Register</button>");
 
@@ -332,12 +349,12 @@ $(function () {
                         // Update the text change
                         textChange = data[i].courseName;
                         searchResultList += ("<li>" + data[i].courseName);
-                        searchResultList += ("<button id='" + data[i].courseName + "-detailsbutton'" + " class='btn btn-primary' onclick='view" + data[i].courseName + "Details()'>Details</button>");
+                        searchResultList += ("<button id='" + data[i].courseName + "-detailsbutton'" + " class='btn btn-primary col-md-2 offset-md-4' onclick='view" + data[i].courseName + "Details()'>Details</button>");
                         searchResultList += "<ul>";
                     }
                     searchResultList += ("<li>" + data[i].courseName + " - " + data[i].courseSection + " " + data[i].courseDate + " - " + data[i].courseTimePeriod);
 
-                    searchResultList += ("<button id='" + data[i].courseName + "-" + data[i].courseSection + "-registerbutton'" + " class='btn btn-success'");
+                    searchResultList += ("<button id='" + data[i].courseName + "-" + data[i].courseSection + "-registerbutton'" + " class='btn btn-success col-md-2 offset-md-4'");
 
                     searchResultList += (" onclick='register" + data[i].courseName + "Section" + data[i].courseSection + "()'>Register</button>");
 

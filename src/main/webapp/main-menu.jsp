@@ -276,7 +276,7 @@
 							<p class="text-center">Your LinkedIn Profile Link has been added to our system. Click OK to Proceed</p>
 						</div>
 						<div class="modal-footer">
-							<button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+							<button class="btn btn-success btn-block" data-dismiss="modal" id="ok-button">OK</button>
 						</div>
 					</div>
 				</div>

@@ -1,6 +1,6 @@
 <div class="alert alert-success">
     <strong>Success!</strong> You have successfully registered
-    <strong class="registered-class"></strong>!
+    <strong class="registered-class"></strong>!</div>
     <div class="panel panel-primary">
         <!-- Default panel contents -->
         <div class="panel-heading">Further Recommendations</div>
@@ -28,17 +28,35 @@
                     <!-- Default panel contents -->
                     <div class="panel-heading">SWE 632 Available Sections</div>
                     <div class="panel-body">
-                        <span>SWE 632 - Section 1: Wednesday - 7:20 to 10:00 <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Register</a></span> 
-                        <span>SWE 632 - Section 1: Wednesday - 7:20 to 10:00 <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Register</a></span>
+                        <div class="row">
+                            <ul>
+                                <li>
+                                    <span>SWE 632 - Section 1: Wednesday - 7:20 to 10:00 <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Register</a></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <ul>
+                                <li>
+                                    <span>SWE 632 - Section 1: Wednesday - 7:20 to 10:00 <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Register</a></span>       
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        
                     </div>
                 </div>
                 <div class="panel panel-info">
                     <!-- Default panel contents -->
                     <div class="panel-heading">SWE 637 Available Sections</div>
                     <div class="panel-body">
-                        <span>SWE 637 - Section 1: Monday - 4:30 to 7:10 <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Register</a></span> 
+                        <div class="row">
+                            <span>SWE 637 - Section 1: Monday - 4:30 to 7:10 <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Register</a></span> 
+                        </div>
                     </div>
-                </div>                
+                </div> 
+                
+                <button class="btn btn-primary" id="main-menu-navigation">Back to Main Menu</button>
            
             <!-- <ul>
                 <div id="core-classes-suggest-one"></div>

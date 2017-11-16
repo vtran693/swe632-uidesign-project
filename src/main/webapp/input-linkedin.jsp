@@ -27,7 +27,7 @@
                     <button class="btn btn-primary" id="verify-linkedin-button">Verify Link</button>
                 </div>
                 <div class="col-md-8">
-                    <button type="button" class="btn btn-warning" data-dismiss="modal"> Not Now</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal" id="not-now-linkedin-button"> Not Now</button>
                 </div>
             </div>
         </div>

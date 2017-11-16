@@ -149,10 +149,10 @@
 						  <div class="panel panel-default">
 						    <div class="panel-heading">
 						      <h4 class="panel-title">
-						        <a data-toggle="collapse" href="#collapseModify">VIEW YOUR CURRENT REGISTRATION</a>
+						        <a data-toggle="collapse" href="#collapseModify1">VIEW YOUR CURRENT REGISTRATION</a>
 						      </h4>
 						    </div>
-						    <div id="collapseModify" class="panel-collapse collapse">
+						    <div id="collapseModify1" class="panel-collapse collapse">
 						      <div class="panel-body">
 						      		<ul id="current-reg">
                                             <li>CS584 - Data Mining</li>

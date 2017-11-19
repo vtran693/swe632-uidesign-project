@@ -369,8 +369,25 @@ $(function () {
     // Register for SWE645
     $("#SWE645-01-registerbutton").click(function () {
 
-    })
+    });
 
+    // The back to main menu button at the suggestion page
+    $("#main-menu-navigation-button").click(function (event){
+        event.preventDefault();
+        returnHome();
+    });
+
+    // Navigation home logo click
+    $("#btn-home").click(function(){
+        returnHome();
+    });
+
+    // Write review page display
+    $("#write-review-option").click(function(){
+        $("main-menu-template").hide();
+        $("#write-review-template").show();
+
+    });
 });
 
 
@@ -464,6 +481,16 @@ function viewCS584Details() {
 function slideClassCategory() {
     $("#class-detail-CS550-template").slideDown();
 }
+
+function returnHome(){
+    $("#new-registration-template").hide();
+    $("#modify-registration-template").hide();
+    $("#registration-suggestion-template").hide();
+    $("#write-review-template").hide();
+    $("#main-menu-template").show();    
+}
+
+    	
 
 
 

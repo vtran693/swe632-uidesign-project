@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/custom/custom-stylesheet.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.scss" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/nav_bar.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/custom/review-style.css" />
 
 	<!-- For Linkedin Verification -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
@@ -66,6 +67,10 @@
 
 	<div id="registration-suggestion-template" class="body-content" style="display:none">
 		<jsp:include page="/registration-suggestion.jsp" />
+	</div>
+
+	<div id="write-review-template" class="body-content" style="display:none">
+		<jsp:include page="/write-review.jsp" />
 	</div>
 
 	<div id='main-menu-template' class='body-content' style="display:none">
@@ -130,157 +135,157 @@
 
 
 					</div>
-					</div>
 				</div>
 			</div>
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. Main Menu</a>
-					</h4>
-				</div>
-				<div id="collapseThree" class="panel-collapse collapse">
-					<div class="panel-body">
+		</div>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. Main Menu</a>
+				</h4>
+			</div>
+			<div id="collapseThree" class="panel-collapse collapse">
+				<div class="panel-body">
 					<div class="list-group">
 
-						
-							
-							<div class="panel-group">
-						  <div class="panel panel-default">
-						    <div class="panel-heading">
-						      <h4 class="panel-title">
-						        <a href="#" id="create">CREATE A NEW REGISTRATION SESSION</a>
-						      </h4>
-						    </div>
 
-						    </div>
-						  </div>
-							
+
 						<div class="panel-group">
-						  <div class="panel panel-default">
-						    <div class="panel-heading">
-						      <h4 class="panel-title">
-						        <a data-toggle="collapse" href="#collapseModify1">VIEW YOUR CURRENT REGISTRATION</a>
-						      </h4>
-						    </div>
-						    <div id="collapseModify1" class="panel-collapse collapse">
-						      <div class="panel-body">
-						      		<ul id="current-reg">
-                                            <li>CS584 - Data Mining</li>
-                                        </ul>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="#" id="create">CREATE A NEW REGISTRATION SESSION</a>
+									</h4>
 								</div>
-						      </div>
-						    </div>
-						  </div>
-						
+
+							</div>
+						</div>
+
 						<div class="panel-group">
-						  <div class="panel panel-default">
-						    <div class="panel-heading">
-						      <h4 class="panel-title">
-						        <a data-toggle="collapse" href="#collapseModify">MODIFY YOUR CURRENT REGISTRATION SESSION</a>
-						      </h4>
-						    </div>
-						    <div id="collapseModify" class="panel-collapse collapse">
-						      <div class="panel-body">
-						      		<div class="alert alert-success alert-dismissable">
-  										<a href="#" class="close" data-dismiss="alert" aria-label="close">Delete</a>
-  										<strong>CS 637 - Component Testing</strong> 
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" href="#collapseModify1">VIEW YOUR CURRENT REGISTRATION</a>
+									</h4>
+								</div>
+								<div id="collapseModify1" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul id="current-reg">
+											<li>CS584 - Data Mining</li>
+										</ul>
 									</div>
-									<div class="alert alert-success alert-dismissable">
-  										<a href="#" class="close" data-dismiss="alert" aria-label="close">Delete</a>
-  										<strong>CS 484 - Data Mining</strong> 
-									</div>
-								</div>
-						      </div>
-						    </div>
-						  </div>
-						  
-						  <div class="panel-group">
-						  <div class="panel panel-default">
-						    <div class="panel-heading">
-						      <h4 class="panel-title">
-						        <a data-toggle="collapse" href="#collapseReview">WRITE REVIEW FOR A COMPLETED COURSE</a>
-						      </h4>
-						    </div>
-						    <div id="collapseReview" class="panel-collapse collapse">
-						      <div class="panel-body">
-						      		
-								</div>
-						      </div>
-						    </div>
-						  </div>
-						
-					
-						
-							
-							</div>	
-								
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="modal fade body-content" id="linkedin-verify-template" role="dialog" aria-labelledby="verify-linkedin-label">
-				<jsp:include page="/input-linkedin.jsp" />
-			</div>
-
-			<div class="modal fade body-content" id="new-feature" tabindex="-1" role="dialog" aria-labelledby="new-feature-label">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-							<h4 class="modal-title" id="new-feature-label">New Feature - Built-in Social Network</h4>
-						</div>
-						<div class="modal-body">
-
-							<p>Our new class registration user interface would use your LinkedIn Profile to create an "internal social network" within
-								the school. By sharing your profile at our registration system, not only would you have an opportunity to match other
-								classmates of same career interests, but you could also allow our school’s affiliated partners to find you earlier.
-							</p>
-
-							<p>Your LinkedIn profile is public anyways, so why not using it properly to introduce yourself to the industry as soon
-								as possible? Before all these opportunities happen, we would need your permission to link your LinkedIn profile to
-								our system, and we would help you do the rest! By clicking on Linked My LinkedIn, you have read and agreed our Terms
-								and Conditions of our Privacy agreement.
-							</p>
-
-							<div class="row">
-								<div class="col-md-2">
-									<button type="button" class="btn btn-default" data-dismiss="modal"> Not Now</button>
-								</div>
-								<div class="col-md-6">
-									<a id="linkedin-link" class="btn btn-block btn-social btn-linkedin" data-dismiss="modal">
-										<span class="fa fa-linkedin"></span> Link Your LinkedIn!
-									</a>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
 
-			<!-- Modal HTML -->
-			<div id="confirm-success" class="modal fade body-content">
-				<div class="modal-dialog modal-confirm">
-					<div class="modal-content">
-						<div class="modal-header">
-							<div class="icon-box">
-								<i class="material-icons">&#xE876;</i>
+						<div class="panel-group">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" href="#collapseModify">MODIFY YOUR CURRENT REGISTRATION SESSION</a>
+									</h4>
+								</div>
+								<div id="collapseModify" class="panel-collapse collapse">
+									<div class="panel-body">
+										<div class="alert alert-success alert-dismissable">
+											<a href="#" class="close" data-dismiss="alert" aria-label="close">Delete</a>
+											<strong>CS 637 - Component Testing</strong>
+										</div>
+										<div class="alert alert-success alert-dismissable">
+											<a href="#" class="close" data-dismiss="alert" aria-label="close">Delete</a>
+											<strong>CS 484 - Data Mining</strong>
+										</div>
+									</div>
+								</div>
 							</div>
-							<h4 class="modal-title">Awesome!</h4>
 						</div>
-						<div class="modal-body">
-							<p class="text-center">Your LinkedIn Profile Link has been added to our system. Click OK to Proceed</p>
+
+						<div class="panel-group">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a id="write-review-option" data-toggle="collapse" href="#collapseReview">WRITE REVIEW FOR A COMPLETED COURSE</a>
+									</h4>
+								</div>
+								<div id="collapseReview" class="panel-collapse collapse">
+									<div class="panel-body">
+
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="modal-footer">
-							<button class="btn btn-success btn-block" data-dismiss="modal" id="ok-button">OK</button>
+
+
+
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="modal fade body-content" id="linkedin-verify-template" role="dialog" aria-labelledby="verify-linkedin-label">
+		<jsp:include page="/input-linkedin.jsp" />
+	</div>
+
+	<div class="modal fade body-content" id="new-feature" tabindex="-1" role="dialog" aria-labelledby="new-feature-label">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="new-feature-label">New Feature - Built-in Social Network</h4>
+				</div>
+				<div class="modal-body">
+
+					<p>Our new class registration user interface would use your LinkedIn Profile to create an "internal social network" within
+						the school. By sharing your profile at our registration system, not only would you have an opportunity to match other
+						classmates of same career interests, but you could also allow our school’s affiliated partners to find you earlier.
+					</p>
+
+					<p>Your LinkedIn profile is public anyways, so why not using it properly to introduce yourself to the industry as soon
+						as possible? Before all these opportunities happen, we would need your permission to link your LinkedIn profile to
+						our system, and we would help you do the rest! By clicking on Linked My LinkedIn, you have read and agreed our Terms
+						and Conditions of our Privacy agreement.
+					</p>
+
+					<div class="row">
+						<div class="col-md-2">
+							<button type="button" class="btn btn-default" data-dismiss="modal"> Not Now</button>
+						</div>
+						<div class="col-md-6">
+							<a id="linkedin-link" class="btn btn-block btn-social btn-linkedin" data-dismiss="modal">
+								<span class="fa fa-linkedin"></span> Link Your LinkedIn!
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<!-- Modal HTML -->
+	<div id="confirm-success" class="modal fade body-content">
+		<div class="modal-dialog modal-confirm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="icon-box">
+						<i class="material-icons">&#xE876;</i>
+					</div>
+					<h4 class="modal-title">Awesome!</h4>
+				</div>
+				<div class="modal-body">
+					<p class="text-center">Your LinkedIn Profile Link has been added to our system. Click OK to Proceed</p>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-success btn-block" data-dismiss="modal" id="ok-button">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </body>
 

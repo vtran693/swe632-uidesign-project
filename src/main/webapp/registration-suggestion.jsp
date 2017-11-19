@@ -56,7 +56,7 @@
                     </div>
                 </div> 
                 
-                <button class="btn btn-primary" id="main-menu-navigation">Back to Main Menu</button>
+                <button class="btn btn-primary" id="main-menu-navigation-button">Back to Main Menu</button>
            
             <!-- <ul>
                 <div id="core-classes-suggest-one"></div>

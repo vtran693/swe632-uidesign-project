@@ -1,6 +1,5 @@
 package cs.swe632.smartclassregistration.springboot.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -458,6 +457,12 @@ public class StudentClassDataRestController {
 	public List<Course> getStudentCompletedCoursesByService(@PathVariable("username") String studentUsername){
 		Student student = studentService.getStudentByUsername(studentUsername);
 		return student.getStudentCompletedCourses();
+	}
+	
+	@GetMapping("/student/{username}/registered")
+	public List<Course> getStudentRegisteredCoursesByService(@PathVariable("username") String studentUsername){
+		Student student = studentService.getStudentByUsername(studentUsername);
+		return student.getStudentCurrentRegisteredCourses();
 	}
 	
 	@GetMapping("/student/{username}/delete")

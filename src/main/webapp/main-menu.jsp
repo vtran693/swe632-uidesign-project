@@ -189,7 +189,7 @@
 									<div class="panel-body">
 										<div class="alert alert-success alert-dismissable">
 											<a href="#" class="close" data-dismiss="alert" aria-label="close">Delete</a>
-											<strong>CS 637 - Component Testing</strong>
+											<strong>CS 442 - Component Testing</strong>
 										</div>
 										<div class="alert alert-success alert-dismissable">
 											<a href="#" class="close" data-dismiss="alert" aria-label="close">Delete</a>

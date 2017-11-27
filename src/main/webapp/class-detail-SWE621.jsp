@@ -1,5 +1,5 @@
 <div id='class-details-SWE621' class="body-content">
-	<div class="container">
+	<div >
 	
 		<script type='text/javascript' src='https://us-east-1.online.tableau.com/javascripts/api/viz_v1.js'></script>
 		<div class='tableauPlaceholder' style='width: 900px; height: 300px;' align="center">

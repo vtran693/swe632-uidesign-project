@@ -108,7 +108,7 @@ $(function () {
                 concentrationHtml = "";
                 for (var i = 0; i < data.length; i++) {
                     var eachCourse = data[i];
-                    if (data[i].courseMajor == "Core") {
+                    if (data[i].courseConcentration == "Core") {
                         coreHtml += ("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "</li>");
                     }
                     else {
@@ -349,7 +349,7 @@ $(function () {
                         // Update the text change
                         textChange = data[i].courseName;
                         searchResultList += ("<li>" + data[i].courseName);
-                        searchResultList += ("<button id='" + data[i].courseName + "-detailsbutton'" + " class='btn btn-primary' style='margin-left:5cm' onclick='view" + data[i].courseName + "Details()'>Details</button>");
+                        searchResultList += ("<button id='" + data[i].courseName + "-detailsbutton'" + " class='btn btn-primary' style='margin-left:1cm' onclick='view" + data[i].courseName + "Details()'>Details</button>");
                         searchResultList += "<ul>";
                     }
                     searchResultList += ("<li>" + data[i].courseName + " - " + data[i].courseSection + " " + data[i].courseDate + " - " + data[i].courseTimePeriod);

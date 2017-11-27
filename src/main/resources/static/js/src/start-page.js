@@ -99,7 +99,18 @@ $(function () {
                 }
             });
 
-
+            $.get("/api/student/" + userLogin + "/registered", function (data) {
+            	var registeredCourses = data;
+            	regHtml="";
+            	for (var i = 0; i < data.length; i++) 
+            	{
+            		regHtml += ("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "  - Prof. " + data[i].courseProfessor + " - " + "Time " + data[i].courseTimePeriod+"</li>");
+                }
+            	if (regHtml == "") {
+                    regHtml = "You have yet registered to any courses. Please click on CREATE A NEW REGISTRATION SESSION";
+                }
+            	$("#current-reg").html(regHtml);
+            });
 
             $.get("/api/student/" + userLogin + "/completed", function (data) {
 
@@ -318,7 +329,7 @@ $(function () {
                         // Update the text change
                         textChange = data[i].courseName;
                         searchResultList += ("<li>" + data[i].courseName) ;
-                        searchResultList += ("<button id='" + data[i].courseName + "-detailsbutton'" + " class='btn btn-primary' style='margin-left:5cm' onclick='view" + data[i].courseName + "Details()'>Details</button>");
+                        searchResultList += ("<button id='" + data[i].courseName + "-detailsbutton'" + " class='btn btn-primary' style='margin-left:1cm' onclick='view" + data[i].courseName + "Details()'>Details</button>");
                         searchResultList += "<ul>";
                     }
                     searchResultList += ("<li>" + data[i].courseName + " - " + data[i].courseSection + " " + data[i].courseDate + " - " + data[i].courseTimePeriod);

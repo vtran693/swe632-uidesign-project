@@ -311,7 +311,7 @@ public class StudentClassDataRestController {
         swe205Section1.setCourseLevel("Undergrad");
         swe205Section1.setCourseSection("01");
         swe205Section1.setCourseMajor("SWE");
-        swe205Section1.setCourseConcentration("Analysis");
+        swe205Section1.setCourseConcentration("Core");
         swe205Section1.setCourseDate("Wed");
         swe205Section1.setCourseTimePeriod("1:30-4:10");
         swe205Section1.setCourseAvailability(1);
@@ -324,7 +324,7 @@ public class StudentClassDataRestController {
         swe321Section2.setCourseLevel("Undergrad");
         swe321Section2.setCourseSection("02");
         swe321Section2.setCourseMajor("SWE");
-        swe321Section2.setCourseConcentration("Engeneering");
+        swe321Section2.setCourseConcentration("Core");
         swe321Section2.setCourseDate("Tue");
         swe321Section2.setCourseTimePeriod("1:30-4:10");
         swe321Section2.setCourseAvailability(1);

@@ -6,7 +6,7 @@
 			<object class='tableauViz' width='1000' height='450' style='display:none;'>
 				<param name='host_url' value='https%3A%2F%2Fus-east-1.online.tableau.com%2F' /> 
 				<param name='embed_code_version' value='2' /> 
-				<param name='site_root' value='&#47;t&#47;divyavajja' />
+				<param name='site_root' value='&#47;t&#47;diva4492atgmailcom' />
 				<param name='name' value='SWE632&#47;SWE621' />
 				<param name='tabs' value='no' />
 				<param name='toolbar' value='no' />

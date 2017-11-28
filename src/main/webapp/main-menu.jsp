@@ -16,6 +16,10 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-social.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery-ui.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-toggle.css" />
+	
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<!-- Custom Stylesheets -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/custom/custom-stylesheet.css" />
@@ -203,9 +207,8 @@
 									</h4>
 								</div>
 								<div id="collapseModify1" class="panel-collapse collapse">
-									<div class="panel-info">
-										<ul id="current-reg">
-										</ul>
+									<div class="panel-body">
+										<jsp:include page="/modify-registration.jsp" />
 									</div>
 								</div>
 							</div>
@@ -220,15 +223,12 @@
 								</div>
 								<div id="collapseReview" class="panel-collapse collapse">
 									<div class="panel-body">
-											<jsp:include page="/review-template.jsp" />
+										<jsp:include page="/review-template.jsp" />
 									</div>
 								</div>
 							</div>
 						</div>
-
-
-
-
+						
 					</div>
 
 				</div>

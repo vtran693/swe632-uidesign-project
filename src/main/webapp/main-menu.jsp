@@ -38,6 +38,7 @@
 	<!-- JavaScript Function -->
 	<!-- ========= -->
 	<script src="${pageContext.request.contextPath}/js/src/start-page.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/js/src/review-script.js" type="text/javascript"></script>
 
 </head>
 
@@ -200,7 +201,7 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" href="#collapseModify1">VIEW YOUR CURRENT REGISTRATION</a>
+										<a data-toggle="collapse" href="#collapseModify1">VIEW/MODIFY YOUR CURRENT REGISTRATION</a>
 									</h4>
 								</div>
 								<div id="collapseModify1" class="panel-collapse collapse">
@@ -216,27 +217,12 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" href="#collapseModify">MODIFY YOUR CURRENT REGISTRATION SESSION</a>
-									</h4>
-								</div>
-								<div id="collapseModify" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul id="modify-reg"></ul>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="panel-group">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
 										<a id="write-review-option" data-toggle="collapse" href="#collapseReview">WRITE REVIEW FOR A COMPLETED COURSE</a>
 									</h4>
 								</div>
 								<div id="collapseReview" class="panel-collapse collapse">
 									<div class="panel-body">
-
+											<jsp:include page="/review-template.jsp" />
 									</div>
 								</div>
 							</div>

@@ -203,6 +203,26 @@ $(function () {
             renderClassList();
         });
     });
+
+    $(".create-global-class").click(function (event) {
+        event.preventDefault();
+
+        returnHome();
+
+        $("#new-registration-template").show();
+        
+
+        $.get("/api/student/get-master-dummy", function (data) {
+
+            if (data.title == 'Master') {
+                dynamicClassList = allMasterClasses;
+            }
+            else {
+                dynamicClassList = allUndergradClasses;
+            }
+            renderClassList();
+        });
+    });
     
     $("#view-modify").click(function (event) {
         event.preventDefault();

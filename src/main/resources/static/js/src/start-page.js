@@ -46,7 +46,7 @@ var classLevelGrad = false;
 var changed = false;
 var coreHtml = "";
 var concentrationHtml = "";
-
+var regHtml = "";
 var loginVerified = false;
 var userLoginData;
 
@@ -205,8 +205,10 @@ $(function () {
     $("#create").click(function (event) {
         event.preventDefault();
         $("#main-menu-template").hide();
+        $("#modify-registration-template").hide();
+        $("#write-review-template").hide();
         $("#new-registration-template").show();
-
+        
 
         $.get("/api/student/get-master-dummy", function (data) {
 
@@ -219,6 +221,34 @@ $(function () {
             renderClassList();
         });
     });
+    
+    $("#current").click(function (event) {
+        event.preventDefault();
+        $("#main-menu-template").hide();
+        $("#modify-registration-template").show();
+        
+        $.get("/api/student/" + userLogin + "/registered", function (data) {
+        	var registeredCourses = data;
+        	regHtml="";
+        	
+        	for (var i = 0; i < data.length; i++) 
+        	{
+        		regHtml +=("<ul>");
+        		regHtml += ("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "  - Prof. " + data[i].courseProfessor + " - " + "Day & Time: " +data[i].courseDate+"-" +data[i].courseTimePeriod+ "<button id='" + data[i].courseName + "-deletebutton'" + " class='btn btn-primary' style='margin-left:1cm' onclick='" + data[i].courseName + "Delete()'>Delete</button>"+"</li>"+"<br/>");
+        		regHtml +=("</ul>");
+        	}
+        	if (regHtml == "") {
+                regHtml = "You have not yet registered to any courses. Please click on CREATE A NEW REGISTRATION SESSION";
+               
+            }
+        	
+        	$("#current-reg").html(regHtml);
+        	
+        	
+        });
+        
+    });
+        
 
     // Modify the existing registration - STILL DUMMY - TESTING MASTER VS UNDERGRADS
     $("#modify").click(function (event) {

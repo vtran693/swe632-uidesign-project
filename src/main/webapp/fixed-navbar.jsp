@@ -32,7 +32,7 @@
 
                 </li>
                 <li>
-                    <a href="#">New Registration</a>
+                    <a id="create" href="#">New Registration</a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services

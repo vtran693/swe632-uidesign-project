@@ -171,7 +171,6 @@
 								<div id="collapseModify1" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul id="current-reg">
-											<li>CS584 - Data Mining</li>
 										</ul>
 									</div>
 								</div>
@@ -187,14 +186,7 @@
 								</div>
 								<div id="collapseModify" class="panel-collapse collapse">
 									<div class="panel-body">
-										<div class="alert alert-success alert-dismissable">
-											<a href="#" class="close" data-dismiss="alert" aria-label="close">Delete</a>
-											<strong>CS 442 - Component Testing</strong>
-										</div>
-										<div class="alert alert-success alert-dismissable">
-											<a href="#" class="close" data-dismiss="alert" aria-label="close">Delete</a>
-											<strong>CS 484 - Data Mining</strong>
-										</div>
+										<ul id="modify-reg"></ul>
 									</div>
 								</div>
 							</div>

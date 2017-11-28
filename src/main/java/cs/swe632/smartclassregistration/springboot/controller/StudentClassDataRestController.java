@@ -451,8 +451,6 @@ public class StudentClassDataRestController {
 		return "delete success";
 	}
 	
-	
-	
 	@GetMapping("/student/{username}/completed")
 	public List<Course> getStudentCompletedCoursesByService(@PathVariable("username") String studentUsername){
 		Student student = studentService.getStudentByUsername(studentUsername);

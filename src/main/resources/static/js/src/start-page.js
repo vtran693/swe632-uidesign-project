@@ -222,7 +222,7 @@ $(function () {
         });
     });
     
-    $("#current").click(function (event) {
+    /*$("#current").click(function (event) {
         event.preventDefault();
         $("#main-menu-template").hide();
         $("#modify-registration-template").show();
@@ -247,7 +247,7 @@ $(function () {
         	
         });
         
-    });
+    });*/
         
 
     // Modify the existing registration - STILL DUMMY - TESTING MASTER VS UNDERGRADS

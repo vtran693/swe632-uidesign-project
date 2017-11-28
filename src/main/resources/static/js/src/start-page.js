@@ -218,7 +218,7 @@ $(function () {
     	modHtml="";
     	for (var i = 0; i < data.length; i++) 
     	{
-    		regHtml +=("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "  - Prof. " + data[i].courseProfessor + " - " + "Time " + data[i].courseTimePeriod+ "<button id='" + data[i].courseName + "-deletebutton'" + " class='btn btn-primary' style='margin-left:1cm' onclick='" + data[i].courseName + "Delete()'>Delete</button>"+"</li>");
+    		regHtml +=("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "  - Prof. " + data[i].courseProfessor + " - " + "Day & Time :" +data[i].courseDate+"-"+ data[i].courseTimePeriod+ "<button id='" + data[i].courseName + "-deletebutton'" + " class='btn btn-primary' style='margin-left:1cm' onclick='" + data[i].courseName + "Delete()'>Delete</button>"+"</li>"+"<br/>");
     	}
     	if (regHtml == "") {
             regHtml = "You have not yet registered to any courses. Please click on CREATE A NEW REGISTRATION SESSION";

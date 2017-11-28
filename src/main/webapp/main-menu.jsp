@@ -17,6 +17,10 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery-ui.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-toggle.css" />
 
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<!-- Custom Stylesheets -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/custom/custom-stylesheet.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.scss" />
@@ -181,26 +185,26 @@
 				</h4>
 			</div>
 			<div id="collapseThree" class="panel-collapse collapse">
-					<div class="panel-body">
-					
-							<ul>
-								<li>
-									<a href="#" id="create">CREATE A NEW REGISTRATION SESSION</a>
-								</li>
-								<li>
-									<a id="view-modify" href="#">VIEW/MODIFY YOUR CURRENT REGISTRATION</a>
-								</li>
-								<li>	
-									<a id="write-review-option" data-toggle="collapse" href="#collapseReview">WRITE REVIEW FOR A COMPLETED COURSE</a>
-								</li>	
-							
-							</ul>
+				<div class="panel-body">
 
-					</div>
+					<ul>
+						<li>
+							<a href="#" id="create">CREATE A NEW REGISTRATION SESSION</a>
+						</li>
+						<li>
+							<a id="view-modify" href="#">VIEW/MODIFY YOUR CURRENT REGISTRATION</a>
+						</li>
+						<li>
+							<a id="write-review-option" data-toggle="collapse" href="#collapseReview">WRITE REVIEW FOR A COMPLETED COURSE</a>
+						</li>
+
+					</ul>
 
 				</div>
+
 			</div>
 		</div>
+	</div>
 
 	</div>
 

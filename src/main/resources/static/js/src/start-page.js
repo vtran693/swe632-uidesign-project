@@ -412,11 +412,22 @@ $(function () {
     });
 
     // Write review page display
-    /*$("#write-review-option").click(function(){
+    $("#write-review-option").click(function(){
         $("main-menu-template").hide();
         $("#write-review-template").show();
+    });
 
-    });*/
+    $("#modify-more-info-button").click(function(event){
+        event.preventDefault();
+        $("modify-more-info-message-template").slideDown();
+        $("modify-delete-message-template").slideUp();
+    });
+
+    $("#modify-delete-button").click(function(event){
+        event.preventDefault();
+        $("modify-more-info-message-template").slideUp();
+        $("modify-delete-message-template").slideDown();
+    });
 });
 
 

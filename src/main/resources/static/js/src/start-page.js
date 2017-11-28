@@ -85,7 +85,7 @@ $(function () {
                     $("#student-linkedin-val").html(data.studentLinkedIn);
                 }
                 else {
-                    $("#student-linkedin-val").html("Not Yet Provided. <a id='linkedin-link-summary' class='btn btn-block btn-social btn-linkedin'><span class='col-md-4 fa fa-linkedin'></span> Link Your LinkedIn!</a>");
+                    $("#student-linkedin-val").html("Not Yet Provided.");
                 }
                 // After data is loaded, show the switch based on the class level
                 // By default it is checked for Grad

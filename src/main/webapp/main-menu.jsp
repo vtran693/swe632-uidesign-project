@@ -85,30 +85,65 @@
 				<div id="collapseOne" class="panel-collapse collapse in">
 					<div class="panel-body">
 						<ul>
-							<li>
-								<span>Name: </span>
-								<span id="student-name-val"></span>
-							</li>
-							<li>
-								<span>G-Number: </span>
-								<span id="student-gnumber-val"></span>
-							</li>
-							<li>
-								<span>Class Level: </span>
-								<span id="student-level-val"></span>
-							</li>
-							<li>
-								<span>Major: </span>
-								<span id="student-major-val"></span>
-							</li>
-							<li>
-								<span>Concentration: </span>
-								<span id="student-conc-val"></span>
-							</li>
-							<li>
-								<span>LinkedIn Profile Link: </span>
-								<span id="student-linkedin-val"></span>
-							</li>
+							<div class="row">
+								<li>
+
+									<span>Name: </span>
+									<span id="student-name-val"></span>
+
+
+								</li>
+							</div>
+							<div class="row">
+								<li>
+
+									<span>G-Number: </span>
+									<span id="student-gnumber-val"></span>
+
+
+								</li>
+							</div>
+							<div class="row">
+								<li>
+
+									<span>Class Level: </span>
+									<span id="student-level-val"></span>
+
+
+								</li>
+							</div>
+							<div class="row">
+								<li>
+
+									<span>Major: </span>
+									<span id="student-major-val"></span>
+
+
+								</li>
+							</div>
+							<div class="row">
+								<li>
+
+									<span>Concentration: </span>
+									<span id="student-conc-val"></span>
+
+
+								</li>
+							</div>
+							<div class="row">
+								<li>
+									<span>LinkedIn Profile Link: </span>
+									<span id="student-linkedin-val"></span>
+								</li>
+							</div>
+							<div class="row" id="linkedin-input-button">
+								<div class="col-md-2">
+									<a id='linkedin-link-summary' class='btn btn-block btn-social btn-linkedin'>
+										<span class='fa fa-linkedin'></span> Link Your LinkedIn! </a>
+								</div>
+
+							</div>
+
 						</ul>
 
 						<!-- <span>Name: ${student.firstName} ${student.firstName}</span> -->

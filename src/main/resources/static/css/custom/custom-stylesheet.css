@@ -1,3 +1,5 @@
+
+
 .body-content{
     margin-top: 5em;
     margin-bottom: 5em;
@@ -184,4 +186,12 @@ body {
 .profile > img {
     padding:1px;
     width:30%;
+}
+
+/* Progress bar CSS written by Viet */
+#progress-div{
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    width: 60%;
 }

@@ -99,24 +99,6 @@ $(function () {
                 }
             });
 
-            $.get("/api/student/" + userLogin + "/registered", function (data) {
-            	var registeredCourses = data;
-            	regHtml="";
-            	modHtml="";
-            	for (var i = 0; i < data.length; i++) 
-            	{
-            		regHtml += ("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "  - Prof. " + data[i].courseProfessor + " - " + "Time " + data[i].courseTimePeriod+"</li>");
-            		modHtml+=("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "  - Prof. " + data[i].courseProfessor + " - " + "Time " + data[i].courseTimePeriod+ "<button id='" + data[i].courseName + "-deletebutton'" + " class='btn btn-primary' style='margin-left:1cm' onclick='" + data[i].courseName + "Delete()'>Delete</button>"+"</li>");
-            	}
-            	if (regHtml == "") {
-                    regHtml = "You have not yet registered to any courses. Please click on CREATE A NEW REGISTRATION SESSION";
-                    modHtml=" You have not yet registered to any courses. Please click on CREATE A NEW REGISTRATION SESSION";
-                }
-            	
-            	$("#current-reg").html(regHtml);
-            	$("#modify-reg").html(modHtml);
-            	
-            });
             
 
             $.get("/api/student/" + userLogin + "/completed", function (data) {
@@ -222,32 +204,31 @@ $(function () {
         });
     });
     
-    /*$("#current").click(function (event) {
+    $("#view-modify").click(function (event) {
         event.preventDefault();
         $("#main-menu-template").hide();
+        $("#write-review-template").hide();
+        $("#new-registration-template").hide();
         $("#modify-registration-template").show();
-        
-        $.get("/api/student/" + userLogin + "/registered", function (data) {
-        	var registeredCourses = data;
-        	regHtml="";
-        	
-        	for (var i = 0; i < data.length; i++) 
-        	{
-        		regHtml +=("<ul>");
-        		regHtml += ("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "  - Prof. " + data[i].courseProfessor + " - " + "Day & Time: " +data[i].courseDate+"-" +data[i].courseTimePeriod+ "<button id='" + data[i].courseName + "-deletebutton'" + " class='btn btn-primary' style='margin-left:1cm' onclick='" + data[i].courseName + "Delete()'>Delete</button>"+"</li>"+"<br/>");
-        		regHtml +=("</ul>");
-        	}
-        	if (regHtml == "") {
-                regHtml = "You have not yet registered to any courses. Please click on CREATE A NEW REGISTRATION SESSION";
-               
-            }
-        	
-        	$("#current-reg").html(regHtml);
-        	
-        	
-        });
-        
-    });*/
+    
+    
+    $.get("/api/student/" + userLogin + "/registered", function (data) {
+    	var registeredCourses = data;
+    	regHtml="";
+    	modHtml="";
+    	for (var i = 0; i < data.length; i++) 
+    	{
+    		regHtml +=("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "  - Prof. " + data[i].courseProfessor + " - " + "Time " + data[i].courseTimePeriod+ "<button id='" + data[i].courseName + "-deletebutton'" + " class='btn btn-primary' style='margin-left:1cm' onclick='" + data[i].courseName + "Delete()'>Delete</button>"+"</li>");
+    	}
+    	if (regHtml == "") {
+            regHtml = "You have not yet registered to any courses. Please click on CREATE A NEW REGISTRATION SESSION";
+        }
+    	
+    	$("#current-reg").html(regHtml);
+    	
+    });
+    
+    });
         
 
     // Modify the existing registration - STILL DUMMY - TESTING MASTER VS UNDERGRADS
@@ -431,11 +412,11 @@ $(function () {
     });
 
     // Write review page display
-    $("#write-review-option").click(function(){
+    /*$("#write-review-option").click(function(){
         $("main-menu-template").hide();
         $("#write-review-template").show();
 
-    });
+    });*/
 });
 
 

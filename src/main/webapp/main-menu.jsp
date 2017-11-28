@@ -182,12 +182,10 @@
 			</div>
 			<div id="collapseThree" class="panel-collapse collapse">
 				<div class="panel-body">
-					<div class="list-group">
-
-
+					<div class="list-group col-md-6">
 
 						<div class="panel-group">
-							<div class="panel panel-default">
+							<div class="panel panel-info">
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a href="#" id="create">CREATE A NEW REGISTRATION SESSION</a>
@@ -198,14 +196,14 @@
 						</div>
 
 						<div class="panel-group">
-							<div class="panel panel-default">
+							<div class="panel panel-info">
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a data-toggle="collapse" href="#collapseModify1">VIEW/MODIFY YOUR CURRENT REGISTRATION</a>
 									</h4>
 								</div>
 								<div id="collapseModify1" class="panel-collapse collapse">
-									<div class="panel-body">
+									<div class="panel-info">
 										<ul id="current-reg">
 										</ul>
 									</div>
@@ -214,7 +212,7 @@
 						</div>
 
 						<div class="panel-group">
-							<div class="panel panel-default">
+							<div class="panel panel-info">
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a id="write-review-option" data-toggle="collapse" href="#collapseReview">WRITE REVIEW FOR A COMPLETED COURSE</a>

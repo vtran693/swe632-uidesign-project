@@ -1,11 +1,17 @@
 <div class="row" style="margin-top:40px;">
-    <div class="col-md-6">
-        <div class="well well-sm">
-            <div class="text-right">
+    <div class="col-md-12">
+
+        <div class="row">
+            <div class="text-left col-md-4">
+                <p>SWE 645 - BLA BLA BLA</p>
+            </div>
+            <div class="text-right col-md-4">
                 <a class="btn btn-success btn-green" href="#reviews-anchor" id="open-review-box">Leave a Review</a>
             </div>
+        </div>
 
-            <div class="row" id="post-review-box" style="display:none;">
+        <div class="well well-md" id="post-review-box" style="display:none;">
+            <div class="row">
                 <div class="col-md-12">
                     <form accept-charset="UTF-8" action="" method="post">
                         <input id="ratings-hidden" name="rating" type="hidden">

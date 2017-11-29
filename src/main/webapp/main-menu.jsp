@@ -66,6 +66,7 @@
 	<div id="new-registration-template" class="body-content" style="display:none">
 		<jsp:include page="/new-registration.jsp" />
 	</div>
+		
 	<div id="modify-registration-template" class="body-content" style="display:none">
 		<jsp:include page="/modify-registration.jsp" />
 	</div>
@@ -74,6 +75,14 @@
 		<jsp:include page="/registration-suggestion.jsp" />
 	</div>
 
+	<div id="registration-suggestion-template-nuthana" class="body-content" style="display:none">
+		<jsp:include page="/registration-suggestion-nuthana.jsp" />
+	</div>
+	
+	<div id="registration-suggestion-template-divya" class="body-content" style="display:none">
+		<jsp:include page="/registration-suggestion-divya.jsp" />
+	</div>
+	
 	<div id="write-review-template" class="body-content" style="display:none">
 		<jsp:include page="/write-review.jsp" />
 	</div>

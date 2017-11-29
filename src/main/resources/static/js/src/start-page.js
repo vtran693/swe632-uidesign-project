@@ -110,10 +110,19 @@ $(function () {
                 for (var i = 0; i < data.length; i++) {
                     var eachCourse = data[i];
                     if (data[i].courseConcentration == "Core") {
+                    	
                         coreHtml += ("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "</li>");
+                    	
                     }
                     else {
+                    	if(data[i].courseName=="SWE621")
+                    	{
+                    		concentrationHtml=concentrationHtml;
+                    	}
+                    	else
+                    	{
                         concentrationHtml += ("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "</li>");
+                    	}
                     }
                 }
                 if (coreHtml == "") {

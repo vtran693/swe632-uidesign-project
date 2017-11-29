@@ -22,7 +22,10 @@
 						</object>
 					</div>
 					<div class="col-md-12">
-						<button type="button" id="viet-swe632-close-details-button" class="btn btn-primary" onclick="hideSWE632DetailsFromSuggestion()"> Close Details Panel </button>
+						<div class="col-md-3">
+							<button type="button" id="viet-swe632-close-details-button" class="btn btn-primary" onclick="hideSWE632DetailsFromSuggestion()"> Close Details Panel </button>
+						</div>
+						
 					</div>
 				</div>
 			</div>

@@ -1,14 +1,14 @@
 <div>
 
-    <div class="row">
+    <div class="col-md-12">
         <div class="col-md-4">
             <button class="btn btn-primary main-menu-navigation-button">Back to Main Menu</button>
         </div>
     </div>
-    <div class="row">
-        <h3>Direct Search</h3>
-        <p>You can use the direct search box below if you already know classes you want to register:</p>
-    </div>
+
+    <h3>Direct Search</h3>
+    <p>You can use the direct search box below if you already know classes you want to register:</p>
+
 
 
     <div class="ui-widget">

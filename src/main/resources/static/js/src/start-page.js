@@ -261,12 +261,12 @@ $(function () {
                 regHtml += ("<div class='col-md-4 info-drop'>");
 
                 // Add the More Info button
-                regHtml += ("<a id='" + data[i].courseName + "-more-info-button'" + " class='btn icon-btn btn-warning' href='#' onclick='" + data[i].courseName + "MoreInfo()'>");
+                regHtml += ("<a id='" + data[i].courseName + "-more-info-button'" + " class='btn icon-btn btn-primary' href='#' onclick='" + data[i].courseName + "MoreInfo()'>");
 
-                regHtml += ("<span class='glyphicon btn-glyphicon glyphicon-trash img-circle text-warning'></span> More Info </a>")
+                regHtml += ("<span class='glyphicon btn-glyphicon glyphicon-info-sign img-circle text-primary'></span> More Info </a>")
 
                 // Add the Drop button
-                regHtml += ("<a id='" + data[i].courseName + "-delete-button'" + " class='btn icon-btn btn-danger' href='#' onclick='" + data[i].courseName + "MoreInfo()'>");
+                regHtml += ("<a id='" + data[i].courseName + "-delete-button'" + " class='btn icon-btn btn-danger' href='#' onclick='" + data[i].courseName + "DropCourse()'>");
 
                 regHtml += ("<span class='glyphicon btn-glyphicon glyphicon-trash img-circle text-danger'></span> Drop </a>")
                 // Close class description alignment
@@ -415,15 +415,15 @@ $(function () {
 
 
 
-    // Register for SWE645
-    $("#SWE645-01-registerbutton").click(function () {
+    // // Register for SWE645
+    // $("#SWE645-01-registerbutton").click(function () {
 
-    });
+    // });
 
-    // Register for SWE632
-    $("#SWE632-01-registerbutton").click(function () {
+    // // Register for SWE632
+    // $("#SWE632-01-registerbutton").click(function () {
 
-    });
+    // });
 
     // The back to main menu button at the suggestion page
     $(".main-menu-navigation-button").click(function (event) {
@@ -442,17 +442,17 @@ $(function () {
         $("#write-review-template").show();
     });
 
-    $("#modify-more-info-button").click(function (event) {
-        event.preventDefault();
-        $("modify-more-info-message-template").slideDown();
-        $("modify-delete-message-template").slideUp();
-    });
+    // $("#modify-more-info-button").click(function (event) {
+    //     event.preventDefault();
+    //     $("modify-more-info-message-template").slideDown();
+    //     $("modify-delete-message-template").slideUp();
+    // });
 
-    $("#modify-delete-button").click(function (event) {
-        event.preventDefault();
-        $("modify-more-info-message-template").slideUp();
-        $("modify-delete-message-template").slideDown();
-    });
+    // $("#modify-delete-button").click(function (event) {
+    //     event.preventDefault();
+    //     $("modify-more-info-message-template").slideUp();
+    //     $("modify-delete-message-template").slideDown();
+    // });
 
     // Class Suggestions
 
@@ -502,7 +502,7 @@ $(function () {
     });
 
 
-    $("#viet-cs584-suggest-close-details-button").click( function () {
+    $("#viet-cs584-suggest-close-details-button").click(function () {
         hideCS584DetailsFromSuggestion();
     });
     // See Details button click
@@ -512,38 +512,9 @@ $(function () {
         viewCS584DetailsFromSuggestion();
     });
 
-    // Close Details buttons
-    // $("#viet-swe621-close-details-button").click(function (event) {
-    //     event.preventDefault();
-    //     $("#class-detail-SWE621-template").slideUp();
-    // });
-
-    // $("#viet-cs550-close-details-button").click(function (event) {
-    //     event.preventDefault();
-    //     $("#class-detail-CS550-template").slideUp();
-    // });
-
-    // $("#viet-swe437-close-details-button").click(function (event) {
-    //     event.preventDefault();
-    //     $("#class-detail-SWE437-template").slideUp();
-    // });
-
-    // $("#viet-swe632-updated-close-details-button").click(function (event) {
-    //     event.preventDefault();
-    //     $("#class-detail-SWE632-updated-template").slideUp();
-    // });
-
-    // $("#viet-swe632-close-details-button").click(function (event) {
-    //     event.preventDefault();
-    //     $("#class-detail-SWE632-template").slideUp();
-    // });
-
-    // $("#viet-swe645-close-details-button").click(function (event) {
-    //     event.preventDefault();
-    //     $("#class-detail-SWE645-template").slideUp();
-    // });
-
-
+    $("#modify-more-info-swe645-close-panel").click(function (event) {
+        $("#viet-modify-more-info-swe645-template").slideUp('slow');
+    });
 
 });
 
@@ -685,6 +656,36 @@ function hideCS584DetailsFromSuggestion() {
     $("#class-detail-CS584-template-suggest").slideUp();
 }
 
+function hideSWE621Details(event) {
+    event.preventDefault();
+    $("#class-detail-SWE621-template").slideUp();
+}
+
+function hideCS550Details(event) {
+    event.preventDefault();
+    $("#class-detail-CS550-template").slideUp();
+}
+
+function hideSWE437Details(event) {
+    event.preventDefault();
+    $("#class-detail-SWE437-template").slideUp();
+}
+
+function hideSWE632UpdatedDetails(event) {
+    event.preventDefault();
+    $("#class-detail-SWE632-updated-template").slideUp();
+}
+
+function hideSWE632Details(event) {
+    event.preventDefault();
+    $("#class-detail-SWE632-template").slideUp();
+};
+
+function hideSWE645Details(event) {
+    event.preventDefault();
+    $("#class-detail-SWE645-template").slideUp();
+}
+
 
 function viewSWE621Details() {
     $("#class-detail-SWE621-template").slideDown();
@@ -750,7 +751,29 @@ function returnHome() {
     $("#main-menu-template").show();
 }
 
+function SWE645MoreInfo() {
+    $("#viet-modify-more-info-swe645-template").slideDown('slow');
+    $("#viet-modify-drop-course-template").slideUp('slow');
+}
+function SWE645DropCourse() {
+    $("#viet-modify-more-info-swe645-template").slideUp('slow');
+    $("#viet-modify-drop-course-template").slideDown('slow');
+}
 
+$("#modify-confirm-drop-cs584").click(function(){
+    $("#current-reg").html("<div>There is currently no registered class. Please create a new registration</div>");
+    $("#modify-confirm-delete-message").show();
+});
+
+
+function CS584MoreInfo() {
+    $("#viet-modify-more-info-cs584-template").slideDown('slow');
+    $("#viet-modify-drop-course-template").slideUp('slow');
+}
+function CS584DropCourse() {
+    $("#viet-modify-more-info-cs584-template").slideUp('slow');
+    $("#viet-modify-drop-course-template").slideDown('slow');
+}
 
 
 

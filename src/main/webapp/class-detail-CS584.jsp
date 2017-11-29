@@ -21,7 +21,7 @@
 					</object>
 				</div>
 				<br>
-				<div class="row">
+				<div class="col-md-12">
 					<div class="col-md-3">
 						<button type="button" id="viet-cs584-suggest-close-details-button" class="btn btn-primary" onclick="hideCS584DetailsFromSuggestion()"> Close Details Panel </button>
 					</div>

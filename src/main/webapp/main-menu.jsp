@@ -66,7 +66,7 @@
 	<div id="new-registration-template" class="body-content" style="display:none">
 		<jsp:include page="/new-registration.jsp" />
 	</div>
-	<div id="modify-registration-template" class="body-content" style="display:none;">
+	<div id="modify-registration-template" class="body-content" style="display:none">
 		<jsp:include page="/modify-registration.jsp" />
 	</div>
 
@@ -78,7 +78,7 @@
 		<jsp:include page="/write-review.jsp" />
 	</div>
 
-	<div id='main-menu-template' class='body-content' style="display:none; margin-left:22%; width:56%">
+	<div id='main-menu-template' class='body-content' style="display:none">
 		<jsp:include page="/title.jsp" />
 		<div class="panel-group" id="accordion">
 			<div class="panel panel-primary">
@@ -142,7 +142,7 @@
 								</li>
 							</div>
 							<div class="row" id="linkedin-input-button">
-								<div class="col-md-2">
+								<div class="col-md-3">
 									<a id='linkedin-link-summary' class='btn btn-block btn-social btn-linkedin'>
 										<span class='fa fa-linkedin'></span> Link Your LinkedIn! </a>
 								</div>

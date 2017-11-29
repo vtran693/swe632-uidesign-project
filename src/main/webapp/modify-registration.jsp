@@ -1,6 +1,6 @@
 <jsp:include page="/title.jsp"/>
 
-<div class="panel panel-primary" style="margin-left:22%; width:56%">
+<div class="panel panel-primary">
     <!-- Default panel contents -->
     <div class="panel-heading">View/Modify Your Current Registration</div>
     <div class="panel-body">

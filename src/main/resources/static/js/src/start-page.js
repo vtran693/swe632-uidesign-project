@@ -460,7 +460,7 @@ $(function () {
 
     // Write review page display
     $("#write-review-option").click(function () {
-        $("main-menu-template").hide();
+        $("#main-menu-template").hide();
         $("#write-review-template").show();
     });
 

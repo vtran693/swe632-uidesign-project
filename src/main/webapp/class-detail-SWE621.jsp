@@ -16,7 +16,7 @@
 		</div>
 		
 		
-   		<div class="panel panel-default">
+   		<div class="panel panel-default" style="max-width:1000px;">
       	<div class="panel-heading" align="center" style="color:grey;font-size: 150%;">Reviews</div>
         <div class="panel-body" style="max-height:200px;overflow-y: scroll;">
               <div class="media">

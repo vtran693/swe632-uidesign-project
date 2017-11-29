@@ -139,8 +139,10 @@ $(function () {
     // Ok button
     $("#ok-button").click(function () {
         $("#student-linkedin-val").html(userLoginData.studentLinkedIn);
+        // Hide the linkedin verify page
         $("#linkedin-verify-template").modal('hide');
         $("#linkedin-input-button").hide();
+        $('#verify-linkedin').slideUp("slow");
     });
 
     // Click the LinkedIn button
@@ -419,7 +421,7 @@ $(function () {
     });
 
     // The back to main menu button at the suggestion page
-    $("#main-menu-navigation-button").click(function (event) {
+    $(".main-menu-navigation-button").click(function (event) {
         event.preventDefault();
         returnHome();
     });

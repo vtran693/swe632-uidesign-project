@@ -9,5 +9,5 @@
     <div id="class-selection-val"></div>
 
     <p>or do you want to use our smart registration helper?</p>
-    <button id="student-questionnaire">Proceed to Helper</button>
+    <button id="student-questionnaire" class="btn btn-primary">Proceed to Helper</button>
 </div>

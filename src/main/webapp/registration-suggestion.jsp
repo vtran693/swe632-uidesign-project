@@ -111,7 +111,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <button class="btn btn-primary" id="main-menu-navigation-button">Back to Main Menu</button>
+                <button class="btn btn-primary main-menu-navigation-button">Back to Main Menu</button>
             </div>
         </div>
     </div>

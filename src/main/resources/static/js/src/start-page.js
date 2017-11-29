@@ -139,8 +139,14 @@ $(function () {
     // Ok button
     $("#ok-button").click(function () {
         $("#student-linkedin-val").html(userLoginData.studentLinkedIn);
+        $("#linkedin-verify-template").modal('hide');
+        $("#linkedin-input-button").hide();
     });
 
+    // Click the LinkedIn button
+    $("#linkedin-input-button").click(function (){
+        $("#linkedin-verify-template").modal('show');
+    });
 
     // Display the textbox to type in LinkedIn Address
     $('#linkedin-link').click(function (event) {

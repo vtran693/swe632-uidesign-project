@@ -15,7 +15,7 @@
 						<param name='site_root' value='&#47;t&#47;diva4492atgmailcom' />
 						<param name='name' value='NuthanaDashboards&#47;Dashboard3' />
 						<param name='tabs' value='no' />
-						<param name='toolbar' value='yes' />
+						<param name='toolbar' value='no' />
 						<param name='showAppBanner' value='false' />
 						<param name='showShareOptions' value='true' />
 					</object>

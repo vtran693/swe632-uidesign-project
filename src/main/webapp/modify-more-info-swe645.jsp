@@ -3,8 +3,6 @@
     <div class="panel-heading">SWE 645 Detailed Information</div>
     <div class="panel-body">
         <div class="row">
-            "courseName": "SWE645", "courseSection": "01", "courseLevel": "Grad", "courseDate": "Thur", "courseTimePeriod": "7:20-10:00",
-            "courseAvailability": 1, "courseProfessor": "Vinod Dubey", "courseMajor": "SWE", "courseConcentration": "Web"
             <ul>
                 <div class="row" style="margin-bottom:20px">
                     <li>

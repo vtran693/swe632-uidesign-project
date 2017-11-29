@@ -78,7 +78,7 @@
 		<jsp:include page="/write-review.jsp" />
 	</div>
 
-	<div id='main-menu-template' class='body-content' style="display:none">
+	<div id='main-menu-template' class='body-content' style="display:none; margin-left:22%; width:56%">
 		<jsp:include page="/title.jsp" />
 		<div class="panel-group" id="accordion">
 			<div class="panel panel-primary">

@@ -243,13 +243,13 @@ $(function () {
                 // Start the list
                 regHtml += ("<li>");
                 // Align class description
-                regHtml += ("<div class='col-md-6'>");
+                regHtml += ("<div class='col-md-8'>");
                 
                 regHtml += (data[i].courseName + " - " + "Section " + data[i].courseSection + "  - Prof. " + data[i].courseProfessor + " - " + "Day & Time :" + data[i].courseDate + "-" + data[i].courseTimePeriod);
                 // Close class description alignment
                 regHtml += ("</div>");
                  // Align Info/Drop button
-                regHtml += ("<div class='col-md-6 info-drop'>");
+                regHtml += ("<div class='col-md-4 info-drop'>");
 
                 // Add the More Info button
                 regHtml += ("<a id='" + data[i].courseName + "-more-info-button'" + " class='btn icon-btn btn-warning' href='#' onclick='" + data[i].courseName + "MoreInfo()'>");

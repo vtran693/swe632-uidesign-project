@@ -146,7 +146,7 @@ $(function () {
     });
 
     // Click the LinkedIn button
-    $("#linkedin-input-button").click(function (){
+    $("#linkedin-input-button").click(function () {
         $("#linkedin-verify-template").modal('show');
     });
 
@@ -288,22 +288,22 @@ $(function () {
 
 
     // Modify the existing registration - STILL DUMMY - TESTING MASTER VS UNDERGRADS
-    $("#modify").click(function (event) {
-        event.preventDefault();
-        $("#main-menu-template").hide();
-        $("#new-registration-template").show();
+    // $("#modify").click(function (event) {
+    //     event.preventDefault();
+    //     $("#main-menu-template").hide();
+    //     $("#new-registration-template").show();
 
-        $.get("/api/student/get-undergrad-dummy", function (data) {
+    //     $.get("/api/student/get-undergrad-dummy", function (data) {
 
-            if (data.title == 'Master') {
-                dynamicClassList = allMasterClasses;
-            }
-            else {
-                dynamicClassList = allUndergradClasses;
-            }
-            renderClassList();
-        });
-    });
+    //         if (data.title == 'Master') {
+    //             dynamicClassList = allMasterClasses;
+    //         }
+    //         else {
+    //             dynamicClassList = allUndergradClasses;
+    //         }
+    //         renderClassList();
+    //     });
+    // });
 
     $(".major").change(function () {
         if ($("#software-engineer").prop("checked") || $("#computer-science").prop("checked")) {
@@ -419,7 +419,7 @@ $(function () {
     $("#SWE645-01-registerbutton").click(function () {
 
     });
-    
+
     // Register for SWE632
     $("#SWE632-01-registerbutton").click(function () {
 
@@ -455,38 +455,38 @@ $(function () {
     });
 
     // Class Suggestions
-    
+
     $("#nuthana-registration-suggestion-swe645-check-available-open-panel").click(function (event) {
         event.preventDefault();
         $("#nuthana-registration-suggestion-swe645-template").slideDown();
     });
-    
+
     $("#nuthana-registration-suggestion-swe645-check-available-close-panel").click(function (event) {
         event.preventDefault();
         $("#nuthana-registration-suggestion-swe645-template").slideUp();
 
     });
-    
+
     $("#nuthana-registration-suggestion-swe642-check-available-open-panel").click(function (event) {
         event.preventDefault();
         $("#nuthana-registration-suggestion-swe642-template").slideDown();
     });
-    
+
     $("#nuthana-registration-suggestion-swe642-check-available-close-panel").click(function (event) {
         event.preventDefault();
         $("#nuthana-registration-suggestion-swe642-template").slideUp();
 
     });
 
-    $("#viet-registration-suggestion-swe632-check-available-open-panel").click(function (event) {
+    $("#viet-registration-suggestion-cs584-check-available-open-panel").click(function (event) {
         event.preventDefault();
-        $("#viet-registration-suggestion-swe632-template").slideDown();
+        $("#viet-registration-suggestion-cs584-template").slideDown();
     });
-    
 
-    $("#viet-registration-suggestion-swe632-check-available-close-panel").click(function (event) {
+
+    $("#viet-registration-suggestion-cs584-check-available-close-panel").click(function (event) {
         event.preventDefault();
-        $("#viet-registration-suggestion-swe632-template").slideUp();
+        $("#viet-registration-suggestion-cs584-template").slideUp();
 
     });
 
@@ -499,8 +499,50 @@ $(function () {
     $("#viet-registration-suggestion-swe637-check-available-close-panel").click(function (event) {
         event.preventDefault();
         $("#viet-registration-suggestion-swe637-template").slideUp();
-
     });
+
+
+    $("#viet-cs584-suggest-close-details-button").click( function () {
+        hideCS584DetailsFromSuggestion();
+    });
+    // See Details button click
+
+    $("#viet-registration-suggestion-cs584-see-details").click(function (event) {
+        event.preventDefault();
+        viewCS584DetailsFromSuggestion();
+    });
+
+    // Close Details buttons
+    // $("#viet-swe621-close-details-button").click(function (event) {
+    //     event.preventDefault();
+    //     $("#class-detail-SWE621-template").slideUp();
+    // });
+
+    // $("#viet-cs550-close-details-button").click(function (event) {
+    //     event.preventDefault();
+    //     $("#class-detail-CS550-template").slideUp();
+    // });
+
+    // $("#viet-swe437-close-details-button").click(function (event) {
+    //     event.preventDefault();
+    //     $("#class-detail-SWE437-template").slideUp();
+    // });
+
+    // $("#viet-swe632-updated-close-details-button").click(function (event) {
+    //     event.preventDefault();
+    //     $("#class-detail-SWE632-updated-template").slideUp();
+    // });
+
+    // $("#viet-swe632-close-details-button").click(function (event) {
+    //     event.preventDefault();
+    //     $("#class-detail-SWE632-template").slideUp();
+    // });
+
+    // $("#viet-swe645-close-details-button").click(function (event) {
+    //     event.preventDefault();
+    //     $("#class-detail-SWE645-template").slideUp();
+    // });
+
 
 
 });
@@ -560,7 +602,7 @@ function writeClassSuggestion(searchResultList, data, i) {
 
     // Start the button for class registration
     searchResultList += ("<div class='col-md-7'>");
-     
+
     // Build the register button
     searchResultList += ("<a class='btn icon-btn btn-success' href='#' id='" + data[i].courseName + "-" + data[i].courseSection + "-registerbutton'");
 
@@ -608,22 +650,41 @@ function renderClassList() {
 }
 
 function registerSWE645Section01() {
-    $(".registered-class").html("SWE645 - Section 01");
+    $(".registered-class").html("SWE 645 - Section 01");
     $("#new-registration-template").hide();
     $("#registration-suggestion-template").show();
 }
 
+// Register CS 584
+function registerCS584Section01FromSuggestion() {
+    $(".registered-class").html("CS 584 - Section 01");
+    $("#new-registration-template").hide();
+    $("#registration-suggestion-template-viet-cs-584").show();
+}
+
 function registerSWE632Section01() {
-    $(".registered-class").html("SWE632 - Section 01");
+    $(".registered-class").html("SWE 632 - Section 01");
     $("#new-registration-template").hide();
     $("#registration-suggestion-template-nuthana").show();
 }
 
 function registerSWE437Section01() {
-    $(".registered-class").html("SWE437 - Section 01");
+    $(".registered-class").html("SWE 437 - Section 01");
     $("#new-registration-template").hide();
     $("#registration-suggestion-template-divya").show();
 }
+
+// View Course Details
+
+function viewCS584DetailsFromSuggestion() {
+    $("#class-detail-CS584-template-suggest").slideDown();
+}
+
+// Hide Course Details
+function hideCS584DetailsFromSuggestion() {
+    $("#class-detail-CS584-template-suggest").slideUp();
+}
+
 
 function viewSWE621Details() {
     $("#class-detail-SWE621-template").slideDown();

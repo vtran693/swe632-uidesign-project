@@ -419,6 +419,11 @@ $(function () {
     $("#SWE645-01-registerbutton").click(function () {
 
     });
+    
+    // Register for SWE632
+    $("#SWE632-01-registerbutton").click(function () {
+
+    });
 
     // The back to main menu button at the suggestion page
     $(".main-menu-navigation-button").click(function (event) {
@@ -450,11 +455,34 @@ $(function () {
     });
 
     // Class Suggestions
+    
+    $("#nuthana-registration-suggestion-swe645-check-available-open-panel").click(function (event) {
+        event.preventDefault();
+        $("#nuthana-registration-suggestion-swe645-template").slideDown();
+    });
+    
+    $("#nuthana-registration-suggestion-swe645-check-available-close-panel").click(function (event) {
+        event.preventDefault();
+        $("#nuthana-registration-suggestion-swe645-template").slideUp();
+
+    });
+    
+    $("#nuthana-registration-suggestion-swe642-check-available-open-panel").click(function (event) {
+        event.preventDefault();
+        $("#nuthana-registration-suggestion-swe642-template").slideDown();
+    });
+    
+    $("#nuthana-registration-suggestion-swe642-check-available-close-panel").click(function (event) {
+        event.preventDefault();
+        $("#nuthana-registration-suggestion-swe642-template").slideUp();
+
+    });
 
     $("#viet-registration-suggestion-swe632-check-available-open-panel").click(function (event) {
         event.preventDefault();
         $("#viet-registration-suggestion-swe632-template").slideDown();
     });
+    
 
     $("#viet-registration-suggestion-swe632-check-available-close-panel").click(function (event) {
         event.preventDefault();
@@ -572,7 +600,6 @@ function displayLoadingPage() {
     }
 }
 
-
 function renderClassList() {
     // Autocomplete trigger for masters/undergrads
     $("#class-selection").autocomplete({
@@ -584,6 +611,18 @@ function registerSWE645Section01() {
     $(".registered-class").html("SWE645 - Section 01");
     $("#new-registration-template").hide();
     $("#registration-suggestion-template").show();
+}
+
+function registerSWE632Section01() {
+    $(".registered-class").html("SWE632 - Section 01");
+    $("#new-registration-template").hide();
+    $("#registration-suggestion-template-nuthana").show();
+}
+
+function registerSWE437Section01() {
+    $(".registered-class").html("SWE437 - Section 01");
+    $("#new-registration-template").hide();
+    $("#registration-suggestion-template-divya").show();
 }
 
 function viewSWE621Details() {
@@ -644,6 +683,8 @@ function returnHome() {
     $("#new-registration-template").hide();
     $("#modify-registration-template").hide();
     $("#registration-suggestion-template").hide();
+    $("#registration-suggestion-template-nuthana").hide();
+    $("#registration-suggestion-template-divya").hide();
     $("#write-review-template").hide();
     $("#main-menu-template").show();
 }

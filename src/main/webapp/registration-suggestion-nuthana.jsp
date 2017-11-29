@@ -41,7 +41,7 @@
 
         </ul>
 
-        <div id="nuthana-registration-suggestion-swe645-template" class="panel panel-info" style="display:none">
+        <div id="nuthana-registration-suggestion-swe645-template" class="panel panel-primary" style="display:none">
             <!-- Default panel contents -->
             <div class="panel-heading">SWE 645 Available Sections</div>
             <div class="panel-body">

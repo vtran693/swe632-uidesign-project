@@ -66,7 +66,7 @@
 	<div id="new-registration-template" class="body-content" style="display:none">
 		<jsp:include page="/new-registration.jsp" />
 	</div>
-	<div id="modify-registration-template" class="body-content" style="display:none">
+	<div id="modify-registration-template" class="body-content" style="display:none;">
 		<jsp:include page="/modify-registration.jsp" />
 	</div>
 

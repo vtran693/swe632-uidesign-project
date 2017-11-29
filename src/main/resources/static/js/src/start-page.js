@@ -99,7 +99,7 @@ $(function () {
                 }
             });
 
-            
+
 
             $.get("/api/student/" + userLogin + "/completed", function (data) {
 
@@ -136,10 +136,10 @@ $(function () {
 
 
     // Ok button
-    $("#ok-button").click(function(){
+    $("#ok-button").click(function () {
         $("#student-linkedin-val").html(userLoginData.studentLinkedIn);
     });
-    
+
 
     // Display the textbox to type in LinkedIn Address
     $('#linkedin-link').click(function (event) {
@@ -164,14 +164,14 @@ $(function () {
                     matched = true;
                 }
             });
-            if (matched == true){
+            if (matched == true) {
                 $('#linkedin-error-label').hide();
 
             }
-            else{
+            else {
                 $('#linkedin-error-label').show();
             }
-            
+
         }, 1000);
 
     });
@@ -190,7 +190,7 @@ $(function () {
         $("#modify-registration-template").hide();
         $("#write-review-template").hide();
         $("#new-registration-template").show();
-        
+
 
         $.get("/api/student/get-master-dummy", function (data) {
 
@@ -210,7 +210,7 @@ $(function () {
         returnHome();
 
         $("#new-registration-template").show();
-        
+
 
         $.get("/api/student/get-master-dummy", function (data) {
 
@@ -223,33 +223,60 @@ $(function () {
             renderClassList();
         });
     });
-    
+
     $("#view-modify").click(function (event) {
         event.preventDefault();
         $("#main-menu-template").hide();
         $("#write-review-template").hide();
         $("#new-registration-template").hide();
         $("#modify-registration-template").show();
-    
-    
-    $.get("/api/student/" + userLogin + "/registered", function (data) {
-    	var registeredCourses = data;
-    	regHtml="";
-    	modHtml="";
-    	for (var i = 0; i < data.length; i++) 
-    	{
-    		regHtml +=("<li>" + data[i].courseName + " - " + "Section " + data[i].courseSection + "  - Prof. " + data[i].courseProfessor + " - " + "Day & Time :" +data[i].courseDate+"-"+ data[i].courseTimePeriod+ "<button id='" + data[i].courseName + "-deletebutton'" + " class='btn btn-primary' style='margin-left:1cm' onclick='" + data[i].courseName + "Delete()'>Delete</button>"+"</li>"+"<br/>");
-    	}
-    	if (regHtml == "") {
-            regHtml = "You have not yet registered to any courses. Please click on CREATE A NEW REGISTRATION SESSION";
-        }
-    	
-    	$("#current-reg").html(regHtml);
-    	
+
+
+        $.get("/api/student/" + userLogin + "/registered", function (data) {
+            var registeredCourses = data;
+            regHtml = "";
+            modHtml = "";
+            for (var i = 0; i < data.length; i++) {
+
+                // Add the div class row
+                regHtml += ("<div class='row'>");
+                // Start the list
+                regHtml += ("<li>");
+                // Align class description
+                regHtml += ("<div class='col-md-6'>");
+                
+                regHtml += (data[i].courseName + " - " + "Section " + data[i].courseSection + "  - Prof. " + data[i].courseProfessor + " - " + "Day & Time :" + data[i].courseDate + "-" + data[i].courseTimePeriod);
+                // Close class description alignment
+                regHtml += ("</div>");
+                 // Align Info/Drop button
+                regHtml += ("<div class='col-md-6 info-drop'>");
+
+                // Add the More Info button
+                regHtml += ("<a id='" + data[i].courseName + "-more-info-button'" + " class='btn icon-btn btn-warning' href='#' onclick='" + data[i].courseName + "MoreInfo()'>");
+
+                regHtml += ("<span class='glyphicon btn-glyphicon glyphicon-trash img-circle text-warning'></span> More Info </a>")
+                
+                // Add the Drop button
+                regHtml += ("<a id='" + data[i].courseName + "-delete-button'" + " class='btn icon-btn btn-danger' href='#' onclick='" + data[i].courseName + "MoreInfo()'>");
+                
+                regHtml += ("<span class='glyphicon btn-glyphicon glyphicon-trash img-circle text-danger'></span> Drop </a>")
+                // Close class description alignment
+                regHtml += ("</div>");
+                // End the list
+                regHtml += ("</li>");
+                // End the row
+                regHtml += ("</div>");
+            }
+            if (regHtml == "") {
+                regHtml = "You have not yet registered to any courses. Please click on CREATE A NEW REGISTRATION SESSION";
+            }
+
+            $("#current-reg").html(regHtml);
+
+        });
+
     });
-    
-    });
-        
+
 
     // Modify the existing registration - STILL DUMMY - TESTING MASTER VS UNDERGRADS
     $("#modify").click(function (event) {
@@ -366,7 +393,7 @@ $(function () {
                         }
                         // Update the text change
                         textChange = data[i].courseName;
-                        searchResultList += ("<li>" + data[i].courseName) ;
+                        searchResultList += ("<li>" + data[i].courseName);
                         searchResultList += ("<button id='" + data[i].courseName + "-detailsbutton'" + " class='btn btn-primary' style='margin-left:1cm' onclick='view" + data[i].courseName + "Details()'>Details</button>");
                         searchResultList += "<ul>";
                     }
@@ -421,29 +448,29 @@ $(function () {
     });
 
     // The back to main menu button at the suggestion page
-    $("#main-menu-navigation-button").click(function (event){
+    $("#main-menu-navigation-button").click(function (event) {
         event.preventDefault();
         returnHome();
     });
 
     // Navigation home logo click
-    $("#btn-home").click(function(){
+    $("#btn-home").click(function () {
         returnHome();
     });
 
     // Write review page display
-    $("#write-review-option").click(function(){
+    $("#write-review-option").click(function () {
         $("main-menu-template").hide();
         $("#write-review-template").show();
     });
 
-    $("#modify-more-info-button").click(function(event){
+    $("#modify-more-info-button").click(function (event) {
         event.preventDefault();
         $("modify-more-info-message-template").slideDown();
         $("modify-delete-message-template").slideUp();
     });
 
-    $("#modify-delete-button").click(function(event){
+    $("#modify-delete-button").click(function (event) {
         event.preventDefault();
         $("modify-more-info-message-template").slideUp();
         $("modify-delete-message-template").slideDown();
@@ -542,15 +569,15 @@ function slideClassCategory() {
     $("#class-detail-CS550-template").slideDown();
 }
 
-function returnHome(){
+function returnHome() {
     $("#new-registration-template").hide();
     $("#modify-registration-template").hide();
     $("#registration-suggestion-template").hide();
     $("#write-review-template").hide();
-    $("#main-menu-template").show();    
+    $("#main-menu-template").show();
 }
 
-    	
+
 
 
 

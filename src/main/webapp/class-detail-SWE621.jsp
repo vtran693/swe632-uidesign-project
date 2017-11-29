@@ -1,4 +1,4 @@
-<div id='class-details-SWE621' class="body-content">
+<div id='class-details-SWE621'>
 	<div >
 	
 		<script type='text/javascript' src='https://us-east-1.online.tableau.com/javascripts/api/viz_v1.js'></script>

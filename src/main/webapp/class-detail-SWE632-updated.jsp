@@ -1,4 +1,4 @@
-<div id='class-details-SWE632-updated' class='body-content'>
+<div id='class-details-SWE632-updated'>
 		<div class="panel-group" id="accordion">
 			<div class="panel panel-primary">
 				<div class="panel-heading">

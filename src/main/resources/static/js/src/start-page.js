@@ -1,5 +1,6 @@
 var dynamicClassList = [];
 
+var textChangeForClassRegistration = "";
 
 var loginInfo = [
 
@@ -244,21 +245,21 @@ $(function () {
                 regHtml += ("<li>");
                 // Align class description
                 regHtml += ("<div class='col-md-8'>");
-                
+
                 regHtml += (data[i].courseName + " - " + "Section " + data[i].courseSection + "  - Prof. " + data[i].courseProfessor + " - " + "Day & Time :" + data[i].courseDate + "-" + data[i].courseTimePeriod);
                 // Close class description alignment
                 regHtml += ("</div>");
-                 // Align Info/Drop button
+                // Align Info/Drop button
                 regHtml += ("<div class='col-md-4 info-drop'>");
 
                 // Add the More Info button
                 regHtml += ("<a id='" + data[i].courseName + "-more-info-button'" + " class='btn icon-btn btn-warning' href='#' onclick='" + data[i].courseName + "MoreInfo()'>");
 
                 regHtml += ("<span class='glyphicon btn-glyphicon glyphicon-trash img-circle text-warning'></span> More Info </a>")
-                
+
                 // Add the Drop button
                 regHtml += ("<a id='" + data[i].courseName + "-delete-button'" + " class='btn icon-btn btn-danger' href='#' onclick='" + data[i].courseName + "MoreInfo()'>");
-                
+
                 regHtml += ("<span class='glyphicon btn-glyphicon glyphicon-trash img-circle text-danger'></span> Drop </a>")
                 // Close class description alignment
                 regHtml += ("</div>");
@@ -379,68 +380,32 @@ $(function () {
         // Reset search data
         $("#search-class-result").html("");
 
-        var textChange = "";
         var searchResultList = "";
         if ($("#software-engineer").prop('checked')) {
             $.get("/api/courses/" + searchCriteriaLevel + "/swe", function (data) {
                 for (var i = 0; i < data.length; i++) {
-                    var eachCourse = data[i];
-                    // If the the text change is different from the current data course name, write <li>
-                    if (textChange != data[i].courseName) {
-                        if (textChange != "") {
-                            searchResultList += "</ul>"
-                            searchResultList += "</li>"
-                        }
-                        // Update the text change
-                        textChange = data[i].courseName;
-                        searchResultList += ("<li>" + data[i].courseName);
-                        searchResultList += ("<button id='" + data[i].courseName + "-detailsbutton'" + " class='btn btn-primary' style='margin-left:1cm' onclick='view" + data[i].courseName + "Details()'>Details</button>");
-                        searchResultList += "<ul>";
-                    }
-                    searchResultList += ("<li>" + data[i].courseName + " - " + data[i].courseSection + " " + data[i].courseDate + " - " + data[i].courseTimePeriod);
-
-                    searchResultList += ("<button style='margin-left:0.3cm' id='" + data[i].courseName + "-" + data[i].courseSection + "-registerbutton'" + " class='btn btn-success'");
-
-                    searchResultList += (" onclick='register" + data[i].courseName + "Section" + data[i].courseSection + "()'>Register</button>");
-
-                    searchResultList += "</li>";
-
+                    searchResultList = writeClassSuggestion(searchResultList, data, i);
                 }
                 $("#search-class-result").append(searchResultList);
             });
         }
         // Reset the text change
-        textChange = "";
-
+        textChangeForClassRegistration = "";
+        searchResultList = "";
         if ($("#computer-science").prop('checked')) {
             $.get("/api/courses/" + searchCriteriaLevel + "/cs", function (data) {
                 for (var i = 0; i < data.length; i++) {
-                    var eachCourse = data[i];
-                    // If the the text change is different from the current data course name, write <li>
-                    if (textChange != data[i].courseName) {
-                        if (textChange != "") {
-                            searchResultList += "</ul>"
-                            searchResultList += "</li>"
-                        }
-                        // Update the text change
-                        textChange = data[i].courseName;
-                        searchResultList += ("<li>" + data[i].courseName);
-                        searchResultList += ("<button id='" + data[i].courseName + "-detailsbutton'" + " class='btn btn-primary' style='margin-left:1cm' onclick='view" + data[i].courseName + "Details()'>Details</button>");
-                        searchResultList += "<ul>";
-                    }
-                    searchResultList += ("<li>" + data[i].courseName + " - " + data[i].courseSection + " " + data[i].courseDate + " - " + data[i].courseTimePeriod);
-
-                    searchResultList += ("<button style='margin-left:0.3cm' id='" + data[i].courseName + "-" + data[i].courseSection + "-registerbutton'" + " class='btn btn-success'");
-
-                    searchResultList += (" onclick='register" + data[i].courseName + "Section" + data[i].courseSection + "()'>Register</button>");
-
-                    searchResultList += "</li>";
-
+                    searchResultList = writeClassSuggestion(searchResultList, data, i);
                 }
                 $("#search-class-result").append(searchResultList);
             });
         }
+        // Reset the text change
+        textChangeForClassRegistration = "";
     });
+
+
+
 
     // Register for SWE645
     $("#SWE645-01-registerbutton").click(function () {
@@ -475,7 +440,105 @@ $(function () {
         $("modify-more-info-message-template").slideUp();
         $("modify-delete-message-template").slideDown();
     });
+
+    // Class Suggestions
+
+    $("#viet-registration-suggestion-swe632-check-available-open-panel").click(function (event) {
+        event.preventDefault();
+        $("#viet-registration-suggestion-swe632-template").slideDown();
+    });
+
+    $("#viet-registration-suggestion-swe632-check-available-close-panel").click(function (event) {
+        event.preventDefault();
+        $("#viet-registration-suggestion-swe632-template").slideUp();
+
+    });
+
+    $("#viet-registration-suggestion-swe637-check-available-open-panel").click(function (event) {
+        event.preventDefault();
+        $("#viet-registration-suggestion-swe637-template").slideDown();
+
+    });
+
+    $("#viet-registration-suggestion-swe637-check-available-close-panel").click(function (event) {
+        event.preventDefault();
+        $("#viet-registration-suggestion-swe637-template").slideUp();
+
+    });
+
+
 });
+
+function writeClassSuggestion(searchResultList, data, i) {
+    // If the the text change is different from the current data course name, write <li>
+    if (textChangeForClassRegistration != data[i].courseName) {
+        if (textChangeForClassRegistration != "") {
+            searchResultList += "</ul>"
+            searchResultList += "</li>"
+            // End the row
+            searchResultList += ("</div>");
+        }
+        // Update the text change
+        textChangeForClassRegistration = data[i].courseName;
+
+        // Start a new row of class
+        searchResultList += ("<div class='row'>");
+
+
+        searchResultList += ("<li>");
+
+        // Start the description for class
+        searchResultList += ("<div class='col-md-8'>");
+        searchResultList += ("<a href='#' id='" + data[i].courseName + "-detailsbutton'" + " onclick='view" + data[i].courseName + "Details()'>");
+        searchResultList += data[i].courseName;
+        searchResultList += "</a>";
+
+        // Close the description for class
+        searchResultList += ("</div>");
+
+        // Start an empty div
+        searchResultList += ("<div class='col-md-4'>");
+        // Close the button for class details
+        searchResultList += ("</div>");
+
+        // Start an line div
+        searchResultList += ("<div class='row'>");
+
+        // Add a title before showing sections
+        searchResultList += ("<span style='font-weight:bold'>Available Sections</span>");
+        // Close the line div
+        searchResultList += ("</div>");
+
+        searchResultList += "<ul>";
+    }
+
+    searchResultList += ("<li>");
+
+    // Start the description for section
+    searchResultList += ("<div class='col-md-5'>");
+    searchResultList += (data[i].courseName + " - " + "Section " + data[i].courseSection + "<br>");
+    searchResultList += ("Class Schedule: " + data[i].courseDate + " from " + data[i].courseTimePeriod);
+
+    // Close the description for section
+    searchResultList += ("</div>");
+
+    // Start the button for class registration
+    searchResultList += ("<div class='col-md-7'>");
+     
+    // Build the register button
+    searchResultList += ("<a class='btn icon-btn btn-success' href='#' id='" + data[i].courseName + "-" + data[i].courseSection + "-registerbutton'");
+
+    searchResultList += (" onclick='register" + data[i].courseName + "Section" + data[i].courseSection + "()'>");
+
+    searchResultList += ("<span class='glyphicon btn-glyphicon glyphicon-plus img-circle text-success'></span>Register</a>");
+
+    // Close the button for section
+    searchResultList += ("</div>");
+
+    searchResultList += "</li>";
+
+    return searchResultList;
+}
 
 
 function displayLoadingPage() {

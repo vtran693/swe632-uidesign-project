@@ -1,4 +1,4 @@
-<div id='class-details-CS550' class="body-content">
+<div id='class-details-CS550'>
 <div class="container">
 	
 		

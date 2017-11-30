@@ -1,6 +1,5 @@
 <div>
-
-    <div class="col-md-12">
+    <div class="row">
         <div class="col-md-4">
             <button class="btn btn-primary main-menu-navigation-button">Back to Main Menu</button>
         </div>

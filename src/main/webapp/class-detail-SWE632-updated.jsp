@@ -24,7 +24,7 @@
 					<br>
 					<div class="col-md-12">
 						<div class="col-md-3">
-							<button type="button" id="viet-swe632-updated-close-details-button" class="btn btn-primary" onclick="hideSWE632UpdatedDetailsFromSuggestion()"> Close Details Panel </button>
+							<button type="button" id="viet-swe632-updated-close-details-button" class="btn btn-primary" onclick="hideSWE632UpdatedDetails()"> Close Details Panel </button>
 						</div>
 					
 					</div>

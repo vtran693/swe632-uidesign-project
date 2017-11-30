@@ -8,7 +8,7 @@
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <a class="btn icon-btn btn-danger" id="modify-confirm-drop-cs584" href="#">
                         <span class="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"></span> Drop </a>
-                    <button type="button" class="btn btn-default"> Cancel </button>
+                    <button type="button" onclick="cancelDropCourseClick()" class="btn btn-default"> Cancel </button>
                 </div>
             </div>
         </div>

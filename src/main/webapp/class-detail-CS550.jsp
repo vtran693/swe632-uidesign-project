@@ -73,7 +73,7 @@
     <br>
     <div class="col-md-12">
       <div class="col-md-3">
-        <button type="button" id="viet-cs550-close-details-button" class="btn btn-primary" onclick="hideCS550DetailsFromSuggestion()">
+        <button type="button" id="viet-cs550-close-details-button" class="btn btn-primary" onclick="hideCS550Details()">
         Close Details Panel </button>
       </div>
 

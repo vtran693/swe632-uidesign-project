@@ -524,6 +524,13 @@ $(function () {
         $("#viet-modify-more-info-swe645-template").slideUp('slow');
     });
 
+    $("#modify-confirm-drop-cs584").click(function(){
+        $("#current-reg").html("<div>There is currently no registered class. Please create a new registration</div>");
+        $("#modify-confirm-delete-message").show();
+        // Slide Up the bar
+        cancelDropCourseClick();
+    });
+
 });
 
 function writeClassSuggestion(searchResultList, data, i) {
@@ -664,33 +671,27 @@ function hideCS584DetailsFromSuggestion() {
     $("#class-detail-CS584-template-suggest").slideUp();
 }
 
-function hideSWE621Details(event) {
-    event.preventDefault();
+function hideSWE621Details() {
     $("#class-detail-SWE621-template").slideUp();
 }
 
-function hideCS550Details(event) {
-    event.preventDefault();
+function hideCS550Details() {
     $("#class-detail-CS550-template").slideUp();
 }
 
-function hideSWE437Details(event) {
-    event.preventDefault();
+function hideSWE437Details() {
     $("#class-detail-SWE437-template").slideUp();
 }
 
-function hideSWE632UpdatedDetails(event) {
-    event.preventDefault();
+function hideSWE632UpdatedDetails() {
     $("#class-detail-SWE632-updated-template").slideUp();
 }
 
-function hideSWE632Details(event) {
-    event.preventDefault();
+function hideSWE632Details() {
     $("#class-detail-SWE632-template").slideUp();
 };
 
-function hideSWE645Details(event) {
-    event.preventDefault();
+function hideSWE645Details() {
     $("#class-detail-SWE645-template").slideUp();
 }
 
@@ -768,11 +769,16 @@ function SWE645DropCourse() {
     $("#viet-modify-drop-course-template").slideDown('slow');
 }
 
-$("#modify-confirm-drop-cs584").click(function(){
-    $("#current-reg").html("<div>There is currently no registered class. Please create a new registration</div>");
-    $("#modify-confirm-delete-message").show();
-});
 
+
+function cancelDropCourseClick(){
+    $("#viet-modify-drop-course-template").slideUp('slow');
+}
+
+// function dropCourseCS584(){
+//     $("#current-reg").html("<div>There is currently no registered class. Please create a new registration</div>");
+//     $("#modify-confirm-delete-message").show();
+// }
 
 function CS584MoreInfo() {
     $("#viet-modify-more-info-cs584-template").slideDown('slow');
